@@ -18,9 +18,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import logica.*;
-import persistencia.*;
-import logica.dtos.*;
+// Cliente del Web Service
+import clienteWS.IctrlServicio;
+import clienteWS.IctrlServicioService;
+import clienteWS.Colaborador;
+import clienteWS.PropuestaDTO;
+import clienteWS.EstadoPropuesta;
 
 /**
  *
@@ -28,8 +31,6 @@ import logica.dtos.*;
  */
 @WebServlet(name = "altaColaboracionServlet", urlPatterns = {"/altaColaboracionServlet"})
 public class altaColaboracionServlet extends HttpServlet {
-
-    ControladoraNueva Sistema = new ControladoraNueva();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -41,13 +42,23 @@ public class altaColaboracionServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
+        // Crear cliente del Web Service
+        System.setProperty("file.encoding", "UTF-8");
+        IctrlServicioService service = new IctrlServicioService();
+        IctrlServicio port = service.getIctrlServicioPort();
 
-        //antes de mandarlo al jsp a q rellene todo necesito listarle las propuestas.
-        List<PropuestaDTO> propuestas = Sistema.listarPropuestasDTO();
+        try {
+            // Obtener todas las propuestas
+            List<PropuestaDTO> propuestas = port.listarPropuestasDTO();
 
-        request.setAttribute("propuestas", propuestas);
+            request.setAttribute("propuestas", propuestas);
+            request.getRequestDispatcher("altaColaboracion.jsp").forward(request, response);
 
-        request.getRequestDispatcher("altaColaboracion.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("mensaje", "Error al cargar las propuestas: " + e.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+        }
 
     }
 
@@ -56,45 +67,59 @@ public class altaColaboracionServlet extends HttpServlet {
             throws ServletException, IOException {
         //processRequest(request, response);
 
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+
         HttpSession sesion = request.getSession();
+        String nicknameColaborador = (String) sesion.getAttribute("usuarioSesion");
 
-        String usuario = (String) sesion.getAttribute("usuarioSesion");
-
-        //lo busco.
-        colaborador colab = Sistema.buscoColaborador(usuario);
-
-        //busco la propuesta
-        String titulo = request.getParameter("titulo");
-        propuesta prop = Sistema.buscoPropuesta(titulo);
-
-        //aca el post d confirmar alta colab.
-        String montoStr = request.getParameter("monto");
-        Float montoAportado = Float.parseFloat(montoStr);
-        String tipoRetorno = request.getParameter("tipoRetorno");
-
-        //fecha del sistema.
-        LocalDate hoy = LocalDate.now();
-        Date fechaActual = Date.valueOf(LocalDate.now());
-
-        try {
-            //si no esta en financiacion. cambiar estado a en financiacion.
-            if (prop.getEstadoActual().toString().equalsIgnoreCase("INGRESADA") || prop.getEstadoActual().toString().equalsIgnoreCase("PUBLICADA")) {
-                prop.setEstado(estadoPropuesta.EN_FINANCIACION);
-                Sistema.modificoPropuesta(prop);
-            }
-            //cambiar a financiada
-            if (prop.getRecaudado()+montoAportado >= prop.getMonto()) {
-                prop.setEstado(estadoPropuesta.FINANCIADA);
-                Sistema.modificoPropuesta(prop);
-            }
-            Sistema.altaColaboracion2(colab, prop, montoAportado, tipoRetorno, fechaActual);
-        } catch (Exception e) {
-            e.printStackTrace();
-            request.setAttribute("mensaje", "❌ Error al crear la colaboracion: " + e.getMessage());
-            request.getRequestDispatcher("home.jsp").forward(request, response);
+        if (nicknameColaborador == null || nicknameColaborador.isEmpty()) {
+            response.sendRedirect("inicioSesion.jsp");
+            return;
         }
 
-        response.sendRedirect("home.jsp"); // o a donde quieras
+        // Crear cliente WS
+        IctrlServicioService service = new IctrlServicioService();
+        IctrlServicio port = service.getIctrlServicioPort();
+
+        try {
+            // Datos del formulario
+            String titulo = request.getParameter("titulo");
+            Float montoAportado = Float.parseFloat(request.getParameter("monto"));
+            String tipoRetorno = request.getParameter("tipoRetorno");
+
+            // Fecha actual
+            Date fechaActual = Date.valueOf(LocalDate.now());
+
+            // Obtener propuesta desde WS
+            PropuestaDTO prop = port.buscoPropuestaDTO(titulo);
+
+            // === Lógica del estado (ahora vía WS) ===
+            if (prop.getEstadoActual().toString().equalsIgnoreCase("INGRESADA") || prop.getEstadoActual().toString().equalsIgnoreCase("PUBLICADA")) {
+                port.cambiarEstadoPropuesta(titulo, EstadoPropuesta.EN_FINANCIACION.name());
+            }
+
+            // Si alcanza el monto total → FINANCIADA
+            if (prop.getMontoRecaudado() + montoAportado >= prop.getMontoNecesario()) {
+                port.cambiarEstadoPropuesta(titulo, EstadoPropuesta.FINANCIADA.name());
+            }
+
+            // Crear la colaboración remotamente
+            port.altaColaboracion(
+                    nicknameColaborador,
+                    titulo,
+                    montoAportado,
+                    tipoRetorno,
+                    fechaActual.toString()
+            );
+
+            response.sendRedirect("home.jsp");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("mensaje", "❌ Error al crear la colaboración: " + e.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+        }
 
     }
 

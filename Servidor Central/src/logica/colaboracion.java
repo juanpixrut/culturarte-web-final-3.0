@@ -29,16 +29,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
         
 @Entity
-public class colaboracion implements Serializable {
+public class Colaboracion implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     int id;
     @ManyToOne
     @JoinColumn(name = "colaborador_id")
-    private colaborador colaborador;
+    private Colaborador colaborador;
     @ManyToOne
     @JoinColumn(name="propuesta_titulo")
-    private propuesta propuesta;
+    private Propuesta propuesta;
     @Basic
     private float montoAportado;
     @Temporal(TemporalType.DATE)
@@ -46,11 +46,11 @@ public class colaboracion implements Serializable {
     @Basic
     private String tipoRetorno; //entrada o porcentaje o ambas
     
-    public colaboracion(){
+    public Colaboracion(){
     
     }
     
-    public colaboracion(colaborador colab, propuesta prop, float montoAportado, String tipoRetorno){
+    public Colaboracion(Colaborador colab, Propuesta prop, float montoAportado, String tipoRetorno){
     this.colaborador = colab;
     this.propuesta = prop;
     this.montoAportado = montoAportado;
@@ -62,11 +62,11 @@ public class colaboracion implements Serializable {
     return this.id;
     }
     
-    public propuesta getPropuesta(){
+    public Propuesta getPropuesta(){
     return propuesta;
     }
     
-    public colaborador getColaborador(){
+    public Colaborador getColaborador(){
     return colaborador;
     }
     

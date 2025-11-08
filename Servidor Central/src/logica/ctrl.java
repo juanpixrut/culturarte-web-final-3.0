@@ -11,18 +11,18 @@ package logica;
 
 import persistencia.ControladoraPersistencia;
 
-public class ctrl extends ictrl{
+public class Ctrl extends Ictrl{
        
-    public static ctrl getInstancia(){
+    public static Ctrl getInstancia(){
         if(instancia == null){
-        instancia = new ctrl();
+        instancia = new Ctrl();
         }
         return instancia;
     }
     
-    private static ctrl instancia = null;
+    private static Ctrl instancia = null;
     
-    private ctrl(){
+    private Ctrl(){
     
     }
 }

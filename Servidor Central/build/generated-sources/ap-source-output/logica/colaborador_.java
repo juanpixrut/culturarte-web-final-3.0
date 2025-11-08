@@ -3,12 +3,12 @@ package logica;
 import javax.annotation.processing.Generated;
 import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
-import logica.colaboracion;
+import logica.Colaboracion;
 
-@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2025-10-22T21:29:33", comments="EclipseLink-2.7.12.v20230209-rNA")
-@StaticMetamodel(colaborador.class)
-public class colaborador_ extends usuario_ {
+@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2025-11-08T16:17:43", comments="EclipseLink-2.7.12.v20230209-rNA")
+@StaticMetamodel(Colaborador.class)
+public class Colaborador_ extends Usuario_ {
 
-    public static volatile ListAttribute<colaborador, colaboracion> colaboraciones;
+    public static volatile ListAttribute<Colaborador, Colaboracion> colaboraciones;
 
 }

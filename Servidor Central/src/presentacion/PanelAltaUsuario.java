@@ -10,14 +10,14 @@ package presentacion;
  */
 
 import java.util.ArrayList;
-import logica.fabrica;
-import logica.ictrl;
+import logica.Fabrica;
+import logica.Ictrl;
 
 import java.awt.CardLayout; //para pasar como en paginas
 import javax.swing.JOptionPane; //para ventanita de errores y exitos.
 
-import logica.proponente;
-import logica.colaborador;
+import logica.Proponente;
+import logica.Colaborador;
 
 //para imagen
 import java.io.File;
@@ -35,16 +35,16 @@ public class PanelAltaUsuario extends javax.swing.JPanel {
      * Creates new form PanelAltaUsuario
      */
     
-    private ictrl ic;
+    private Ictrl ic;
     private byte[] imagenBytes = null;
     
     javax.swing.JPanel contenido;
             
-    public PanelAltaUsuario(ictrl ic, javax.swing.JPanel contenido) {
+    public PanelAltaUsuario(Ictrl ic, javax.swing.JPanel contenido) {
         initComponents();
         this.ic = ic;
         this.contenido = contenido;
-        Panelsito1.setVisible(false); //oculto el panelsito con lo del proponente.
+        Panelsito1.setVisible(false); //oculto el panelsito con lo del Proponente.
     
     }
 
@@ -437,7 +437,7 @@ public class PanelAltaUsuario extends javax.swing.JPanel {
         if(esProponente){
             
             //verificar q no existan los datos en la bd
-            for(proponente p : ic.listarProponentes()){
+            for(Proponente p : ic.listarProponentes()){
             if(p.getNickname().equalsIgnoreCase(nickname)){
             JOptionPane.showMessageDialog(this, "Nickname ya existe.", "Informacion ya existente", JOptionPane.WARNING_MESSAGE);
             return;
@@ -448,7 +448,7 @@ public class PanelAltaUsuario extends javax.swing.JPanel {
             }
             }
             
-            for(colaborador c : ic.listarColaboradores()){
+            for(Colaborador c : ic.listarColaboradores()){
             if(c.getNickname().equalsIgnoreCase(nickname)){
             JOptionPane.showMessageDialog(this, "Nickname ya existe.", "Informacion ya existente", JOptionPane.WARNING_MESSAGE);
             return;
@@ -476,7 +476,7 @@ public class PanelAltaUsuario extends javax.swing.JPanel {
             
             //verificar q no existan los datos en la bd
             
-            for(proponente p : ic.listarProponentes()){
+            for(Proponente p : ic.listarProponentes()){
             if(p.getNickname().equalsIgnoreCase(nickname)){
             JOptionPane.showMessageDialog(this, "Nickname ya existe.", "Informacion ya existente", JOptionPane.WARNING_MESSAGE);
             return;
@@ -487,7 +487,7 @@ public class PanelAltaUsuario extends javax.swing.JPanel {
             }
             }
             
-            for(colaborador c : ic.listarColaboradores()){
+            for(Colaborador c : ic.listarColaboradores()){
             if(c.getNickname().equalsIgnoreCase(nickname)){
             JOptionPane.showMessageDialog(this, "Nickname ya existe.", "Informacion ya existente", JOptionPane.WARNING_MESSAGE);
             return;

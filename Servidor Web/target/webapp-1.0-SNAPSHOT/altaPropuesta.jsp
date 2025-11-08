@@ -4,9 +4,11 @@
     Author     : Juanpi
 --%>
 
+<%@page import="clienteWS.CategoriaDTO"%>
 <%@page import="logica.*"%>
 <%@page import="java.util.List"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <%@ page import="javax.servlet.http.HttpSession" %>
 
 <%
@@ -112,9 +114,9 @@
             <select name="tipoEspectaculo" id="tipoEspectaculo" required>
                 <option value="">-- Seleccione un tipo --</option>
                 <%
-                    List<categoria> tipos = (List<categoria>) request.getAttribute("tiposCategorias");
+                    List<CategoriaDTO> tipos = (List<CategoriaDTO>) request.getAttribute("tiposCategorias");
                     if (tipos != null) {
-                        for (categoria c : tipos) {
+                        for (CategoriaDTO c : tipos) {
                 %>
                 <option value="<%= c.getNombre()%>"><%= c.getNombre()%></option>
                 <%

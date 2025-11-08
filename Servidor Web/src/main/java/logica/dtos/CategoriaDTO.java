@@ -12,7 +12,7 @@ package logica.dtos;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import logica.categoria;
+import logica.Categoria;
 
 import logica.*;
 import persistencia.*;
@@ -48,7 +48,7 @@ public class CategoriaDTO implements Serializable {
     public void setHijos(List<CategoriaDTO> hijos) { this.hijos = hijos; }
 
     // ----- Conversión desde entidad -----
-    public static CategoriaDTO fromEntity(categoria c) {
+    public static CategoriaDTO fromEntity(Categoria c) {
         if (c == null) return null;
 
         CategoriaDTO dto = new CategoriaDTO(
@@ -59,11 +59,11 @@ public class CategoriaDTO implements Serializable {
 
         try {
             ControladoraNueva Sistema = new ControladoraNueva();
-            List<categoria> todas = Sistema.listarCategoria();
+            List<Categoria> todas = Sistema.listarCategoria();
             List<CategoriaDTO> hijosDTO = new ArrayList<>();
 
             for (int i = 0; i < todas.size(); i++) {
-                categoria posibleHijo = todas.get(i);
+                Categoria posibleHijo = todas.get(i);
                 // si el padre del hijo coincide con esta categoría
                 if (posibleHijo.getPadre() != null && 
                     posibleHijo.getPadre().getId() == c.getId()) {

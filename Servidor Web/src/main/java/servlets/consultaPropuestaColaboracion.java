@@ -14,9 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import logica.*;
-import logica.dtos.PropuestaDTO;
-import persistencia.*;
+// Cliente WS
+import clienteWS.IctrlServicio;
+import clienteWS.IctrlServicioService;
+import clienteWS.PropuestaDTO;
+import clienteWS.ColaboradorDTO;
+import clienteWS.ColaboracionDTO;
 
 /**
  *
@@ -24,8 +27,6 @@ import persistencia.*;
  */
 @WebServlet(name = "consultaPropuestaColaboracion", urlPatterns = {"/consultaPropuestaColaboracion"})
 public class consultaPropuestaColaboracion extends HttpServlet {
-    
-    ControladoraNueva Sistema = new ControladoraNueva();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -38,40 +39,62 @@ public class consultaPropuestaColaboracion extends HttpServlet {
             throws ServletException, IOException {
         //processRequest(request, response);
         
+       request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+
         HttpSession session = request.getSession();
         String usuarioSesion = (String) session.getAttribute("usuarioSesion");
-        
         String titulo = request.getParameter("titulo");
-        
-        PropuestaDTO propuesta = Sistema.buscoPropuestaDTO(titulo);
-        
-        //NEWWWWW
-        //si es colaborador y colaboro con la propuesta.
-        colaborador col = Sistema.buscoColaborador(usuarioSesion);
-        boolean colaboro = false;
-        boolean puedeColaborar = false;
-        
-        if (col != null) {
-            List<colaboracion> misColabs = Sistema.listarColaboraciones();
-            for (colaboracion c : misColabs) {
-                if (c.getPropuesta() != null && c.getPropuesta().getTitulo().trim().equalsIgnoreCase(titulo.trim()) && c.getColaborador().getNickname().equalsIgnoreCase(usuarioSesion)) {
-                    colaboro = true;
-                    break; // ya encontramos una coincidencia, no seguimos buscando
+
+        // Crear cliente del Web Service
+        System.setProperty("file.encoding", "UTF-8");
+        IctrlServicioService service = new IctrlServicioService();
+        IctrlServicio port = service.getIctrlServicioPort();
+
+        try {
+            // Buscar propuesta completa por título
+            PropuestaDTO propuesta = port.buscoPropuestaDTO(titulo);
+            if (propuesta == null) {
+                request.setAttribute("errorMensaje", "No se encontró la propuesta especificada.");
+                request.getRequestDispatcher("error.jsp").forward(request, response);
+                return;
+            }
+
+            // Determinar si el usuario colaboró o puede colaborar
+            boolean colaboro = false;
+            boolean puedeColaborar = false;
+
+            if (usuarioSesion != null) {
+                ColaboradorDTO col = port.buscoColaboradorDTO(usuarioSesion);
+
+                if (col != null) {
+                    List<ColaboracionDTO> misColabs = port.listarColaboracionesDTO();
+
+                    for (ColaboracionDTO c : misColabs) {
+                        if (c.getPropuestaTitulo() != null
+                                && c.getPropuestaTitulo().equalsIgnoreCase(titulo)
+                                && c.getColaboradorNickname().equalsIgnoreCase(usuarioSesion)) {
+                            colaboro = true;
+                            break;
+                        }
+                    }
+
+                    if (!colaboro) puedeColaborar = true;
                 }
             }
+
+            request.setAttribute("colaboro", colaboro);
+            request.setAttribute("puedeColaborar", puedeColaborar);
+            request.setAttribute("propuesta", propuesta);
+            request.setAttribute("titulo", titulo);
+
+            request.getRequestDispatcher("detallePropuestaColaboracion.jsp").forward(request, response);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("errorMensaje", "Error al consultar la propuesta: " + e.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request, response);
         }
-        
-        if(col != null && colaboro == false){
-        puedeColaborar = true;
-        }
-        
-        request.setAttribute("colaboro", colaboro);
-        request.setAttribute("puedeColaborar", puedeColaborar);
-        
-        request.setAttribute("propuesta", propuesta);
-        request.setAttribute("titulo", titulo);
-        request.getRequestDispatcher("detallePropuestaColaboracion.jsp").forward(request, response);
-        
     }
 
     @Override

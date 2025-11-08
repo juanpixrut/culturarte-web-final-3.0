@@ -32,11 +32,11 @@ import java.util.Calendar;
 
 import logica.dtos.*;
 
-public class ictrl {
+public class Ictrl {
 
     private ControladoraPersistencia controlP = new ControladoraPersistencia(); //no se si instanciar eso aca o como tenerlo.
 
-    protected ictrl() {
+    protected Ictrl() {
 
     }
 
@@ -45,8 +45,8 @@ public class ictrl {
         //imagen opcional
         //si el nickname o el correo esta en uso o un campo vacio o formato incorrecto, el sistema avisa.
 
-        //una vez creado le paso el usuario que sea a controlP
-        proponente p = new proponente(nickname, nombre, apellido, correo, imagenBytes, direccion, biografia, linkSitio);
+        //una vez creado le paso el Usuario que sea a controlP
+        Proponente p = new Proponente(nickname, nombre, apellido, correo, imagenBytes, direccion, biografia, linkSitio);
         //controlP.crearUsuario(u);
         controlP.crearUsuarioProponente(p);
     }
@@ -55,40 +55,40 @@ public class ictrl {
         //imagen opcional
         //si el nickname o el correo esta en uso o un campo vacio o formato incorrecto, el sistema avisa.
 
-        //una vez creado le paso el usuario que sea a controlP
-        proponente p = new proponente(nickname, nombre, apellido, correo, imagenBytes, contrasena, direccion, biografia, linkSitio);
+        //una vez creado le paso el Usuario que sea a controlP
+        Proponente p = new Proponente(nickname, nombre, apellido, correo, imagenBytes, contrasena, direccion, biografia, linkSitio);
         //controlP.crearUsuario(u);
         controlP.crearUsuarioProponente(p);
     }
 
-    public List<proponente> listarProponentes() {
+    public List<Proponente> listarProponentes() {
         return controlP.listarProponentes();
     }
 
     public void altaPerfilColaborador(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes) {
-        colaborador c = new colaborador(nickname, nombre, apellido, correo, imagenBytes);
+        Colaborador c = new Colaborador(nickname, nombre, apellido, correo, imagenBytes);
         controlP.crearUsuarioColaborador(c);
     }
 
     public void altaPerfilColaborador(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes, String contrasena) {
-        colaborador c = new colaborador(nickname, nombre, apellido, correo, imagenBytes, contrasena);
+        Colaborador c = new Colaborador(nickname, nombre, apellido, correo, imagenBytes, contrasena);
         controlP.crearUsuarioColaborador(c);
     }
 
-    public List<colaborador> listarColaboradores() {
+    public List<Colaborador> listarColaboradores() {
         return controlP.listarColaboradores();
     }
 
     public void altaCategoria(String nombre) {
-        categoria cat = new categoria(nombre);
-        categoria pad = controlP.GetCategoria("Categoria");
+        Categoria cat = new Categoria(nombre);
+        Categoria pad = controlP.GetCategoria("Categoria");
         cat.setPadre(pad);
         controlP.crearCategoria(cat);
     }
 
     public void altaSubCategoria(String nombre, String padre) {
-        categoria cat = new categoria(nombre);
-        categoria pad = controlP.GetCategoria(padre);
+        Categoria cat = new Categoria(nombre);
+        Categoria pad = controlP.GetCategoria(padre);
         if (pad == null) {
             throw new IllegalArgumentException("No existe el padre:" + padre);
         }
@@ -97,62 +97,62 @@ public class ictrl {
 
     }
 
-    public List<categoria> listarCategoria() {
+    public List<Categoria> listarCategoria() {
         return controlP.listarCategoria();
     }
 
-    public void altaPropuesta(proponente proponente, String titulo, String descripcion, String tipoEspectaculo, String lugar, Date fechaRealizacion, float precioEntrada, float montoNecesario, String tipoRetorno, byte[] imagenBytes, estadoPropuesta estado) {
-        propuesta prop = new propuesta(proponente, titulo, descripcion, tipoEspectaculo, lugar, fechaRealizacion, precioEntrada, montoNecesario, tipoRetorno);
+    public void altaPropuesta(Proponente proponente, String titulo, String descripcion, String tipoEspectaculo, String lugar, Date fechaRealizacion, float precioEntrada, float montoNecesario, String tipoRetorno, byte[] imagenBytes, EstadoPropuesta estado) {
+        Propuesta prop = new Propuesta(proponente, titulo, descripcion, tipoEspectaculo, lugar, fechaRealizacion, precioEntrada, montoNecesario, tipoRetorno);
         prop.setImagen(imagenBytes);
         prop.setEstado(estado);
         controlP.crearPropuesta(prop);
     }
 
-    public void altaPropuesta(proponente proponente, String titulo, String descripcion, String tipoEspectaculo, String lugar, Date fechaRealizacion, LocalTime hora, float precioEntrada, float montoNecesario, String tipoRetorno, byte[] imagenBytes, estadoPropuesta estado) {
-        propuesta prop = new propuesta(proponente, titulo, descripcion, tipoEspectaculo, lugar, fechaRealizacion, hora, precioEntrada, montoNecesario, tipoRetorno);
+    public void altaPropuesta(Proponente proponente, String titulo, String descripcion, String tipoEspectaculo, String lugar, Date fechaRealizacion, LocalTime hora, float precioEntrada, float montoNecesario, String tipoRetorno, byte[] imagenBytes, EstadoPropuesta estado) {
+        Propuesta prop = new Propuesta(proponente, titulo, descripcion, tipoEspectaculo, lugar, fechaRealizacion, hora, precioEntrada, montoNecesario, tipoRetorno);
         prop.setImagen(imagenBytes);
         prop.setEstado(estado);
         controlP.crearPropuesta(prop);
     }
 
-    public List<propuesta> listarPropuestas() {
+    public List<Propuesta> listarPropuestas() {
         return controlP.listarPropuestas();
     }
 
-    public void modificoPropuesta(propuesta prop) {
+    public void modificoPropuesta(Propuesta prop) {
         controlP.modificoPropuesta(prop);
     }
 
-    public void altaColaboracion(colaborador colab, propuesta prop, Float monto, String retorno) {
+    public void altaColaboracion(Colaborador colab, Propuesta prop, Float monto, String retorno) {
 
         //tengo q actualizar el montorecaudado en la prop (a ver si asi funciona testear)
         prop.setMontoRecaudado(monto);
-        //cambiar estado  de propuesta dependiendo
+        //cambiar estado  de Propuesta dependiendo
         if (prop.getEstadoActual().toString().equalsIgnoreCase("INGRESADA")) {
-            prop.setEstado(estadoPropuesta.EN_FINANCIACION);
+            prop.setEstado(EstadoPropuesta.EN_FINANCIACION);
         } else if (prop.getEstadoActual().toString().equalsIgnoreCase("EN_FINANCIACION")) {
             Float total = prop.getRecaudado() + monto;
             if (total >= prop.getMonto()) {
-                prop.setEstado(estadoPropuesta.FINANCIADA);
+                prop.setEstado(EstadoPropuesta.FINANCIADA);
             }
         }
 
         controlP.modificoPropuesta(prop);
 
-        colaboracion col = new colaboracion(colab, prop, monto, retorno);
+        Colaboracion col = new Colaboracion(colab, prop, monto, retorno);
         controlP.crearColaboracion(col);
     }
 
-    public void altaColaboracion2(colaborador colab, propuesta prop, Float monto, String retorno, Date fecha) { //usado para cargar los datos precargados esos
+    public void altaColaboracion2(Colaborador colab, Propuesta prop, Float monto, String retorno, Date fecha) { //usado para cargar los datos precargados esos
 
         prop.setMontoRecaudado(monto);
-        //cambiar estado  de propuesta dependiendo
+        //cambiar estado  de Propuesta dependiendo
         if (prop.getEstadoActual().toString().equalsIgnoreCase("INGRESADA")) {
-            prop.setEstado(estadoPropuesta.EN_FINANCIACION);
+            prop.setEstado(EstadoPropuesta.EN_FINANCIACION);
         } else if (prop.getEstadoActual().toString().equalsIgnoreCase("EN_FINANCIACION")) {
             Float total = prop.getRecaudado() + monto;
             if (total >= prop.getMonto()) {
-                prop.setEstado(estadoPropuesta.FINANCIADA);
+                prop.setEstado(EstadoPropuesta.FINANCIADA);
             }
         }
 
@@ -160,12 +160,12 @@ public class ictrl {
 
         controlP.modificoPropuesta(prop);
 
-        colaboracion col = new colaboracion(colab, prop, monto, retorno);
+        Colaboracion col = new Colaboracion(colab, prop, monto, retorno);
         controlP.crearColaboracion(col);
 
     }
 
-    public List<colaboracion> listarColaboraciones() {
+    public List<Colaboracion> listarColaboraciones() {
         return controlP.listarColaboraciones();
     }
 
@@ -173,7 +173,7 @@ public class ictrl {
         controlP.eliminoColaboracion(id);
     }
 
-    public List<usuario> listarUsuarios() {
+    public List<Usuario> listarUsuarios() {
         return controlP.listarUsuarios();
     }
 
@@ -495,10 +495,10 @@ public class ictrl {
 
     }
 
-    public proponente buscoProponente(String nickname) {
+    public Proponente buscoProponente(String nickname) {
 
-        proponente seleccionado = null;
-        for (proponente p : this.listarProponentes()) {
+        Proponente seleccionado = null;
+        for (Proponente p : this.listarProponentes()) {
             if (p.getNickname().equalsIgnoreCase(nickname)) {
                 seleccionado = p;
                 break;
@@ -507,10 +507,10 @@ public class ictrl {
         return seleccionado;
     }
 
-    public colaborador buscoColaborador(String nickname) {
+    public Colaborador buscoColaborador(String nickname) {
 
-        colaborador seleccionado = null;
-        for (colaborador c : this.listarColaboradores()) {
+        Colaborador seleccionado = null;
+        for (Colaborador c : this.listarColaboradores()) {
             if (c.getNickname().equalsIgnoreCase(nickname)) {
                 seleccionado = c;
                 break;
@@ -539,43 +539,43 @@ public class ictrl {
 
             byte[] imagen;
 
-            proponente seleccionado = this.buscoProponente("diegop");
+            Proponente seleccionado = this.buscoProponente("diegop");
             Date fecha = this.doyFecha(16, 9, 2025);
-            this.altaPropuesta(seleccionado, "Cine en el Botánico", "El 16 de Diciembre a la hora 20 se proyectará la película \"Clever\", en el Jardín Botánico (Av. 19 de Abril 1181) en el marco\n" + "de las actividades realizadas por el ciclo Cultura al Aire Libre. El largometraje uruguayo de ficción Clever es dirigido por\n" + "Federico Borgia y Guillermo Madeiro. Es apto para mayores de 15 años.", "Cine al Aire Libre", "Jardín Botánico", fecha, 200, 150000, "Porcentaje", null, estadoPropuesta.INGRESADA);
+            this.altaPropuesta(seleccionado, "Cine en el Botánico", "El 16 de Diciembre a la hora 20 se proyectará la película \"Clever\", en el Jardín Botánico (Av. 19 de Abril 1181) en el marco\n" + "de las actividades realizadas por el ciclo Cultura al Aire Libre. El largometraje uruguayo de ficción Clever es dirigido por\n" + "Federico Borgia y Guillermo Madeiro. Es apto para mayores de 15 años.", "Cine al Aire Libre", "Jardín Botánico", fecha, 200, 150000, "Porcentaje", null, EstadoPropuesta.INGRESADA);
 
 //busco la prop. la modifico agregando los historiales y luego la guardo.
             imagen = Fotos.cargarComoPNG(carpeta, "mom", 150, 150, true); //NO HAY IMAGEN MOM ESTA MAL EL LINK
             seleccionado = this.buscoProponente("hrubino");
             fecha = this.doyFecha(7, 10, 2025);
-            this.altaPropuesta(seleccionado, "Religiosamente", "MOMOSAPIENS presenta \"Religiosamente\". Mediante dos parodias y un hilo conductor que aborda la temática de la\n" + "religión Momosapiens, mediante el humor y la reflexión, hilvana una historia que muestra al hombre inmerso en el tema\n" + "religioso. El libreto está escrito utilizando diferentes lenguajes de humor, dando una visión satírica y reflexiva desde\n" + "distintos puntos de vista, logrando mediante situaciones paródicas armar una propuesta plena de arte carnavalero.", "Parodistas", "Teatro de Verano", fecha, 300, 300000, "Ambas", null, estadoPropuesta.INGRESADA);
+            this.altaPropuesta(seleccionado, "Religiosamente", "MOMOSAPIENS presenta \"Religiosamente\". Mediante dos parodias y un hilo conductor que aborda la temática de la\n" + "religión Momosapiens, mediante el humor y la reflexión, hilvana una historia que muestra al hombre inmerso en el tema\n" + "religioso. El libreto está escrito utilizando diferentes lenguajes de humor, dando una visión satírica y reflexiva desde\n" + "distintos puntos de vista, logrando mediante situaciones paródicas armar una propuesta plena de arte carnavalero.", "Parodistas", "Teatro de Verano", fecha, 300, 300000, "Ambas", null, EstadoPropuesta.INGRESADA);
 
             imagen = Fotos.cargarComoPNG(carpeta, "pim", 150, 150, true);
             seleccionado = this.buscoProponente("mbusca");
             fecha = this.doyFecha(19, 10, 2025);
-            this.altaPropuesta(seleccionado, "El Pimiento Indomable", "El Pimiento Indomable, formación compuesta por Kiko Veneno y el uruguayo Martín Buscaglia, presentará este 19 de\n" + "Octubre, su primer trabajo. Bajo un título homónimo al del grupo, es un disco que según los propios protagonistas “no se\n" + "parece al de ninguno de los dos por separado. Entre los títulos que se podrán escuchar se encuentran “Nadador salvador”,\n" + "“América es más grande”, “Pescaito Enroscado” o “La reina del placer”.", "Concierto", "Teatro Solís", fecha, 400, 400000, "Porcentaje", null, estadoPropuesta.INGRESADA);
+            this.altaPropuesta(seleccionado, "El Pimiento Indomable", "El Pimiento Indomable, formación compuesta por Kiko Veneno y el uruguayo Martín Buscaglia, presentará este 19 de\n" + "Octubre, su primer trabajo. Bajo un título homónimo al del grupo, es un disco que según los propios protagonistas “no se\n" + "parece al de ninguno de los dos por separado. Entre los títulos que se podrán escuchar se encuentran “Nadador salvador”,\n" + "“América es más grande”, “Pescaito Enroscado” o “La reina del placer”.", "Concierto", "Teatro Solís", fecha, 400, 400000, "Porcentaje", null, EstadoPropuesta.INGRESADA);
 
             imagen = Fotos.cargarComoPNG(carpeta, "pil", 150, 150, true);
             seleccionado = this.buscoProponente("kairoh");
             fecha = this.doyFecha(21, 10, 2025);
             LocalTime hora = LocalTime.parse("15:30");
-            this.altaPropuesta(seleccionado, "Pilsen Rock", "La edición 2025 del Pilsen Rock se celebrará el 21 de Octubre en la Rural del Prado y contará con la participación de más\n" + "de 15 bandas nacionales. Quienes no puedan trasladarse al lugar, tendrán la posibilidad de disfrutar los shows a través de\n" + "Internet, así como entrevistas en vivo a los músicos una vez finalizados los conciertos.", "Festival", "Rural de Prado", fecha, hora, 1000, 900000, "Ambas", null, estadoPropuesta.INGRESADA);
+            this.altaPropuesta(seleccionado, "Pilsen Rock", "La edición 2025 del Pilsen Rock se celebrará el 21 de Octubre en la Rural del Prado y contará con la participación de más\n" + "de 15 bandas nacionales. Quienes no puedan trasladarse al lugar, tendrán la posibilidad de disfrutar los shows a través de\n" + "Internet, así como entrevistas en vivo a los músicos una vez finalizados los conciertos.", "Festival", "Rural de Prado", fecha, hora, 1000, 900000, "Ambas", null, EstadoPropuesta.INGRESADA);
 
             seleccionado = this.buscoProponente("juliob");
             fecha = this.doyFecha(05, 11, 2025);
-            this.altaPropuesta(seleccionado, "Romeo y Julieta", "Romeo y Julieta de Kenneth MacMillan, uno de los ballets favoritos del director artístico Julio Bocca, se presentará\n" + "nuevamente el 5 de Noviembre en el Auditorio Nacional del Sodre. Basada en la obra homónima de William Shakespeare,\n" + "Romeo y Julieta es considerada la coreografía maestra del MacMillan. La producción de vestuario y escenografía se realizó\n" + "en los Talleres del Auditorio Adela Reta, sobre los diseños originales.", "Ballet", "Auditorio Nacional del Sodre", fecha, 800, 750000, "Porcentaje", null, estadoPropuesta.INGRESADA);
+            this.altaPropuesta(seleccionado, "Romeo y Julieta", "Romeo y Julieta de Kenneth MacMillan, uno de los ballets favoritos del director artístico Julio Bocca, se presentará\n" + "nuevamente el 5 de Noviembre en el Auditorio Nacional del Sodre. Basada en la obra homónima de William Shakespeare,\n" + "Romeo y Julieta es considerada la coreografía maestra del MacMillan. La producción de vestuario y escenografía se realizó\n" + "en los Talleres del Auditorio Adela Reta, sobre los diseños originales.", "Ballet", "Auditorio Nacional del Sodre", fecha, 800, 750000, "Porcentaje", null, EstadoPropuesta.INGRESADA);
 
             imagen = Fotos.cargarComoPNG(carpeta, "udj", 150, 150, true);
             seleccionado = this.buscoProponente("tabarec");
             fecha = this.doyFecha(16, 11, 2025);
-            this.altaPropuesta(seleccionado, "Un día de Julio", "La Catalina presenta el espectáculo \"Un Día de Julio\" en Landia. Un hombre misterioso y solitario vive encerrado entre las\n" + "cuatro paredes de su casa. Intenta, con sus teorías extravagantes, cambiar el mundo exterior que le resulta inhabitable. Un\n" + "día de Julio sucederá algo que cambiará su vida y la de su entorno para siempre.", "Murga", "Landia", fecha, 650, 300000, "Ambas", null, estadoPropuesta.INGRESADA);
+            this.altaPropuesta(seleccionado, "Un día de Julio", "La Catalina presenta el espectáculo \"Un Día de Julio\" en Landia. Un hombre misterioso y solitario vive encerrado entre las\n" + "cuatro paredes de su casa. Intenta, con sus teorías extravagantes, cambiar el mundo exterior que le resulta inhabitable. Un\n" + "día de Julio sucederá algo que cambiará su vida y la de su entorno para siempre.", "Murga", "Landia", fecha, 650, 300000, "Ambas", null, EstadoPropuesta.INGRESADA);
 
             seleccionado = this.buscoProponente("hectorg");
             fecha = this.doyFecha(3, 12, 2025);
-            this.altaPropuesta(seleccionado, "El Lazarillo de Tormes", "Vuelve unas de las producciones de El Galpón más aclamadas de los últimos tiempos. Esta obra se ha presentado en\n" + "Miami, Nueva York, Washington, México, Guadalajara, Río de Janeiro y La Habana. En nuestro país, El Lazarillo de\n" + "Tormes fue nominado en los rubros mejor espectáculo y mejor dirección a los Premios Florencio 1995, obteniendo su\n" + "protagonista Héctor Guido el Florencio a Mejor actor de ese año.", "Teatro Dramático", "Teatro el Galpón", fecha, 350, 175000, "Entrada", null, estadoPropuesta.INGRESADA);
+            this.altaPropuesta(seleccionado, "El Lazarillo de Tormes", "Vuelve unas de las producciones de El Galpón más aclamadas de los últimos tiempos. Esta obra se ha presentado en\n" + "Miami, Nueva York, Washington, México, Guadalajara, Río de Janeiro y La Habana. En nuestro país, El Lazarillo de\n" + "Tormes fue nominado en los rubros mejor espectáculo y mejor dirección a los Premios Florencio 1995, obteniendo su\n" + "protagonista Héctor Guido el Florencio a Mejor actor de ese año.", "Teatro Dramático", "Teatro el Galpón", fecha, 350, 175000, "Entrada", null, EstadoPropuesta.INGRESADA);
 
             seleccionado = this.buscoProponente("losBardo");
             fecha = this.doyFecha(10, 12, 2025);
-            this.altaPropuesta(seleccionado, "Bardo en la FING", "El 10 de Diciembre se presentará Bardo Científico en la FING. El humor puede ser usado como una herramienta\n" + "importante para el aprendizaje y la democratización de la ciencia, los monólogos científicos son una forma didáctica de\n" + "apropiación del conocimiento científico y contribuyen a que el público aprenda ciencia de forma amena. Los invitamos a\n" + "pasar un rato divertido, en un espacio en el cual aprenderán cosas de la ciencia que los sorprenderán. ¡Los esperamos!", "Stand-up", "Anfiteatro Edificio José Luis Massera", fecha, 200, 100000, "Entrada", null, estadoPropuesta.INGRESADA);
+            this.altaPropuesta(seleccionado, "Bardo en la FING", "El 10 de Diciembre se presentará Bardo Científico en la FING. El humor puede ser usado como una herramienta\n" + "importante para el aprendizaje y la democratización de la ciencia, los monólogos científicos son una forma didáctica de\n" + "apropiación del conocimiento científico y contribuyen a que el público aprenda ciencia de forma amena. Los invitamos a\n" + "pasar un rato divertido, en un espacio en el cual aprenderán cosas de la ciencia que los sorprenderán. ¡Los esperamos!", "Stand-up", "Anfiteatro Edificio José Luis Massera", fecha, 200, 100000, "Entrada", null, EstadoPropuesta.INGRESADA);
 
         } catch (Exception e) {
             javax.swing.JOptionPane.showMessageDialog(null, "No se pudo cargar propuestas" + e.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
@@ -583,9 +583,9 @@ public class ictrl {
 
     }
 
-    public propuesta buscoPropuesta(String titulo) {
-        propuesta prop = null;
-        for (propuesta p : this.listarPropuestas()) {
+    public Propuesta buscoPropuesta(String titulo) {
+        Propuesta prop = null;
+        for (Propuesta p : this.listarPropuestas()) {
             if (p.getTitulo().equalsIgnoreCase(titulo)) {
                 prop = p;
                 break;
@@ -597,8 +597,8 @@ public class ictrl {
     public void cargoColaboraciones() { //faltaria LA HORA.
 
         try {
-            colaborador seleccionado;
-            propuesta propuesta;
+            Colaborador seleccionado;
+            Propuesta propuesta;
             float monto;
             Date fecha;
 
@@ -725,7 +725,7 @@ public class ictrl {
 //aca las mias
     public boolean validarUsuario(String usuario, String clave) {
         boolean valido = false;
-        for (proponente p : this.listarProponentes()) {
+        for (Proponente p : this.listarProponentes()) {
             if (p.getNickname().equalsIgnoreCase(usuario)) {
                 if (p.getContrasena().equalsIgnoreCase(clave)) {
                     valido = true;
@@ -734,7 +734,7 @@ public class ictrl {
             }
         }
 
-        for (colaborador c : this.listarColaboradores()) {
+        for (Colaborador c : this.listarColaboradores()) {
             if (c.getNickname().equalsIgnoreCase(usuario)) {
                 if (c.getNickname().equalsIgnoreCase(usuario)) {
                     if (c.getContrasena().equalsIgnoreCase(clave)) {
@@ -750,13 +750,13 @@ public class ictrl {
     //mia
     public String buscoRol(String usuario) {
         String rol = null;
-        for (proponente p : this.listarProponentes()) {
+        for (Proponente p : this.listarProponentes()) {
             if (p.getNickname().equalsIgnoreCase(usuario)) {
                 rol = "proponente";
                 break;
             }
         }
-        for (colaborador c : this.listarColaboradores()) {
+        for (Colaborador c : this.listarColaboradores()) {
             if (c.getNickname().equalsIgnoreCase(usuario)) {
                 rol = "colaborador";
                 break;
@@ -779,10 +779,10 @@ public class ictrl {
     }
 
     public List<PropuestaDTO> listarPropuestasDTO() {
-        List<propuesta> entidades = this.listarPropuestas();
+        List<Propuesta> entidades = this.listarPropuestas();
         List<PropuestaDTO> dtos = new ArrayList<>();
 
-        for (propuesta p : entidades) {
+        for (Propuesta p : entidades) {
             dtos.add(new PropuestaDTO(
                     p.getProponente(),
                     p.getTitulo(),
@@ -815,33 +815,33 @@ public class ictrl {
     }
 
     public PropuestaDTO buscoPropuestaDTO(String titulo) {
-        propuesta prop = this.buscoPropuesta(titulo);
+        Propuesta prop = this.buscoPropuesta(titulo);
         PropuestaDTO propDTO = PropuestaDTO.fromEntity(prop);
         return propDTO;
     }
 
     public List<UsuarioDTO> listarUsuariosDTO() {
-        List<usuario> entidades = this.listarUsuarios();
+        List<Usuario> entidades = this.listarUsuarios();
         List<UsuarioDTO> dtos = new ArrayList<>();
-        for (usuario u : entidades) {
+        for (Usuario u : entidades) {
             dtos.add(UsuarioDTO.fromEntity(u));
         }
         return dtos;
     }
 
     public List<ProponenteDTO> listarProponentesDTO() {
-        List<proponente> entidades = this.listarProponentes();
+        List<Proponente> entidades = this.listarProponentes();
         List<ProponenteDTO> dtos = new ArrayList<>();
-        for (proponente p : entidades) {
+        for (Proponente p : entidades) {
             dtos.add(ProponenteDTO.fromEntity(p));
         }
         return dtos;
     }
 
     public List<ColaboradorDTO> listarColaboradoresDTO() {
-        List<colaborador> entidades = this.listarColaboradores();
+        List<Colaborador> entidades = this.listarColaboradores();
         List<ColaboradorDTO> dtos = new ArrayList<>();
-        for (colaborador c : entidades) {
+        for (Colaborador c : entidades) {
             dtos.add(ColaboradorDTO.fromEntity(c));
         }
         return dtos;
@@ -849,19 +849,19 @@ public class ictrl {
 
     public List<PropuestaDTO> listarPropuestasFavoritas(String nickname) {
         String rol = buscoRol(nickname);
-        usuario u = null;
+        Usuario u = null;
         if (rol.equalsIgnoreCase("proponente")) {
-            proponente prop = this.buscoProponente(nickname);
+            Proponente prop = this.buscoProponente(nickname);
             u = prop;
         } else if (rol.equalsIgnoreCase("colaborador")) {
-            colaborador col = this.buscoColaborador(nickname);
+            Colaborador col = this.buscoColaborador(nickname);
             u = col;
         }
 
         List<PropuestaDTO> resultado = new ArrayList<>();
 
         if (u != null && u.getFavoritas() != null) {
-            for (propuesta p : u.getFavoritas()) {
+            for (Propuesta p : u.getFavoritas()) {
                 resultado.add(PropuestaDTO.fromEntity(p));
             }
         }
@@ -871,12 +871,12 @@ public class ictrl {
 
     public List<PropuestaDTO> listarPropuestasPublicadas(String nickname) {
         String rol = buscoRol(nickname);
-        usuario u = null;
+        Usuario u = null;
         if (rol.equalsIgnoreCase("proponente")) {
-            proponente prop = this.buscoProponente(nickname);
+            Proponente prop = this.buscoProponente(nickname);
             u = prop;
         } else if (rol.equalsIgnoreCase("colaborador")) {
-            colaborador col = this.buscoColaborador(nickname);
+            Colaborador col = this.buscoColaborador(nickname);
             u = col;
         }
 
@@ -886,7 +886,7 @@ public class ictrl {
         if (u != null) {
             for (PropuestaDTO p : dtos) {
                 String estado = p.getEstadoActual().toString();
-                if (estado.equalsIgnoreCase("PUBLICADA") && p.getProp().equalsIgnoreCase(nickname)) {
+                if (estado.equalsIgnoreCase("PUBLICADA") && p.getProponenteNickname().equalsIgnoreCase(nickname)) {
                     resultado.add(p);
                 }
             }
@@ -900,7 +900,7 @@ public class ictrl {
         List<PropuestaDTO> pub = new ArrayList<>();
         for (PropuestaDTO p : dtos) {
             String estado = p.getEstadoActual().toString();
-            if (estado.equalsIgnoreCase("INGRESADA") && p.getProp().equalsIgnoreCase(nickname)) {
+            if (estado.equalsIgnoreCase("INGRESADA") && p.getProponenteNickname().equalsIgnoreCase(nickname)) {
                 pub.add(p);
             }
         }
@@ -912,17 +912,17 @@ public class ictrl {
         List<PropuestaDTO> financiadas = new ArrayList<>();
         for (PropuestaDTO p : dtos) {
             String estado = p.getEstadoActual().toString();
-            if (estado.equalsIgnoreCase("FINANCIADA") && p.getProp().equalsIgnoreCase(nickname)) {
+            if (estado.equalsIgnoreCase("FINANCIADA") && p.getProponenteNickname().equalsIgnoreCase(nickname)) {
                 financiadas.add(p);
             }
         }
         return financiadas;
     }
 
-    public usuario buscoUsuario(String nickname) {
-        colaborador col = this.buscoColaborador(nickname);
-        proponente prop = this.buscoProponente(nickname);
-        usuario usuario = null;
+    public Usuario buscoUsuario(String nickname) {
+        Colaborador col = this.buscoColaborador(nickname);
+        Proponente prop = this.buscoProponente(nickname);
+        Usuario usuario = null;
         if (col != null) {
             usuario = col;
         } else if (prop != null) {
@@ -931,22 +931,22 @@ public class ictrl {
         return usuario;
     }
 
-    public usuario buscoUsuario2(String nickname) {
+    public Usuario buscoUsuario2(String nickname) {
         return controlP.buscarUsuarioConRelaciones(nickname);
     }
 
     public void cancelarPropuesta(String titulo) {
         //la busco.
-        propuesta prop = this.buscoPropuesta(titulo);
-        prop.setEstado(estadoPropuesta.CANCELADA);
-        prop.registrarCambioEstado(estadoPropuesta.CANCELADA);
+        Propuesta prop = this.buscoPropuesta(titulo);
+        prop.setEstado(EstadoPropuesta.CANCELADA);
+        prop.registrarCambioEstado(EstadoPropuesta.CANCELADA);
         this.modificoPropuesta(prop);
     }
 
-    public boolean usuarioSigueA(usuario usuarioSesion, String nickname) {
+    public boolean usuarioSigueA(Usuario usuarioSesion, String nickname) {
         boolean loSigue = false;
-        List<usuario> seguidos = usuarioSesion.getSeguidos();
-        for (usuario u : seguidos) {
+        List<Usuario> seguidos = usuarioSesion.getSeguidos();
+        for (Usuario u : seguidos) {
             if (u.getNickname().equalsIgnoreCase(nickname)) {
                 loSigue = true;
             }
@@ -954,8 +954,8 @@ public class ictrl {
         return loSigue;
     }
 
-    public List<usuario> buscarSeguidos(String nickname) {
-        usuario u = controlP.buscarUsuarioConRelaciones(nickname); // trae seguidos y seguidores con JOIN FETCH
+    public List<Usuario> buscarSeguidos(String nickname) {
+        Usuario u = controlP.buscarUsuarioConRelaciones(nickname); // trae seguidos y seguidores con JOIN FETCH
         if (u == null) {
             throw new IllegalArgumentException("El usuario no existe: " + nickname);
         }
@@ -968,8 +968,8 @@ public class ictrl {
         return new ArrayList<>(u.getSeguidos());
     }
 
-    public List<usuario> buscarSeguidores(String nickname) {
-        usuario u = controlP.buscarUsuarioConRelaciones(nickname); // mismo método
+    public List<Usuario> buscarSeguidores(String nickname) {
+        Usuario u = controlP.buscarUsuarioConRelaciones(nickname); // mismo método
         if (u == null) {
             throw new IllegalArgumentException("El usuario no existe: " + nickname);
         }
@@ -982,8 +982,8 @@ public class ictrl {
     }
 
     public void agregarComentarioAPropuesta(String tituloPropuesta, String nicknameColaborador, String texto) {
-        propuesta p = buscoPropuesta(tituloPropuesta);
-        colaborador c = buscoColaborador(nicknameColaborador);
+        Propuesta p = buscoPropuesta(tituloPropuesta);
+        Colaborador c = buscoColaborador(nicknameColaborador);
 
         if (p == null || c == null) {
             throw new IllegalArgumentException("Propuesta o colaborador no encontrados");
@@ -992,10 +992,55 @@ public class ictrl {
         p.agregarComentario(c, texto);
         controlP.modificoPropuesta(p);
     }
-    
-    public List<comentario> listarComentariosDePropuesta(String tituloPropuesta) {
-        propuesta p = buscoPropuesta(tituloPropuesta);
+
+    public List<Comentario> listarComentariosDePropuesta(String tituloPropuesta) {
+        Propuesta p = buscoPropuesta(tituloPropuesta);
         return p != null ? p.getComentarios() : new ArrayList<>();
+    }
+
+    public void dejarComentario(String nickname, String titulo, String texto) {
+        Colaborador c = this.buscoColaborador(nickname);
+        Propuesta p = this.buscoPropuesta(titulo);
+        Comentario nuevo = new Comentario(c, p, texto);
+        p.agregarComentario(nuevo);
+        this.modificoPropuesta(p);
+    }
+
+    public void cambiarEstadoPropuesta(String titulo, String estado) {
+        Propuesta p = this.buscoPropuesta(titulo);
+        switch (estado) {
+            case "INGRESADA":
+                p.cambiarEstado(EstadoPropuesta.INGRESADA);
+                break;
+
+            case "PUBLICADA":
+                p.cambiarEstado(EstadoPropuesta.PUBLICADA);
+                break;
+
+            case "EN_FINANCIACION":
+                p.cambiarEstado(EstadoPropuesta.EN_FINANCIACION);
+                break;
+
+            case "FINANCIADA":
+                p.cambiarEstado(EstadoPropuesta.FINANCIADA);
+                break;
+
+            case "NO_FINANCIADA":
+                p.cambiarEstado(EstadoPropuesta.NO_FINANCIADA);
+                break;
+
+            case "CANCELADA":
+                p.cambiarEstado(EstadoPropuesta.CANCELADA);
+                break;
+        }
+
+        this.modificoPropuesta(p);
+
+    }
+
+    //
+    public List<Registro> listarRegistros() {
+        return controlP.listarRegistros();
     }
 
 }

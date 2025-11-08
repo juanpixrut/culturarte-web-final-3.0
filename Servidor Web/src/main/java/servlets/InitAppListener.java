@@ -22,13 +22,9 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import java.sql.*;
 
-import logica.*;
-import persistencia.*;
 
 @WebListener
 public class InitAppListener implements ServletContextListener {
-    
-    ControladoraNueva Sistema = new ControladoraNueva(); //creada como hija de ictrl, (pasar todos los metodos luego a ictrl)
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {

@@ -12,17 +12,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import logica.*;
-import persistencia.*;
-
 /**
  *
  * @author Juanpi
  */
+
+// Import del cliente generado (por wsimport)
+import clienteWS.IctrlServicio;
+import clienteWS.IctrlServicioService;
+import clienteWS.Proponente;
+import clienteWS.Colaborador;
+
 @WebServlet(name = "verPerfilServlet", urlPatterns = {"/verPerfilServlet"})
 public class verPerfilServlet extends HttpServlet {
-    
-    ControladoraNueva Sistema = new ControladoraNueva();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -36,10 +38,16 @@ public class verPerfilServlet extends HttpServlet {
         processRequest(request, response);
         
         String nickname = request.getParameter("nickname");
-        proponente p = null;
-        colaborador c = null;
-        p = Sistema.buscoProponente(nickname);
-        c = Sistema.buscoColaborador(nickname);
+        
+        // Crear cliente WS
+        System.setProperty("file.encoding", "UTF-8");
+        IctrlServicioService service = new IctrlServicioService();
+        IctrlServicio port = service.getIctrlServicioPort();
+        
+        Proponente p = null;
+        Colaborador c = null;
+        p = port.buscoProponente(nickname);
+        c = port.buscoColaborador(nickname);
         if(p == null){
         request.setAttribute("usuario", c);
         request.setAttribute("tipo", "colaborador");

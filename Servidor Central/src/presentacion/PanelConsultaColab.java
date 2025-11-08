@@ -9,13 +9,13 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
+import logica.Ictrl;
 
-import logica.usuario;
+import logica.Usuario;
 
-import logica.colaborador;
+import logica.Colaborador;
 
-import logica.colaboracion;
+import logica.Colaboracion;
 
 import javax.swing.DefaultListModel;
 
@@ -30,21 +30,21 @@ public class PanelConsultaColab extends javax.swing.JPanel {
      * Creates new form PanelConsultaColab
      */
     
-    ictrl ic;
+    Ictrl ic;
     
     DefaultListModel modelo = new DefaultListModel();
     
     DefaultListModel modelo2 = new DefaultListModel();
     
-    colaborador colaborador;
+    Colaborador colaborador;
     
-    public PanelConsultaColab(ictrl ic) {
+    public PanelConsultaColab(Ictrl ic) {
         initComponents();
         
         this.ic = ic;
         
         listaColaboradores.setModel(modelo);
-        for(colaborador c : ic.listarColaboradores()){
+        for(Colaborador c : ic.listarColaboradores()){
         modelo.addElement(c.getNickname());
         }
         
@@ -201,11 +201,11 @@ public class PanelConsultaColab extends javax.swing.JPanel {
          modelo2.clear();
          listaColab.setModel(modelo2);
         
-        //guardo el colaborador.
+        //guardo el Colaborador.
         String texto = listaColaboradores.getSelectedValue();
         if(texto == null) return;
         this.colaborador = null;
-        for(colaborador c : ic.listarColaboradores()){
+        for(Colaborador c : ic.listarColaboradores()){
         if(c != null && c.getNickname().equalsIgnoreCase(texto)){
         this.colaborador = c;
         break;
@@ -216,7 +216,7 @@ public class PanelConsultaColab extends javax.swing.JPanel {
         
         //listar las colaboraciones. si tiene.
        if(ic.listarColaboraciones() == null) return;
-       for(colaboracion co : ic.listarColaboraciones()){
+       for(Colaboracion co : ic.listarColaboraciones()){
         if(co == null) continue;
         if(co.getColaborador() == null) continue;
         if(co.getColaborador().getNickname().equalsIgnoreCase(colaborador.getNickname())){
@@ -231,7 +231,7 @@ public class PanelConsultaColab extends javax.swing.JPanel {
         
         //mostrar info de la colab elejida
         int i = listaColab.getSelectedIndex();
-        colaboracion c = ic.listarColaboraciones().get(i);
+        Colaboracion c = ic.listarColaboraciones().get(i);
         
         Locale esUY = new Locale("es", "UY");
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", esUY);

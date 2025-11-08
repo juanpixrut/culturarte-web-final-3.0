@@ -5,6 +5,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.Base64;
 import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -14,9 +15,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import logica.*;
-import persistencia.*;
-import logica.dtos.*;
+// Cliente WS
+import clienteWS.IctrlServicio;
+import clienteWS.IctrlServicioService;
+import clienteWS.UsuarioDTO;
+import clienteWS.PropuestaDTO;
+import clienteWS.ColaboracionDTO;
+import clienteWS.ColaboradorDTO;
+import clienteWS.Usuario;
 
 /**
  *
@@ -25,9 +31,6 @@ import logica.dtos.*;
 @WebServlet(name = "consultaUsuarioFullServlet", urlPatterns = {"/consultaUsuarioFullServlet"})
 public class consultaUsuarioFullServlet extends HttpServlet {
 
-        ControladoraNueva Sistema = new ControladoraNueva();
-
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -44,68 +47,76 @@ public class consultaUsuarioFullServlet extends HttpServlet {
         
         // nickname del usuario logueado real
         String usuarioSesion = (String) session.getAttribute("usuarioSesion");
+        
+        // Crear cliente WS
+        System.setProperty("file.encoding", "UTF-8");
+        IctrlServicioService service = new IctrlServicioService();
+        IctrlServicio port = service.getIctrlServicioPort();
 
-        // si vino por parametro, lo guardamos en la sesion
-        if (nicknamePedido != null && !nicknamePedido.isEmpty()) {
-            session.setAttribute("nicknamePedido", nicknamePedido);
-            request.setAttribute("usuario", Sistema.buscoUsuario(nicknamePedido));
-        } else {
-            // si no vino, lo tomamos desde la sesion
-            nicknamePedido = (String) session.getAttribute("nicknamePedido");
-        }
+         try {
+            // Si vino por parámetro, lo guardamos en sesión
+            if (nicknamePedido != null && !nicknamePedido.isEmpty()) {
+                session.setAttribute("nicknamePedido", nicknamePedido);
+            } else {
+                nicknamePedido = (String) session.getAttribute("nicknamePedido");
+            }
 
-        String rol = Sistema.buscoRol(nicknamePedido);
-        
-        //if(rol.equalsIgnoreCase("proponente")){
-        //usuario = ProponenteDTO.fromEntity(Sistema.buscoProponente(nicknamePedido));
-        //}else if(rol.equalsIgnoreCase("colaborador")){
-        //usuario = ColaboradorDTO.fromEntity(Sistema.buscoColaborador(nicknamePedido));
-        //}
-        
-        usuario usuarioEntidad = Sistema.buscoUsuario(nicknamePedido);
-        UsuarioDTO usuario = UsuarioDTO.fromEntity(usuarioEntidad);
-        
-        boolean esPropioPerfil = nicknamePedido.equalsIgnoreCase(usuarioSesion);
-        request.setAttribute("esPropioPerfil", esPropioPerfil);
-        
-        //si consulta su propio perfil. aca en medio porq si.
-        if(nicknamePedido.equalsIgnoreCase(usuarioSesion) && rol.equalsIgnoreCase("proponente")){
-        //listar ingresadas.
-        List<PropuestaDTO> listaIngresadas = Sistema.listarPropuestasIngresadas(nicknamePedido);
-        request.setAttribute("listaPropuestasIng", listaIngresadas); //FALTA EN JSP
-        }
-        if(nicknamePedido.equalsIgnoreCase(usuarioSesion) && rol.equalsIgnoreCase("colaborador")){
-        //ver el monto y fecha de las colaboraciones que realizo.
-        }
-        
-        //me quede aca. fui a agregar favorita si o no a las propuestas.
-        List<PropuestaDTO> listaPropuestasFav = Sistema.listarPropuestasFavoritas(nicknamePedido);
+            // Obtener datos del usuario
+            String rol = port.buscoRol(nicknamePedido);
+            UsuarioDTO usuario = port.buscoUsuarioDTO(nicknamePedido);
 
-        List<usuario> listaSeguidos = Sistema.buscarSeguidos(usuario.getNickname());
-        List<usuario> listaSeguidores = Sistema.buscarSeguidores(usuario.getNickname());
-        
-        if(rol.equalsIgnoreCase("proponente")){
-        //si es prop lista de PUBLICADA.
-        List<PropuestaDTO> listaPropuestasPub = Sistema.listarPropuestasPublicadas(nicknamePedido);
-        request.setAttribute("listaPropuestasPub", listaPropuestasPub);
-        }else if (rol.equalsIgnoreCase("colaborador")){
-        //si es colab lista de prop que colaboro.
-        ColaboradorDTO colaborador = ColaboradorDTO.fromEntity(Sistema.buscoColaborador(nicknamePedido));
-        List<ColaboracionDTO> colaboraciones = colaborador.getColaboraciones();
-            request.setAttribute("colaboraciones", colaboraciones);
-        }
-        
-        if (usuario.getImagen() != null) {
-            String base64 = java.util.Base64.getEncoder().encodeToString(usuario.getImagen());
-            request.setAttribute("imagenBase64", base64);
-        }
+            boolean esPropioPerfil = nicknamePedido.equalsIgnoreCase(usuarioSesion);
+            request.setAttribute("esPropioPerfil", esPropioPerfil);
 
-        request.setAttribute("usuario", usuario);
-        request.setAttribute("listaSeguidos", listaSeguidos);
-        request.setAttribute("listaSeguidores", listaSeguidores);
-        request.setAttribute("listaPropuestasFav", listaPropuestasFav);
-        request.getRequestDispatcher("detalleUsuario.jsp").forward(request, response);
-    }
+            // Si consulta su propio perfil
+            if (esPropioPerfil && rol.equalsIgnoreCase("proponente")) {
+                List<PropuestaDTO> listaIngresadas = port.listarPropuestasIngresadas(nicknamePedido);
+                request.setAttribute("listaPropuestasIng", listaIngresadas);
+            }
+
+            if (esPropioPerfil && rol.equalsIgnoreCase("colaborador")) {
+                // Ejemplo: podrías mostrar colaboraciones con monto y fecha si el WS tiene el método
+                ColaboradorDTO colab = port.buscoColaboradorDTO(nicknamePedido);
+                List<ColaboracionDTO> colaboraciones = colab.getColaboraciones();
+                request.setAttribute("colaboraciones", colaboraciones);
+            }
+
+            // Listar propuestas favoritas
+            List<PropuestaDTO> listaPropuestasFav = port.listarPropuestasFavoritas(nicknamePedido);
+
+            // Listar seguidores y seguidos
+            List<UsuarioDTO> listaSeguidos = port.buscarSeguidos(nicknamePedido);
+            List<UsuarioDTO> listaSeguidores = port.buscarSeguidores(nicknamePedido);
+
+            // Si es proponente, listar propuestas publicadas
+            if (rol.equalsIgnoreCase("proponente")) {
+                List<PropuestaDTO> listaPropuestasPub = port.listarPropuestasPublicadas(nicknamePedido);
+                request.setAttribute("listaPropuestasPub", listaPropuestasPub);
+            }
+
+            // Convertir imagen a base64 si existe
+            if (usuario.getImagen() != null) {
+                String base64 = Base64.getEncoder().encodeToString(usuario.getImagen());
+                request.setAttribute("imagenBase64", base64);
+            }
+
+            // Pasar todos los datos a la JSP
+            request.setAttribute("usuario", usuario);
+            request.setAttribute("listaSeguidos", listaSeguidos);
+            request.setAttribute("listaSeguidores", listaSeguidores);
+            request.setAttribute("listaPropuestasFav", listaPropuestasFav);
+
+            request.getRequestDispatcher("detalleUsuario.jsp").forward(request, response);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("errorMensaje", "Error al consultar usuario: " + e.getMessage());
+                response.setContentType("text/plain;charset=UTF-8");
+                response.getWriter().println("Error al consultar usuario: " + e.getMessage());
+                return;
+            //request.getRequestDispatcher("error.jsp").forward(request, response);
+        }
+    }   
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

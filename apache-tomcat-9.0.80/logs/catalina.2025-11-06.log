@@ -1,0 +1,1041 @@
+06-Nov-2025 13:04:49.394 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.80
+06-Nov-2025 13:04:49.398 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 23 2023 21:59:38 UTC
+06-Nov-2025 13:04:49.398 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.80.0
+06-Nov-2025 13:04:49.398 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+06-Nov-2025 13:04:49.398 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+06-Nov-2025 13:04:49.398 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+06-Nov-2025 13:04:49.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-24
+06-Nov-2025 13:04:49.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.6+8-LTS-188
+06-Nov-2025 13:04:49.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+06-Nov-2025 13:04:49.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80
+06-Nov-2025 13:04:49.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80
+06-Nov-2025 13:04:49.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+06-Nov-2025 13:04:49.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+06-Nov-2025 13:04:49.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+06-Nov-2025 13:04:49.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+06-Nov-2025 13:04:49.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+06-Nov-2025 13:04:49.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\logging.properties
+06-Nov-2025 13:04:49.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+06-Nov-2025 13:04:49.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|error404
+06-Nov-2025 13:04:49.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+06-Nov-2025 13:04:49.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+06-Nov-2025 13:04:49.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+06-Nov-2025 13:04:49.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80
+06-Nov-2025 13:04:49.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80
+06-Nov-2025 13:04:49.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\temp
+06-Nov-2025 13:04:49.490 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-24\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\Oracle\VirtualBox;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\cygwin64\bin;C:\cygwin64\lib;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\Juanpi\AppData\Local\Microsoft\WindowsApps;C:\Users\Juanpi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk-24\bin;;.]
+06-Nov-2025 13:04:49.789 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+06-Nov-2025 13:04:49.810 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [593] milliseconds
+06-Nov-2025 13:04:49.874 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+06-Nov-2025 13:04:49.874 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.80]
+06-Nov-2025 13:04:49.884 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\ServerWebLAB.xml]
+06-Nov-2025 13:04:49.897 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/ServerWebLAB] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\ServerWebLAB.xml] has been ignored
+06-Nov-2025 13:04:49.902 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor A docBase [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\home\samuel\dev\ServerWebLAB\build\web] inside the host appBase has been specified, and will be ignored
+06-Nov-2025 13:04:49.924 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\ServerWebLAB.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:686)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:662)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:689)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1888)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:582)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:472)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1617)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:318)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:114)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:402)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:345)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:893)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:795)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:249)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:922)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:347)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@329dbdbf]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4575)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4708)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+		... 35 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\ServerWebLAB] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:749)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:707)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 39 more
+06-Nov-2025 13:04:49.969 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\ServerWebLAB.xml] has finished in [84] ms
+06-Nov-2025 13:04:49.969 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\ServWeb.xml]
+06-Nov-2025 13:04:49.971 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/ServWeb] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\ServWeb.xml] has been ignored
+06-Nov-2025 13:04:49.972 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor A docBase [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\home\samuel\testJavaWebService\ServWeb\target\ServWeb-1.0-SNAPSHOT] inside the host appBase has been specified, and will be ignored
+06-Nov-2025 13:04:49.978 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\ServWeb.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:686)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:662)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:689)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1888)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:582)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:472)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1617)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:318)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:114)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:402)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:345)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:893)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:795)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:249)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:922)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:347)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@5d43661b]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4575)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4708)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+		... 35 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\ServWeb] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:749)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:707)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 39 more
+06-Nov-2025 13:04:50.123 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\ServWeb.xml] has finished in [153] ms
+06-Nov-2025 13:04:50.123 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:04:50.124 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:04:52.290 WARNING [main] java.util.ArrayList.forEach Name = db Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:04:52.290 WARNING [main] java.util.ArrayList.forEach Name = db Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:04:52.491 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:04:52.569 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [2,445] ms
+06-Nov-2025 13:04:52.569 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webserverprueba.xml]
+06-Nov-2025 13:04:52.570 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webserverprueba] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webserverprueba.xml] has been ignored
+06-Nov-2025 13:04:52.571 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor A docBase [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\home\samuel\testJavaWebService\webserverprueba\target\webserverprueba-1] inside the host appBase has been specified, and will be ignored
+06-Nov-2025 13:04:52.574 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webserverprueba.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:686)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:662)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:689)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1888)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:582)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:472)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1617)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:318)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:114)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:402)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:345)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:893)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:795)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:249)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:922)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:347)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@408708a1]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4575)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4708)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+		... 35 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\webserverprueba] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:749)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:707)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 39 more
+06-Nov-2025 13:04:52.618 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webserverprueba.xml] has finished in [49] ms
+06-Nov-2025 13:04:52.618 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webserverservidor.xml]
+06-Nov-2025 13:04:52.619 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webserverservidor] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webserverservidor.xml] has been ignored
+06-Nov-2025 13:04:52.620 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor A docBase [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\home\samuel\testJavaWebService\webserverservidor\target\webserverservidor-1] inside the host appBase has been specified, and will be ignored
+06-Nov-2025 13:04:52.624 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webserverservidor.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:686)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:662)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:689)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1888)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:582)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:472)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1617)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:318)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:114)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:402)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:345)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:893)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:795)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:249)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:922)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:347)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@a23b96b]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:419)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:186)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4575)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4708)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+		... 35 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\webserverservidor] is not a directory or war file, or is not readable (it does not exist or permissions to access it are missing)
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:749)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:707)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		... 39 more
+06-Nov-2025 13:04:52.681 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webserverservidor.xml] has finished in [62] ms
+06-Nov-2025 13:04:52.689 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\ServerCentral.war]
+06-Nov-2025 13:04:56.626 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:04:57.816 SEVERE [main] com.sun.xml.ws.transport.http.servlet.WSServletContextListener.parseAdaptersAndCreateDelegate WSSERVLET11: failed to parse runtime descriptor: javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.12.v20230209-e5c4074ef3): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Error Code: 0
+	javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.12.v20230209-e5c4074ef3): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Error Code: 0
+		at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:854)
+		at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:222)
+		at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:200)
+		at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.getDatabaseSession(EntityManagerFactoryImpl.java:542)
+		at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactoryImpl(PersistenceProvider.java:153)
+		at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactory(PersistenceProvider.java:191)
+		at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+		at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+		at controladores.Sistema.<init>(Sistema.java:51)
+		at controladores.Sistema.getInstance(Sistema.java:64)
+		at controladores.Fabrica.getSistema(Fabrica.java:11)
+		at webservice.WSSistema.<init>(WSSistema.java:37)
+		at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+		at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+		at java.base/java.lang.reflect.ReflectAccess.newInstance(ReflectAccess.java:128)
+		at java.base/jdk.internal.reflect.ReflectionFactory.newInstance(ReflectionFactory.java:304)
+		at java.base/java.lang.Class.newInstance(Class.java:725)
+		at com.sun.xml.ws.api.server.InstanceResolver.createNewInstance(InstanceResolver.java:189)
+		at com.sun.xml.ws.api.server.InstanceResolver.createDefault(InstanceResolver.java:154)
+		at com.sun.xml.ws.server.EndpointFactory.create(EndpointFactory.java:179)
+		at com.sun.xml.ws.server.EndpointFactory.createEndpoint(EndpointFactory.java:134)
+		at com.sun.xml.ws.api.server.WSEndpoint.create(WSEndpoint.java:578)
+		at com.sun.xml.ws.api.server.WSEndpoint.create(WSEndpoint.java:560)
+		at com.sun.xml.ws.transport.http.DeploymentDescriptorParser.parseAdapters(DeploymentDescriptorParser.java:273)
+		at com.sun.xml.ws.transport.http.DeploymentDescriptorParser.parse(DeploymentDescriptorParser.java:149)
+		at com.sun.xml.ws.transport.http.servlet.WSServletContextListener.parseAdaptersAndCreateDelegate(WSServletContextListener.java:101)
+		at com.sun.xml.ws.transport.http.servlet.WSServletContainerInitializer.onStartup(WSServletContainerInitializer.java:35)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4904)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:662)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1023)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1910)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:824)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:474)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1617)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:318)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:114)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:402)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:345)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:893)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:795)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:249)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:922)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:347)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+	Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.12.v20230209-e5c4074ef3): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Error Code: 0
+		at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+		at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:328)
+		at org.eclipse.persistence.sessions.DefaultConnector.connect(DefaultConnector.java:140)
+		at org.eclipse.persistence.sessions.DatasourceLogin.connectToDatasource(DatasourceLogin.java:172)
+		at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.setOrDetectDatasource(DatabaseSessionImpl.java:226)
+		at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.loginAndDetectDatasource(DatabaseSessionImpl.java:810)
+		at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.login(EntityManagerFactoryProvider.java:261)
+		at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:771)
+		... 64 more
+	Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+		at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+		at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+		at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+		at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+		at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+		at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+		at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:191)
+		at org.eclipse.persistence.sessions.DefaultConnector.connect(DefaultConnector.java:100)
+		... 69 more
+	Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+		at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+		at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+		at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+		at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+		at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+		at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+		at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+		at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+		at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+		at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+		at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+		... 75 more
+	Caused by: java.net.ConnectException: Connection refused: connect
+		at java.base/sun.nio.ch.Net.connect0(Native Method)
+		at java.base/sun.nio.ch.Net.connect(Net.java:589)
+		at java.base/sun.nio.ch.Net.connect(Net.java:578)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+		at java.base/java.net.Socket.connect(Socket.java:751)
+		at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155)
+		at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+		... 78 more
+06-Nov-2025 13:04:57.843 SEVERE [main] org.apache.catalina.core.StandardContext.startInternal Error during ServletContainerInitializer processing
+	javax.servlet.ServletException: com.sun.xml.ws.transport.http.servlet.WSServletException: WSSERVLET11: failed to parse runtime descriptor: javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.12.v20230209-e5c4074ef3): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Error Code: 0
+		at com.sun.xml.ws.transport.http.servlet.WSServletContainerInitializer.onStartup(WSServletContainerInitializer.java:40)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4904)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:683)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:658)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:662)
+		at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1023)
+		at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1910)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:824)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:474)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1617)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:318)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:114)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:402)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:345)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:893)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:795)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:249)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:922)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:347)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+	Caused by: com.sun.xml.ws.transport.http.servlet.WSServletException: WSSERVLET11: failed to parse runtime descriptor: javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.12.v20230209-e5c4074ef3): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Error Code: 0
+		at com.sun.xml.ws.transport.http.servlet.WSServletContextListener.parseAdaptersAndCreateDelegate(WSServletContextListener.java:111)
+		at com.sun.xml.ws.transport.http.servlet.WSServletContainerInitializer.onStartup(WSServletContainerInitializer.java:35)
+		... 38 more
+	Caused by: javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.12.v20230209-e5c4074ef3): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Error Code: 0
+		at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:854)
+		at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getAbstractSession(EntityManagerFactoryDelegate.java:222)
+		at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:200)
+		at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.getDatabaseSession(EntityManagerFactoryImpl.java:542)
+		at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactoryImpl(PersistenceProvider.java:153)
+		at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactory(PersistenceProvider.java:191)
+		at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+		at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+		at controladores.Sistema.<init>(Sistema.java:51)
+		at controladores.Sistema.getInstance(Sistema.java:64)
+		at controladores.Fabrica.getSistema(Fabrica.java:11)
+		at webservice.WSSistema.<init>(WSSistema.java:37)
+		at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+		at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+		at java.base/java.lang.reflect.ReflectAccess.newInstance(ReflectAccess.java:128)
+		at java.base/jdk.internal.reflect.ReflectionFactory.newInstance(ReflectionFactory.java:304)
+		at java.base/java.lang.Class.newInstance(Class.java:725)
+		at com.sun.xml.ws.api.server.InstanceResolver.createNewInstance(InstanceResolver.java:189)
+		at com.sun.xml.ws.api.server.InstanceResolver.createDefault(InstanceResolver.java:154)
+		at com.sun.xml.ws.server.EndpointFactory.create(EndpointFactory.java:179)
+		at com.sun.xml.ws.server.EndpointFactory.createEndpoint(EndpointFactory.java:134)
+		at com.sun.xml.ws.api.server.WSEndpoint.create(WSEndpoint.java:578)
+		at com.sun.xml.ws.api.server.WSEndpoint.create(WSEndpoint.java:560)
+		at com.sun.xml.ws.transport.http.DeploymentDescriptorParser.parseAdapters(DeploymentDescriptorParser.java:273)
+		at com.sun.xml.ws.transport.http.DeploymentDescriptorParser.parse(DeploymentDescriptorParser.java:149)
+		at com.sun.xml.ws.transport.http.servlet.WSServletContextListener.parseAdaptersAndCreateDelegate(WSServletContextListener.java:101)
+		... 39 more
+	Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.7.12.v20230209-e5c4074ef3): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Error Code: 0
+		at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:333)
+		at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:328)
+		at org.eclipse.persistence.sessions.DefaultConnector.connect(DefaultConnector.java:140)
+		at org.eclipse.persistence.sessions.DatasourceLogin.connectToDatasource(DatasourceLogin.java:172)
+		at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.setOrDetectDatasource(DatabaseSessionImpl.java:226)
+		at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.loginAndDetectDatasource(DatabaseSessionImpl.java:810)
+		at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.login(EntityManagerFactoryProvider.java:261)
+		at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:771)
+		... 64 more
+	Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+		at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+		at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+		at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+		at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+		at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+		at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+		at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:191)
+		at org.eclipse.persistence.sessions.DefaultConnector.connect(DefaultConnector.java:100)
+		... 69 more
+	Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+		at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+		at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+		at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+		at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+		at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+		at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+		at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+		at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+		at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+		at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+		at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+		... 75 more
+	Caused by: java.net.ConnectException: Connection refused: connect
+		at java.base/sun.nio.ch.Net.connect0(Native Method)
+		at java.base/sun.nio.ch.Net.connect(Net.java:589)
+		at java.base/sun.nio.ch.Net.connect(Net.java:578)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+		at java.base/java.net.Socket.connect(Socket.java:751)
+		at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155)
+		at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+		... 78 more
+06-Nov-2025 13:04:57.916 SEVERE [main] org.apache.catalina.core.StandardContext.startInternal Context [/ServerCentral] startup failed due to previous errors
+06-Nov-2025 13:04:57.933 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\ServerCentral.war] has finished in [5,244] ms
+06-Nov-2025 13:04:57.942 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\ServerWeb.war]
+06-Nov-2025 13:05:00.178 WARNING [main] java.util.ArrayList.forEach Name = tur Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:00.178 WARNING [main] java.util.ArrayList.forEach Name = tur Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:00.179 WARNING [main] java.util.ArrayList.forEach Name = Turismo Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:00.179 WARNING [main] java.util.ArrayList.forEach Name = Turismo Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:00.180 WARNING [main] java.util.ArrayList.forEach Name = LABPAPP_WEB Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:00.180 WARNING [main] java.util.ArrayList.forEach Name = LABPAPP_WEB Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:00.180 WARNING [main] java.util.ArrayList.forEach Name = turismo Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:00.180 WARNING [main] java.util.ArrayList.forEach Name = turismo Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:00.218 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:05:00.222 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\ServerWeb.war] has finished in [2,279] ms
+06-Nov-2025 13:05:00.226 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\webapp-1.0-SNAPSHOT.war]
+06-Nov-2025 13:05:02.260 WARNING [main] java.util.ArrayList.forEach Name = db Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:02.260 WARNING [main] java.util.ArrayList.forEach Name = db Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:02.344 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:05:04.273 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\webapp-1.0-SNAPSHOT.war] has finished in [4,047] ms
+06-Nov-2025 13:05:04.274 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\docs]
+06-Nov-2025 13:05:04.580 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:05:04.582 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\docs] has finished in [308] ms
+06-Nov-2025 13:05:04.582 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\examples]
+06-Nov-2025 13:05:05.219 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:05:05.283 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\examples] has finished in [701] ms
+06-Nov-2025 13:05:05.283 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\host-manager]
+06-Nov-2025 13:05:05.594 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:05:05.600 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\host-manager] has finished in [317] ms
+06-Nov-2025 13:05:05.601 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\lab-deploy-manual]
+06-Nov-2025 13:05:05.910 WARNING [main] java.util.ArrayList.forEach Name = tur Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:05.910 WARNING [main] java.util.ArrayList.forEach Name = tur Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:05.911 WARNING [main] java.util.ArrayList.forEach Name = Turismo Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:05.911 WARNING [main] java.util.ArrayList.forEach Name = Turismo Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:05.911 WARNING [main] java.util.ArrayList.forEach Name = LABPAPP_WEB Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:05.911 WARNING [main] java.util.ArrayList.forEach Name = LABPAPP_WEB Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:05.911 WARNING [main] java.util.ArrayList.forEach Name = turismo Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:05.912 WARNING [main] java.util.ArrayList.forEach Name = turismo Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:05.918 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:05:05.920 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\lab-deploy-manual] has finished in [320] ms
+06-Nov-2025 13:05:05.920 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\labfotos]
+06-Nov-2025 13:05:07.187 WARNING [main] java.util.ArrayList.forEach Name = tur Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:07.187 WARNING [main] java.util.ArrayList.forEach Name = tur Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:07.188 WARNING [main] java.util.ArrayList.forEach Name = Turismo Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:07.188 WARNING [main] java.util.ArrayList.forEach Name = Turismo Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:07.188 WARNING [main] java.util.ArrayList.forEach Name = LABPAPP_WEB Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:07.188 WARNING [main] java.util.ArrayList.forEach Name = LABPAPP_WEB Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:07.188 WARNING [main] java.util.ArrayList.forEach Name = turismo Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:07.188 WARNING [main] java.util.ArrayList.forEach Name = turismo Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:07.213 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:05:07.216 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\labfotos] has finished in [1,296] ms
+06-Nov-2025 13:05:07.216 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\LAB_DEPLOY_WAR]
+06-Nov-2025 13:05:09.695 WARNING [main] java.util.ArrayList.forEach Name = tur Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:09.695 WARNING [main] java.util.ArrayList.forEach Name = tur Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:09.697 WARNING [main] java.util.ArrayList.forEach Name = Turismo Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:09.697 WARNING [main] java.util.ArrayList.forEach Name = Turismo Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:09.697 WARNING [main] java.util.ArrayList.forEach Name = LABPAPP_WEB Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:09.697 WARNING [main] java.util.ArrayList.forEach Name = LABPAPP_WEB Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:09.698 WARNING [main] java.util.ArrayList.forEach Name = turismo Property maxActive is not used in DBCP2, use maxTotal instead. maxTotal default value is 8. You have set value of "20" for "maxActive" property, which is being ignored.
+06-Nov-2025 13:05:09.698 WARNING [main] java.util.ArrayList.forEach Name = turismo Property maxWait is not used in DBCP2 , use maxWaitMillis instead. maxWaitMillis default value is PT-0.001S. You have set value of "-1" for "maxWait" property, which is being ignored.
+06-Nov-2025 13:05:09.722 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:05:09.724 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\LAB_DEPLOY_WAR] has finished in [2,508] ms
+06-Nov-2025 13:05:09.724 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\manager]
+06-Nov-2025 13:05:10.029 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:05:10.031 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\manager] has finished in [307] ms
+06-Nov-2025 13:05:10.032 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\ROOT]
+06-Nov-2025 13:05:10.314 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:05:10.317 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\webapps\ROOT] has finished in [285] ms
+06-Nov-2025 13:05:10.320 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+06-Nov-2025 13:05:10.332 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [20521] milliseconds
+06-Nov-2025 13:05:12.394 WARNING [http-nio-8080-exec-8] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.io.WinNTFileSystem.canonicalize0(Native Method)
+ java.base/java.io.WinNTFileSystem.canonicalize(WinNTFileSystem.java:463)
+ java.base/java.io.File.getCanonicalPath(File.java:626)
+ org.apache.catalina.webresources.AbstractFileResourceSet.file(AbstractFileResourceSet.java:94)
+ org.apache.catalina.webresources.DirResourceSet.getResource(DirResourceSet.java:94)
+ org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+ org.apache.catalina.webresources.CachedResource.validateResource(CachedResource.java:106)
+ org.apache.catalina.webresources.Cache.getResource(Cache.java:96)
+ org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+ org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+ org.apache.catalina.loader.WebappClassLoaderBase.findResource(WebappClassLoaderBase.java:954)
+ org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1078)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:05:12.912 INFO [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 13:05:13.002 INFO [http-nio-8080-exec-4] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:05:13.003 WARNING [http-nio-8080-exec-4] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:05:15.083 INFO [http-nio-8080-exec-4] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:05:15.101 INFO [http-nio-8080-exec-4] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [2,098] ms
+06-Nov-2025 13:05:15.103 INFO [http-nio-8080-exec-2] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 13:05:17.404 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:09:22.604 WARNING [http-nio-8080-exec-18] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:09:23.127 INFO [http-nio-8080-exec-18] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 13:09:23.210 INFO [http-nio-8080-exec-16] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:09:23.214 WARNING [http-nio-8080-exec-16] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:09:25.708 INFO [http-nio-8080-exec-16] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:09:25.959 INFO [http-nio-8080-exec-16] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [2,748] ms
+06-Nov-2025 13:09:26.002 INFO [http-nio-8080-exec-17] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 13:09:27.609 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:20:17.295 WARNING [http-nio-8080-exec-21] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:285)
+ org.apache.catalina.webresources.CachedResource.validateResource(CachedResource.java:106)
+ org.apache.catalina.webresources.Cache.getResource(Cache.java:96)
+ org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+ org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+ org.apache.catalina.loader.WebappClassLoaderBase.findResource(WebappClassLoaderBase.java:954)
+ org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1078)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:20:17.814 INFO [http-nio-8080-exec-21] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 13:20:17.971 INFO [http-nio-8080-exec-24] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:20:17.971 WARNING [http-nio-8080-exec-24] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:20:20.000 INFO [http-nio-8080-exec-24] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:20:20.033 INFO [http-nio-8080-exec-24] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [2,062] ms
+06-Nov-2025 13:20:20.037 INFO [http-nio-8080-exec-25] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 13:20:22.300 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:20:59.564 WARNING [http-nio-8080-exec-32] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.io.WinNTFileSystem.getBooleanAttributes0(Native Method)
+ java.base/java.io.WinNTFileSystem.getBooleanAttributes(WinNTFileSystem.java:479)
+ java.base/java.io.FileSystem.hasBooleanAttributes(FileSystem.java:125)
+ java.base/java.io.File.isFile(File.java:900)
+ org.apache.catalina.webresources.AbstractFileResourceSet.file(AbstractFileResourceSet.java:69)
+ org.apache.catalina.webresources.DirResourceSet.getResource(DirResourceSet.java:94)
+ org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:272)
+ org.apache.catalina.webresources.CachedResource.validateResource(CachedResource.java:106)
+ org.apache.catalina.webresources.Cache.getResource(Cache.java:96)
+ org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:211)
+ org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:220)
+ org.apache.catalina.loader.WebappClassLoaderBase.findResource(WebappClassLoaderBase.java:954)
+ org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1078)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:21:00.076 INFO [http-nio-8080-exec-32] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 13:21:00.116 INFO [http-nio-8080-exec-36] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:21:00.117 WARNING [http-nio-8080-exec-36] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:21:01.757 INFO [http-nio-8080-exec-36] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:21:01.775 INFO [http-nio-8080-exec-36] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,659] ms
+06-Nov-2025 13:21:01.778 INFO [http-nio-8080-exec-34] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 13:21:04.569 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:21:14.238 WARNING [http-nio-8080-exec-37] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:21:14.747 INFO [http-nio-8080-exec-37] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 13:21:14.779 INFO [http-nio-8080-exec-39] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:21:14.779 WARNING [http-nio-8080-exec-39] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:21:16.614 INFO [http-nio-8080-exec-39] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:21:16.624 INFO [http-nio-8080-exec-39] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,845] ms
+06-Nov-2025 13:21:16.634 INFO [http-nio-8080-exec-41] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 13:21:19.247 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:21:29.392 WARNING [http-nio-8080-exec-45] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:21:29.902 INFO [http-nio-8080-exec-45] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 13:21:29.936 INFO [http-nio-8080-exec-42] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:21:29.945 WARNING [http-nio-8080-exec-42] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:21:31.636 INFO [http-nio-8080-exec-42] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:21:31.655 INFO [http-nio-8080-exec-42] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,719] ms
+06-Nov-2025 13:21:31.659 INFO [http-nio-8080-exec-47] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 13:21:34.401 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:22:14.400 WARNING [http-nio-8080-exec-44] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:22:14.906 INFO [http-nio-8080-exec-44] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 13:22:14.945 INFO [http-nio-8080-exec-31] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:22:14.945 WARNING [http-nio-8080-exec-31] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:22:16.808 INFO [http-nio-8080-exec-31] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:22:16.824 INFO [http-nio-8080-exec-31] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,875] ms
+06-Nov-2025 13:22:16.828 INFO [http-nio-8080-exec-43] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 13:22:19.411 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:22:38.736 WARNING [http-nio-8080-exec-55] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:22:39.242 INFO [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 13:22:39.283 INFO [http-nio-8080-exec-54] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:22:39.283 WARNING [http-nio-8080-exec-54] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:22:40.902 INFO [http-nio-8080-exec-54] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:22:40.916 INFO [http-nio-8080-exec-54] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,633] ms
+06-Nov-2025 13:22:40.918 INFO [http-nio-8080-exec-52] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 13:22:43.749 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:49:19.927 WARNING [http-nio-8080-exec-58] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1060)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.unlock(ThreadPoolExecutor.java:670)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:49:20.431 INFO [http-nio-8080-exec-58] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 13:49:24.934 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:50:17.853 INFO [http-nio-8080-exec-67] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:50:17.854 WARNING [http-nio-8080-exec-67] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:50:19.616 INFO [http-nio-8080-exec-67] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:50:19.632 INFO [http-nio-8080-exec-67] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,779] ms
+06-Nov-2025 13:50:19.634 INFO [http-nio-8080-exec-68] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 13:54:09.165 WARNING [http-nio-8080-exec-76] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.release(AbstractQueuedSynchronizer.java:1060)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.unlock(ThreadPoolExecutor.java:670)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:54:09.680 INFO [http-nio-8080-exec-76] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 13:54:14.180 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:54:56.088 INFO [http-nio-8080-exec-77] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:54:56.088 WARNING [http-nio-8080-exec-77] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:54:57.921 INFO [http-nio-8080-exec-77] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:54:57.940 INFO [http-nio-8080-exec-77] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,852] ms
+06-Nov-2025 13:54:57.943 INFO [http-nio-8080-exec-78] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 13:56:07.824 WARNING [http-nio-8080-exec-84] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:56:08.335 INFO [http-nio-8080-exec-84] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 13:56:08.379 INFO [http-nio-8080-exec-86] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:56:08.380 WARNING [http-nio-8080-exec-86] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:56:10.016 INFO [http-nio-8080-exec-86] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:56:10.031 INFO [http-nio-8080-exec-86] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,652] ms
+06-Nov-2025 13:56:10.035 INFO [http-nio-8080-exec-85] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 13:56:12.837 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:57:45.309 WARNING [http-nio-8080-exec-81] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:57:45.819 INFO [http-nio-8080-exec-81] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 13:57:45.862 INFO [http-nio-8080-exec-92] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:57:45.863 WARNING [http-nio-8080-exec-92] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:57:47.741 INFO [http-nio-8080-exec-92] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:57:47.761 INFO [http-nio-8080-exec-92] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,898] ms
+06-Nov-2025 13:57:47.767 INFO [http-nio-8080-exec-90] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 13:57:50.314 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:59:01.746 WARNING [http-nio-8080-exec-100] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 13:59:02.254 INFO [http-nio-8080-exec-100] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 13:59:02.307 INFO [http-nio-8080-exec-98] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 13:59:02.307 WARNING [http-nio-8080-exec-98] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 13:59:03.994 INFO [http-nio-8080-exec-98] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 13:59:04.010 INFO [http-nio-8080-exec-98] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,700] ms
+06-Nov-2025 13:59:04.013 INFO [http-nio-8080-exec-96] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 13:59:06.750 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:03:55.738 WARNING [http-nio-8080-exec-114] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:03:56.249 INFO [http-nio-8080-exec-114] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 14:03:56.311 INFO [http-nio-8080-exec-106] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 14:03:56.312 WARNING [http-nio-8080-exec-106] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 14:03:58.101 INFO [http-nio-8080-exec-106] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 14:03:58.116 INFO [http-nio-8080-exec-106] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,805] ms
+06-Nov-2025 14:03:58.119 INFO [http-nio-8080-exec-115] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 14:04:00.749 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:07:29.135 WARNING [http-nio-8080-exec-116] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:07:29.654 INFO [http-nio-8080-exec-116] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 14:07:29.728 INFO [http-nio-8080-exec-119] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 14:07:29.728 WARNING [http-nio-8080-exec-119] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 14:07:31.409 INFO [http-nio-8080-exec-119] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 14:07:31.425 INFO [http-nio-8080-exec-119] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,696] ms
+06-Nov-2025 14:07:31.427 INFO [http-nio-8080-exec-118] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 14:07:34.146 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:08:00.770 WARNING [http-nio-8080-exec-127] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:08:01.276 INFO [http-nio-8080-exec-127] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 14:08:01.317 INFO [http-nio-8080-exec-123] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 14:08:01.318 WARNING [http-nio-8080-exec-123] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 14:08:02.930 INFO [http-nio-8080-exec-123] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 14:08:02.946 INFO [http-nio-8080-exec-123] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,629] ms
+06-Nov-2025 14:08:02.949 INFO [http-nio-8080-exec-124] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 14:08:05.783 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:08:58.860 WARNING [http-nio-8080-exec-136] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:08:59.377 INFO [http-nio-8080-exec-136] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 14:08:59.417 INFO [http-nio-8080-exec-122] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 14:08:59.418 WARNING [http-nio-8080-exec-122] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 14:09:01.063 INFO [http-nio-8080-exec-122] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 14:09:01.077 INFO [http-nio-8080-exec-122] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,660] ms
+06-Nov-2025 14:09:01.079 INFO [http-nio-8080-exec-134] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 14:09:03.865 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:09:43.488 WARNING [http-nio-8080-exec-146] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:09:43.996 INFO [http-nio-8080-exec-146] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 14:09:44.049 INFO [http-nio-8080-exec-144] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 14:09:44.050 WARNING [http-nio-8080-exec-144] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 14:09:45.732 INFO [http-nio-8080-exec-144] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 14:09:45.746 INFO [http-nio-8080-exec-144] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,697] ms
+06-Nov-2025 14:09:45.750 INFO [http-nio-8080-exec-139] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 14:09:48.490 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:11:20.413 WARNING [http-nio-8080-exec-157] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:11:20.922 INFO [http-nio-8080-exec-157] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp]
+06-Nov-2025 14:11:20.983 INFO [http-nio-8080-exec-149] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml]
+06-Nov-2025 14:11:20.983 WARNING [http-nio-8080-exec-149] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/webapp] in deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has been ignored
+06-Nov-2025 14:11:22.626 INFO [http-nio-8080-exec-149] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Nov-2025 14:11:22.640 INFO [http-nio-8080-exec-149] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\apache-tomcat-9.0.80\conf\Catalina\localhost\webapp.xml] has finished in [1,657] ms
+06-Nov-2025 14:11:22.643 INFO [http-nio-8080-exec-158] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/webapp]] after start() had already been called. The second call will be ignored.
+06-Nov-2025 14:11:25.419 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1057)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:23:45.763 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+06-Nov-2025 14:23:45.763 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+06-Nov-2025 14:23:45.766 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+06-Nov-2025 14:23:45.785 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [labfotos] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:23:45.832 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [LAB_DEPLOY_WAR] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:23:45.844 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:23:45.856 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [webapp-1.0-SNAPSHOT] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+06-Nov-2025 14:23:45.856 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [webapp-1.0-SNAPSHOT] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+06-Nov-2025 14:23:45.859 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+06-Nov-2025 14:23:45.886 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

@@ -14,8 +14,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import logica.*;
-import persistencia.*;
+// Imports del cliente WS
+import clienteWS.IctrlServicio;
+import clienteWS.IctrlServicioService;
+import clienteWS.Proponente;
+import clienteWS.Colaborador;
 
 /**
  *
@@ -24,8 +27,6 @@ import persistencia.*;
 @WebServlet(name = "listarUsuariosServlet", urlPatterns = {"/listarUsuariosServlet"})
 public class listarUsuariosServlet extends HttpServlet {
 
-    ControladoraNueva Sistema = new ControladoraNueva();
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -35,19 +36,29 @@ public class listarUsuariosServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        processRequest(request, response);
-        List<proponente> proponentes = new ArrayList<>();
-        proponentes = Sistema.listarProponentes();
-        
-        List<colaborador> colaboradores = new ArrayList<>();
-        colaboradores = Sistema.listarColaboradores();
-        
-        request.setAttribute("proponentes", proponentes);
-        request.setAttribute("colaboradores", colaboradores);
-        
-        request.getRequestDispatcher("otrosPerfiles.jsp").forward(request, response);
-        
+
+        // Crear cliente WS
+        System.setProperty("file.encoding", "UTF-8");
+        IctrlServicioService service = new IctrlServicioService();
+        IctrlServicio port = service.getIctrlServicioPort();
+
+        try {
+            // Llamar a los métodos remotos del Web Service
+            List<Proponente> proponentes = port.listarProponentes();
+            List<Colaborador> colaboradores = port.listarColaboradores();
+
+            // Enviar a la vista JSP
+            request.setAttribute("proponentes", proponentes);
+            request.setAttribute("colaboradores", colaboradores);
+            request.getRequestDispatcher("otrosPerfiles.jsp").forward(request, response);
+
+        } catch (Exception e) {
+            // Si algo falla, mostramos error en consola y redirigimos a una página de error
+            e.printStackTrace();
+            request.setAttribute("errorMensaje", "Error al listar usuarios: " + e.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+        }
+
     }
 
     @Override

@@ -11,6 +11,6 @@ package logica;
 
 import java.time.LocalDate;
 
-public enum estadoPropuesta {
+public enum EstadoPropuesta {
     INGRESADA, PUBLICADA, EN_FINANCIACION, FINANCIADA, NO_FINANCIADA, CANCELADA
 }

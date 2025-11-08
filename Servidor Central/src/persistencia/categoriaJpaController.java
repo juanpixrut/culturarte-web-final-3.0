@@ -12,7 +12,7 @@ import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import logica.categoria;
+import logica.Categoria;
 import persistencia.exceptions.NonexistentEntityException;
 
 import javax.persistence.Persistence;
@@ -37,7 +37,7 @@ public class categoriaJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(categoria categoria) {
+    public void create(Categoria categoria) {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -51,7 +51,7 @@ public class categoriaJpaController implements Serializable {
         }
     }
 
-    public void edit(categoria categoria) throws NonexistentEntityException, Exception {
+    public void edit(Categoria categoria) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -79,9 +79,9 @@ public class categoriaJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            categoria categoria;
+            Categoria categoria;
             try {
-                categoria = em.getReference(categoria.class, id);
+                categoria = em.getReference(Categoria.class, id);
                 categoria.getId();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The categoria with id " + id + " no longer exists.", enfe);
@@ -95,19 +95,19 @@ public class categoriaJpaController implements Serializable {
         }
     }
 
-    public List<categoria> findcategoriaEntities() {
+    public List<Categoria> findcategoriaEntities() {
         return findcategoriaEntities(true, -1, -1);
     }
 
-    public List<categoria> findcategoriaEntities(int maxResults, int firstResult) {
+    public List<Categoria> findcategoriaEntities(int maxResults, int firstResult) {
         return findcategoriaEntities(false, maxResults, firstResult);
     }
 
-    private List<categoria> findcategoriaEntities(boolean all, int maxResults, int firstResult) {
+    private List<Categoria> findcategoriaEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(categoria.class));
+            cq.select(cq.from(Categoria.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -119,10 +119,10 @@ public class categoriaJpaController implements Serializable {
         }
     }
 
-    public categoria findcategoria(int id) {
+    public Categoria findcategoria(int id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(categoria.class, id);
+            return em.find(Categoria.class, id);
         } finally {
             em.close();
         }
@@ -132,7 +132,7 @@ public class categoriaJpaController implements Serializable {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<categoria> rt = cq.from(categoria.class);
+            Root<Categoria> rt = cq.from(Categoria.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();

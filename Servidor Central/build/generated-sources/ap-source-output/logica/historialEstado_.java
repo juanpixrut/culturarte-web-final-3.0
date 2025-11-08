@@ -4,16 +4,16 @@ import java.util.Date;
 import javax.annotation.processing.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
-import logica.estadoPropuesta;
-import logica.propuesta;
+import logica.EstadoPropuesta;
+import logica.Propuesta;
 
-@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2025-10-22T21:29:33", comments="EclipseLink-2.7.12.v20230209-rNA")
-@StaticMetamodel(historialEstado.class)
-public class historialEstado_ { 
+@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2025-11-08T16:17:43", comments="EclipseLink-2.7.12.v20230209-rNA")
+@StaticMetamodel(HistorialEstado.class)
+public class HistorialEstado_ { 
 
-    public static volatile SingularAttribute<historialEstado, Date> fecha;
-    public static volatile SingularAttribute<historialEstado, estadoPropuesta> estado;
-    public static volatile SingularAttribute<historialEstado, propuesta> propuesta;
-    public static volatile SingularAttribute<historialEstado, Integer> id;
+    public static volatile SingularAttribute<HistorialEstado, Date> fecha;
+    public static volatile SingularAttribute<HistorialEstado, EstadoPropuesta> estado;
+    public static volatile SingularAttribute<HistorialEstado, Propuesta> propuesta;
+    public static volatile SingularAttribute<HistorialEstado, Integer> id;
 
 }

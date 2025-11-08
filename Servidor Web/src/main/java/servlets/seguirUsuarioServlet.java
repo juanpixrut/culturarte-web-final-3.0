@@ -13,8 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import logica.*;
-import persistencia.*;
+// ✅ Import del cliente WS (generado por wsimport)
+import clienteWS.IctrlServicio;
+import clienteWS.IctrlServicioService;
+import clienteWS.Usuario;
+import clienteWS.UsuarioDTO;
 
 /**
  *
@@ -22,9 +25,6 @@ import persistencia.*;
  */
 @WebServlet(name = "seguirUsuarioServlet", urlPatterns = {"/seguirUsuarioServlet"})
 public class seguirUsuarioServlet extends HttpServlet {
-    
-    ControladoraNueva Sistema = new ControladoraNueva();
-
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -36,26 +36,24 @@ public class seguirUsuarioServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        
-        
-        
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        
+
         // Recuperar la sesion actual
         HttpSession session = request.getSession(false);
-        
+
         if (session == null || session.getAttribute("usuarioObjeto") == null) {
             response.sendRedirect("inicioSesion.jsp");
             return;
         }
 
         // Usuario logueado (el que sigue a otro)
-        usuario usuarioSesion = (usuario) session.getAttribute("usuarioObjeto");
+        UsuarioDTO usuarioSesion = (UsuarioDTO) session.getAttribute("usuarioObjeto");
         String nicknameSeguidor = usuarioSesion.getNickname();
 
         // Usuario a seguir (viene por parametro del formulario jsp)
@@ -66,11 +64,17 @@ public class seguirUsuarioServlet extends HttpServlet {
             return;
         }
 
-        // Registrar el seguimiento
-        Sistema.seguirUsuario(nicknameSeguidor, nicknameSeguido);
-        usuario usuarioActualizado = Sistema.buscoUsuario2(usuarioSesion.getNickname());
-        session.setAttribute("usuarioObjeto", usuarioActualizado);
+        // ✅ Crear cliente del Web Service
+        System.setProperty("file.encoding", "UTF-8");
+        IctrlServicioService service = new IctrlServicioService();
+        IctrlServicio port = service.getIctrlServicioPort();
+
+        // ✅ Registrar el seguimiento en el servidor (llamada remota)
+        port.seguirUsuario(nicknameSeguidor, nicknameSeguido);
         
+        UsuarioDTO usuarioActualizado = port.buscoUsuarioDTO(nicknameSeguidor);
+        session.setAttribute("usuarioObjeto", usuarioActualizado);
+
         // Redirigir al perfil del usuario seguido
         response.sendRedirect("consultaPerfilServlet?nickname=" + nicknameSeguido);
     }

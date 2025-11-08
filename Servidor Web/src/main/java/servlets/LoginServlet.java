@@ -18,8 +18,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import logica.*;
-import persistencia.*;
+// Cliente del Web Service
+import clienteWS.IctrlServicio;
+import clienteWS.IctrlServicioService;
+import clienteWS.Usuario;
+import clienteWS.UsuarioDTO;
 
 /**
  *
@@ -28,9 +31,7 @@ import persistencia.*;
 
 @WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
-    
-    ControladoraNueva Sistema = new ControladoraNueva(); //creada como hija de ictrl, (pasar todos los metodos luego a ictrl)
- 
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -46,63 +47,68 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+       
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+
         String usuario = request.getParameter("usuario");
         String clave = request.getParameter("clave");
-        
-        HttpSession sesion = request.getSession();
-        sesion.setAttribute("usuarioSesion", usuario); //aca era nickname CAMBIE
-        
-        // Aca usamos el controlador para validar
-        boolean valido = Sistema.validarUsuario(usuario, clave);
 
-        //vemos el rol
-        String rol = Sistema.buscoRol(usuario);
-        
-        usuario user = null;
-        
-        //para testear.
-        if(usuario.equalsIgnoreCase("admin") && clave.equalsIgnoreCase("admin")){
+        // Crear la sesión
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("usuarioSesion", usuario);
+
+        // Casos especiales hardcodeados
+        if ("admin".equalsIgnoreCase(usuario) && "admin".equalsIgnoreCase(clave)) {
             sesion.setAttribute("usuarioLogueado", "admin");
             sesion.setAttribute("rol", "admin");
             response.sendRedirect("home.jsp");
             return;
         }
-        
-        if (usuario.equalsIgnoreCase("visitante")) {
+
+        if ("visitante".equalsIgnoreCase(usuario)) {
             sesion.setAttribute("usuarioLogueado", "visitante");
             sesion.setAttribute("rol", "visitante");
             response.sendRedirect("home.jsp");
             return;
         }
 
-        if (valido) {
- 
-            //guardo el objeto asi uso los getters. sin mandar peticiones gets creo al pedo
-            //if (rol.equalsIgnoreCase("proponente")) {
-            //    user = Sistema.buscoProponente(usuario);
-            //} else if (rol.equalsIgnoreCase("colaborador")) {
-            //    user = Sistema.buscoColaborador(usuario);
-            //}
-            
-            user = Sistema.buscoUsuario(usuario);
-            
-            // Guardamos el usuario en sesion
-            sesion.setAttribute("usuarioLogueado", usuario);
-            sesion.setAttribute("usuarioObjeto", user);
-            sesion.setAttribute("rol", rol);
+        // Conexión al Web Service
+        System.setProperty("file.encoding", "UTF-8");
+        IctrlServicioService service = new IctrlServicioService();
+        IctrlServicio port = service.getIctrlServicioPort();
 
-            //ACA GUARDO EL USUARIO EN SESION PARA PRUEBAS.
-            usuario usuarioEnSesion = Sistema.buscoUsuario(usuario);
-            sesion.setAttribute("usuarioEnSesion", usuarioEnSesion);
-            
-            // Redirige al home
-            response.sendRedirect("home.jsp");
-        } else {
-            // Mandamos un mensaje de error
-            request.setAttribute("mensaje", "Usuario o contraseña incorrectos");
+        try {
+            // === Validar usuario ===
+            boolean valido = port.validarUsuario(usuario, clave);
+
+            if (valido) {
+                // Obtener el rol del usuario
+                String rol = port.buscoRol(usuario);
+
+                // Obtener el objeto Usuario completo
+                //Usuario user = port.buscoUsuario(usuario); //ACA CAMBIE
+                UsuarioDTO user = port.buscoUsuarioDTO(usuario);
+
+                // Guardar en sesión
+                sesion.setAttribute("usuarioLogueado", usuario);
+                sesion.setAttribute("usuarioObjeto", user);
+                sesion.setAttribute("rol", rol);
+                sesion.setAttribute("usuarioEnSesion", user);
+
+                response.sendRedirect("home.jsp");
+
+            } else {
+                // Usuario o contraseña incorrectos
+                request.setAttribute("mensaje", "Usuario o contraseña incorrectos");
+                request.getRequestDispatcher("inicioSesion.jsp").forward(request, response);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("mensaje", "Error al iniciar sesión: " + e.getMessage());
             request.getRequestDispatcher("inicioSesion.jsp").forward(request, response);
         }
-
     }
 
     @Override

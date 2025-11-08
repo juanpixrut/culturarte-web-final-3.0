@@ -9,7 +9,7 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
+import logica.Ictrl;
 
 import java.awt.CardLayout;
 
@@ -19,14 +19,14 @@ public class PanelLaWeb extends javax.swing.JPanel {
      * Creates new form PanelColaboraciones
      */
   
-    ictrl ic;
+    Ictrl ic;
     
     CardLayout c1;
     
     java.awt.CardLayout p1;
     javax.swing.JPanel PantallaGrandePrincipal;
     
-    public PanelLaWeb(ictrl ic, java.awt.CardLayout p1, javax.swing.JPanel PantallaGrandePrincipal) {
+    public PanelLaWeb(Ictrl ic, java.awt.CardLayout p1, javax.swing.JPanel PantallaGrandePrincipal) {
         initComponents();
         
         this.ic = ic;
@@ -56,8 +56,9 @@ public class PanelLaWeb extends javax.swing.JPanel {
         labelFoto = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        botonRegistro = new javax.swing.JButton();
         botonAtras = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(16, 32, 56));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -129,16 +130,16 @@ public class PanelLaWeb extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(119, 205, 215));
-        jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("EVALUAR PROPUESTA");
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setOpaque(true);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botonRegistro.setBackground(new java.awt.Color(119, 205, 215));
+        botonRegistro.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        botonRegistro.setForeground(new java.awt.Color(255, 255, 255));
+        botonRegistro.setText("Registro Acceso al sitio");
+        botonRegistro.setBorderPainted(false);
+        botonRegistro.setContentAreaFilled(false);
+        botonRegistro.setOpaque(true);
+        botonRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botonRegistroActionPerformed(evt);
             }
         });
 
@@ -155,25 +156,39 @@ public class PanelLaWeb extends javax.swing.JPanel {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(119, 205, 215));
+        jButton3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("EVALUAR PROPUESTA");
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.setOpaque(true);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(botonAtras)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(46, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(74, 74, 74))
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
-                        .addGap(38, 38, 38)))
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(38, 38, 38))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(botonAtras)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -184,8 +199,10 @@ public class PanelLaWeb extends javax.swing.JPanel {
                 .addGap(45, 45, 45)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 560, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 492, Short.MAX_VALUE)
                 .addComponent(botonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56))
             .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -204,19 +221,24 @@ public class PanelLaWeb extends javax.swing.JPanel {
         p1.show(PantallaGrandePrincipal, "principal");
     }//GEN-LAST:event_botonAtrasActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
         // TODO add your handling code here:
-        PanelLaWebEvaluar PanelLaWebEvaluar = new PanelLaWebEvaluar(ic, contenido, c1);
-        contenido.add(PanelLaWebEvaluar, "PanelLaWebEvaluar");
-        c1.show(contenido, "PanelLaWebEvaluar");
-    }//GEN-LAST:event_jButton2ActionPerformed
+        PanelLaWebRegistro PanelLaWebRegistro = new PanelLaWebRegistro(ic, contenido, c1);
+        contenido.add(PanelLaWebRegistro, "PanelLaWebRegistro");
+        c1.show(contenido, "PanelLaWebRegistro");
+    }//GEN-LAST:event_botonRegistroActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAtras;
+    private javax.swing.JButton botonRegistro;
     private javax.swing.JPanel contenido;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelFoto;

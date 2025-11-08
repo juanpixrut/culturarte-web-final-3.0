@@ -52,6 +52,6 @@
 -->
     <user password="tecnologo" roles="manager-script,admin" username="tecnologo"/>
     <user password="aa" roles="manager-script,admin" username="aa"/>
-    <user password="juan22" roles="manager-script,admin" username="juan"/>
     <user password="juan22" roles="manager-script,admin" username="juanpi"/>
+    <user password="juan22" roles="manager-script,admin" username="juan"/>
 </tomcat-users>

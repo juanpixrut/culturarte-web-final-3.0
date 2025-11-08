@@ -9,10 +9,10 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
-import logica.proponente;
-import logica.propuesta;
-import logica.colaboracion;
+import logica.Ictrl;
+import logica.Proponente;
+import logica.Propuesta;
+import logica.Colaboracion;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class PanelConsultaProponente extends javax.swing.JPanel {
      * Creates new form PanelConsultaProponente
      */
     
-    private ictrl ic;
+    private Ictrl ic;
     
     List lista = null;
     DefaultListModel<String> modelo = new DefaultListModel<>();
@@ -33,11 +33,11 @@ public class PanelConsultaProponente extends javax.swing.JPanel {
     
     DefaultListModel<String> modeloUsuarios = new DefaultListModel<>();
     
-    public PanelConsultaProponente(ictrl ic) {
+    public PanelConsultaProponente(Ictrl ic) {
         initComponents();
         this.ic = ic;
         ListaProponentes.setModel(modelo);
-        for(proponente p : ic.listarProponentes()){
+        for(Proponente p : ic.listarProponentes()){
         modelo.addElement("Nickname: " + p.getNickname() + " | Nombre: " + p.getNombre() + " | Apellido: " + p.getApellido());
         }
     }
@@ -358,7 +358,7 @@ public class PanelConsultaProponente extends javax.swing.JPanel {
 
     private void ListaProponentesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaProponentesMouseClicked
         // TODO add your handling code here:
-        proponente seleccionado = null;
+        Proponente seleccionado = null;
         int i = ListaProponentes.getSelectedIndex();
         if(i >= 0){
         seleccionado = ic.listarProponentes().get(i); //ic.listar... devuelve una lista por eso luego .get ...
@@ -373,8 +373,8 @@ public class PanelConsultaProponente extends javax.swing.JPanel {
         
         //ahora mostrar las propuestas.
         //podria mostrar todas las propuestas relacionadas a el y iterar y mostrar.
-        List<propuesta> lista = new ArrayList<>();
-        for(propuesta p : ic.listarPropuestas()){
+        List<Propuesta> lista = new ArrayList<>();
+        for(Propuesta p : ic.listarPropuestas()){
            if(p.getProponente() == seleccionado.getNickname()){ //getproponente me da el nickname.
            lista.add(p);
            }
@@ -383,7 +383,7 @@ public class PanelConsultaProponente extends javax.swing.JPanel {
         //ahora en listapropuestas mostrarlas todas. prox paso.
         modeloPropuesta.clear();
         listaPropuestas.setModel(modeloPropuesta); //intento usar mismo modelo.
-        for(propuesta p : lista){
+        for(Propuesta p : lista){
         modeloPropuesta.addElement(p.getTitulo());
         }
         
@@ -407,11 +407,11 @@ public class PanelConsultaProponente extends javax.swing.JPanel {
 
     private void listaPropuestasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaPropuestasMouseClicked
         // TODO add your handling code here:
-        propuesta seleccionada = null;
+        Propuesta seleccionada = null;
         
         String titulo = listaPropuestas.getSelectedValue();
         
-        for(propuesta p : ic.listarPropuestas()){
+        for(Propuesta p : ic.listarPropuestas()){
         if(p.getTitulo().contains(titulo)){
         seleccionada = p;
         break;
@@ -426,13 +426,13 @@ public class PanelConsultaProponente extends javax.swing.JPanel {
         
         //ahora tengo q mostrar los usuarios q colaboraron con p en listaUsuarios.
         
-        //de propuesta, obtener las colaboraciones a ella y de cada colab obtener el colaborador para listarlo capaz.
+        //de Propuesta, obtener las colaboraciones a ella y de cada colab obtener el Colaborador para listarlo capaz.
         
         modeloUsuarios.clear();
         listaUsuarios.setModel(modeloUsuarios);
-        for(colaboracion c : ic.listarColaboraciones()){
+        for(Colaboracion c : ic.listarColaboraciones()){
         if(c.getPropuesta().getTitulo().equalsIgnoreCase(titulo)){ //titulo o p.getTitulo capaz.
-        //ahora get nombre proponente y agregarlo a la lista.
+        //ahora get nombre Proponente y agregarlo a la lista.
         modeloUsuarios.addElement(c.getColaborador().getNickname());
         }
         }

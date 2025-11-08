@@ -8,14 +8,14 @@ package logica;
  *
  * @author Juanpi
  */
-public class fabrica {
+public class Fabrica {
     
-    public fabrica(){
+    public Fabrica(){
     
     }
     
-    public ictrl getIctrl(){
-    return ctrl.getInstancia();
+    public Ictrl getIctrl(){
+    return Ctrl.getInstancia();
     }
     
 }

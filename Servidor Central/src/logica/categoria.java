@@ -29,7 +29,7 @@ import javax.persistence.ForeignKey;
 import javax.persistence.CascadeType;
 
 @Entity
-public class categoria implements Serializable {
+public class Categoria implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -40,16 +40,16 @@ public class categoria implements Serializable {
     // LADO DUEÑO (guarda la FK):
     @ManyToOne
     @JoinColumn(name = "padre_id", referencedColumnName = "id")
-    private categoria padre; //null = raiz
+    private Categoria padre; //null = raiz
     
     @OneToMany(mappedBy="padre", cascade = CascadeType.ALL)
-    private List<categoria> hijos = new ArrayList<>();
+    private List<Categoria> hijos = new ArrayList<>();
     
-    public categoria(){
+    public Categoria(){
     
     }
     
-    public categoria(String nombre){
+    public Categoria(String nombre){
     this.nombre = nombre;
     this.padre = null;
     }
@@ -62,11 +62,11 @@ public class categoria implements Serializable {
     return nombre;
     }
     
-    public void setPadre(categoria padre){
+    public void setPadre(Categoria padre){
     this.padre = padre;
     }
     
-    public categoria getPadre(){
+    public Categoria getPadre(){
     return this.padre;
     }
     

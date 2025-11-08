@@ -124,7 +124,7 @@ public class PropuestaDTO implements Serializable {
     public LocalTime getHora() { return hora; }
 
     // ----- Conversión desde entidad -----
-    public static PropuestaDTO fromEntity(propuesta p) {
+    public static PropuestaDTO fromEntity(Propuesta p) {
         if (p == null) return null;
 
         PropuestaDTO dto = new PropuestaDTO();
@@ -149,7 +149,7 @@ public class PropuestaDTO implements Serializable {
         // Colaboraciones
         if (p.getColaboraciones() != null && !p.getColaboraciones().isEmpty()) {
             List<ColaboracionDTO> colaboracionesDTO = new ArrayList<>();
-            for (colaboracion c : p.getColaboraciones()) {
+            for (Colaboracion c : p.getColaboraciones()) {
                 colaboracionesDTO.add(ColaboracionDTO.fromEntity(c));
             }
             dto.setColaboraciones(colaboracionesDTO);

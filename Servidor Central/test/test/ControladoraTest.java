@@ -21,27 +21,27 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class ControladoraTest {
 
-    private fabrica fab = new fabrica();
-    private ictrl ic = fab.getIctrl();
+    private Fabrica fab = new Fabrica();
+    private Ictrl ic = fab.getIctrl();
 
     // Creamos una subclase para poder inyectar datos falsos
-    class ControladoraMock extends ictrl {
+    class ControladoraMock extends Ictrl {
 
-        private List<proponente> proponentes = new ArrayList<>();
-        private List<colaborador> colaboradores = new ArrayList<>();
-        private List<propuesta> propuestas = new ArrayList<>();
-        private List<colaboracion> colaboraciones = new ArrayList<>();
+        private List<Proponente> proponentes = new ArrayList<>();
+        private List<Colaborador> colaboradores = new ArrayList<>();
+        private List<Propuesta> propuestas = new ArrayList<>();
+        private List<Colaboracion> colaboraciones = new ArrayList<>();
 
         ControladoraPersistenciaMock persistenciaMock = new ControladoraPersistenciaMock();
 
         @Override
         public String buscoRol(String nickname) {
-            for (proponente p : listarProponentes()) {
+            for (Proponente p : listarProponentes()) {
                 if (p != null && nickname.equalsIgnoreCase(p.getNickname())) {
                     return "proponente";
                 }
             }
-            for (colaborador c : listarColaboradores()) {
+            for (Colaborador c : listarColaboradores()) {
                 if (c != null && nickname.equalsIgnoreCase(c.getNickname())) {
                     return "colaborador";
                 }
@@ -51,47 +51,47 @@ public class ControladoraTest {
 
         @Override
         public void altaPerfilProponente(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes, String direccion, String biografia, String linkSitio, String contrasena) {
-            proponente p = new proponente(nickname, nombre, apellido, correo, imagenBytes, contrasena, direccion, biografia, linkSitio);
+            Proponente p = new Proponente(nickname, nombre, apellido, correo, imagenBytes, contrasena, direccion, biografia, linkSitio);
             persistenciaMock.crearUsuarioProponente(p);
         }
 
         @Override
         public void altaPerfilColaborador(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes) {
-            colaborador c = new colaborador(nickname, nombre, apellido, correo, imagenBytes);
+            Colaborador c = new Colaborador(nickname, nombre, apellido, correo, imagenBytes);
             persistenciaMock.crearUsuarioColaborador(c);
         }
 
         @Override
-        public List<proponente> listarProponentes() {
+        public List<Proponente> listarProponentes() {
             return proponentes;
         }
 
         @Override
-        public List<colaborador> listarColaboradores() {
+        public List<Colaborador> listarColaboradores() {
             return colaboradores;
         }
 
         @Override
-        public List<propuesta> listarPropuestas() {
+        public List<Propuesta> listarPropuestas() {
             return propuestas;
         }
 
         @Override
-        public List<colaboracion> listarColaboraciones() {
+        public List<Colaboracion> listarColaboraciones() {
             return colaboraciones;
         }
 
-        public void agregarProponente(proponente p) {
+        public void agregarProponente(Proponente p) {
             proponentes.add(p);
         }
 
-        public void agregarColaborador(colaborador c) {
+        public void agregarColaborador(Colaborador c) {
             colaboradores.add(c);
         }
 
         @Override
-        public proponente buscoProponente(String nickname) {
-            for (proponente p : this.listarProponentes()) {
+        public Proponente buscoProponente(String nickname) {
+            for (Proponente p : this.listarProponentes()) {
                 if (p.getNickname().equalsIgnoreCase(nickname)) {
                     return p;
                 }
@@ -100,8 +100,8 @@ public class ControladoraTest {
         }
 
         @Override
-        public colaborador buscoColaborador(String nickname) {
-            for (colaborador c : this.listarColaboradores()) {
+        public Colaborador buscoColaborador(String nickname) {
+            for (Colaborador c : this.listarColaboradores()) {
                 if (c.getNickname().equalsIgnoreCase(nickname)) {
                     return c;
                 }
@@ -110,39 +110,39 @@ public class ControladoraTest {
         }
 
         @Override
-        public usuario buscoUsuario(String nickname) {
-            colaborador col = mockCtrl.buscoColaborador(nickname);
-            proponente prop = mockCtrl.buscoProponente(nickname);
+        public Usuario buscoUsuario(String nickname) {
+            Colaborador col = mockCtrl.buscoColaborador(nickname);
+            Proponente prop = mockCtrl.buscoProponente(nickname);
 
             if (col != null) {
-                usuario user = col;
+                Usuario user = col;
                 return user;
             }
             if (prop != null) {
-                usuario user = prop;
+                Usuario user = prop;
                 return user;
             }
             return null;
         }
 
-        public void agregarPropuesta(propuesta prop) {
+        public void agregarPropuesta(Propuesta prop) {
             propuestas.add(prop);
         }
 
-        //public propuesta buscoPropuesta(String titulo) {
-        //    for (propuesta p : propuestas) {
+        //public Propuesta buscoPropuesta(String titulo) {
+        //    for (Propuesta p : propuestas) {
         //        if(p.getTitulo().equalsIgnoreCase(titulo)){
         //        return p;
         //        }
         //    }
         //   return null;
         //}
-        public void agregarColaboracion(colaboracion col) {
+        public void agregarColaboracion(Colaboracion col) {
             colaboraciones.add(col);
         }
 
-        public colaboracion buscoColaboracion(int id) {
-            for (colaboracion c : colaboraciones) {
+        public Colaboracion buscoColaboracion(int id) {
+            for (Colaboracion c : colaboraciones) {
                 if (c.getId() == 10) {
                     return c;
                 }
@@ -153,7 +153,7 @@ public class ControladoraTest {
         @Override
         public List<PropuestaDTO> listarPropuestasFavoritas(String nickname) {
             String rol = buscoRol(nickname);
-            usuario u = null;
+            Usuario u = null;
 
             if ("proponente".equalsIgnoreCase(rol)) {
                 u = buscoProponente(nickname);
@@ -164,7 +164,7 @@ public class ControladoraTest {
             List<PropuestaDTO> resultado = new ArrayList<>();
 
             if (u != null && u.getFavoritas() != null) {
-                for (propuesta p : u.getFavoritas()) {
+                for (Propuesta p : u.getFavoritas()) {
                     if (p != null) {
                         resultado.add(PropuestaDTO.fromEntity(p));
                     }
@@ -180,17 +180,17 @@ public class ControladoraTest {
     class ControladoraPersistenciaMock extends ControladoraPersistencia {
 
         public boolean llamado = false;
-        public proponente ultimoProponente = null;
-        public colaborador ultimoColaborador = null;
+        public Proponente ultimoProponente = null;
+        public Colaborador ultimoColaborador = null;
 
         @Override
-        public void crearUsuarioProponente(proponente p) {
+        public void crearUsuarioProponente(Proponente p) {
             llamado = true;
             ultimoProponente = p;
         }
 
         @Override
-        public void crearUsuarioColaborador(colaborador c) {
+        public void crearUsuarioColaborador(Colaborador c) {
             llamado = true;
             ultimoColaborador = c;
         }
@@ -206,7 +206,7 @@ public class ControladoraTest {
 
     @Test
     public void validarUsuarioExistenteYClaveCorrecta() {
-        proponente p = new proponente();
+        Proponente p = new Proponente();
         p.setNickname("juanpi");
         p.setContrasena("1234");
         mockCtrl.agregarProponente(p);
@@ -217,7 +217,7 @@ public class ControladoraTest {
 
     @Test
     public void validarUsuarioExistenteYClaveIncorrecta() {
-        proponente p = new proponente();
+        Proponente p = new Proponente();
         p.setNickname("juanpi");
         p.setContrasena("1234");
         mockCtrl.agregarProponente(p);
@@ -228,7 +228,7 @@ public class ControladoraTest {
 
     @Test
     public void validarUsuarioInexistente() {
-        proponente p = new proponente();
+        Proponente p = new Proponente();
         p.setNickname("flor");
         p.setContrasena("abcd");
         mockCtrl.agregarProponente(p);
@@ -239,11 +239,11 @@ public class ControladoraTest {
 
     @Test
     public void buscoRol() {
-        proponente p = new proponente();
+        Proponente p = new Proponente();
         p.setNickname("mario");
         mockCtrl.agregarProponente(p);
 
-        colaborador c = new colaborador();
+        Colaborador c = new Colaborador();
         c.setNickname("ana");
         mockCtrl.agregarColaborador(c);
 
@@ -254,7 +254,7 @@ public class ControladoraTest {
 
     @Test
     public void buscoProponente() {
-        proponente p = new proponente();
+        Proponente p = new Proponente();
         p.setNickname("mario");
         mockCtrl.agregarProponente(p);
 
@@ -263,7 +263,7 @@ public class ControladoraTest {
 
     @Test
     public void buscoColaborador() {
-        colaborador c = new colaborador();
+        Colaborador c = new Colaborador();
         c.setNickname("mario");
         mockCtrl.agregarColaborador(c);
 
@@ -272,19 +272,19 @@ public class ControladoraTest {
 
     @Test
     public void buscoUsuario() {
-        proponente p = new proponente();
+        Proponente p = new Proponente();
         p.setNickname("mario");
         mockCtrl.agregarProponente(p);
-        usuario user = p;
+        Usuario user = p;
 
         assertEquals(user, mockCtrl.buscoUsuario("mario"));
     }
 
     @Test
     public void altaPropuesta() {
-        proponente p = new proponente();
+        Proponente p = new Proponente();
         p.setNickname("mario");
-        propuesta prop = new propuesta(p, "prueba", null, null, null, null, 10, 10, null);
+        Propuesta prop = new Propuesta(p, "prueba", null, null, null, null, 10, 10, null);
         mockCtrl.agregarPropuesta(prop);
 
         assertEquals(prop, mockCtrl.buscoPropuesta("prueba"));
@@ -292,14 +292,14 @@ public class ControladoraTest {
 
     @Test
     public void altaColaboracion() {
-        colaborador c = new colaborador();
+        Colaborador c = new Colaborador();
         c.setNickname("mario");
 
-        proponente p = new proponente();
+        Proponente p = new Proponente();
         p.setNickname("mario");
-        propuesta prop = new propuesta(p, "prueba", null, null, null, null, 10, 10, null);
+        Propuesta prop = new Propuesta(p, "prueba", null, null, null, null, 10, 10, null);
 
-        colaboracion col = new colaboracion(c, prop, 10, null);
+        Colaboracion col = new Colaboracion(c, prop, 10, null);
         col.setId(10);
         mockCtrl.agregarColaboracion(col);
 
@@ -310,16 +310,16 @@ public class ControladoraTest {
     @Test
     public void testBuscoPropuesta_ExisteExacta() {
         // preparamos los datos simulados
-        propuesta p1 = new propuesta();
+        Propuesta p1 = new Propuesta();
         p1.setTitulo("titulo p1");
-        propuesta p2 = new propuesta();
+        Propuesta p2 = new Propuesta();
         p2.setTitulo("titulo p2");
 
         mockCtrl.agregarPropuesta(p1);
         mockCtrl.agregarPropuesta(p2);
 
         // ejecutamos el método
-        propuesta resultado = mockCtrl.buscoPropuesta("titulo p1");
+        Propuesta resultado = mockCtrl.buscoPropuesta("titulo p1");
 
         // verificamos que encontró la correcta
         assertNotNull("Debe encontrar la propuesta con ese título", resultado);
@@ -328,26 +328,26 @@ public class ControladoraTest {
 
     @Test
     public void testBuscoPropuesta_Inexistente() {
-        propuesta p = new propuesta();
+        Propuesta p = new Propuesta();
         p.setTitulo("titulo p");
         mockCtrl.agregarPropuesta(p);
 
-        propuesta resultado = mockCtrl.buscoPropuesta("titulo erroneo");
+        Propuesta resultado = mockCtrl.buscoPropuesta("titulo erroneo");
 
         assertNull("Debe devolver null si no encuentra la propuesta", resultado);
     }
 
     @Test
     public void testBuscoColaborador_ExisteExacto() {
-        colaborador c1 = new colaborador();
+        Colaborador c1 = new Colaborador();
         c1.setNickname("juanpi");
-        colaborador c2 = new colaborador();
+        Colaborador c2 = new Colaborador();
         c2.setNickname("flor");
 
         mockCtrl.agregarColaborador(c1);
         mockCtrl.agregarColaborador(c2);
 
-        colaborador resultado = mockCtrl.buscoColaborador("flor");
+        Colaborador resultado = mockCtrl.buscoColaborador("flor");
 
         assertNotNull("Debe encontrar al colaborador con ese nickname", resultado);
         assertEquals("flor", resultado.getNickname());
@@ -355,11 +355,11 @@ public class ControladoraTest {
 
     @Test
     public void testBuscoColaborador_Inexistente() {
-        colaborador c = new colaborador();
+        Colaborador c = new Colaborador();
         c.setNickname("ana");
         mockCtrl.agregarColaborador(c);
 
-        colaborador resultado = mockCtrl.buscoColaborador("pepe");
+        Colaborador resultado = mockCtrl.buscoColaborador("pepe");
         assertNull("Debe devolver null si no existe el colaborador", resultado);
     }
 
@@ -415,20 +415,20 @@ public class ControladoraTest {
 
     @Test
     public void testListarPropuestasFavoritas_DeProponente() {
-        // Creamos un proponente con una propuesta favorita
-        proponente p = new proponente();
+        // Creamos un Proponente con una Propuesta favorita
+        Proponente p = new Proponente();
         p.setNickname("juanpi");
 
-        propuesta prop = new propuesta();
+        Propuesta prop = new Propuesta();
         prop.setTitulo("Festival de Música");
         prop.setDescripcion("Evento con bandas locales.");
         prop.setLugar("Montevideo");
         prop.setMonto(5000);
         prop.setProponente(p);
-        prop.setEstado(estadoPropuesta.INGRESADA);
+        prop.setEstado(EstadoPropuesta.INGRESADA);
 
         // Simulamos lista de favoritas
-        List<propuesta> favoritas = new ArrayList<>();
+        List<Propuesta> favoritas = new ArrayList<>();
         favoritas.add(prop);
         p.setFavoritas(favoritas);
 
@@ -448,8 +448,8 @@ public class ControladoraTest {
 
     @Test
     public void testListarPropuestasPublicadas_DeProponente() {
-        // 1. Creamos el proponente
-        proponente p = new proponente();
+        // 1. Creamos el Proponente
+        Proponente p = new Proponente();
         p.setNickname("juanpi");
         mockCtrl.agregarProponente(p);
 
@@ -480,7 +480,7 @@ public class ControladoraTest {
             }
 
             @Override
-            public proponente buscoProponente(String nickname) {
+            public Proponente buscoProponente(String nickname) {
                 return p;
             }
         };

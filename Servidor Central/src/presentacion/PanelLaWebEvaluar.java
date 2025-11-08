@@ -9,13 +9,13 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
+import logica.Ictrl;
 
-import logica.propuesta;
+import logica.Propuesta;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-import logica.estadoPropuesta;
+import logica.EstadoPropuesta;
 
 public class PanelLaWebEvaluar extends javax.swing.JPanel {
 
@@ -23,7 +23,7 @@ public class PanelLaWebEvaluar extends javax.swing.JPanel {
      * Creates new form PanelConsulta
      */
     
-    ictrl ic;
+    Ictrl ic;
     
     private javax.swing.JPanel contenido;
     private java.awt.CardLayout c1;
@@ -32,7 +32,7 @@ public class PanelLaWebEvaluar extends javax.swing.JPanel {
     
     DefaultListModel modelo = new DefaultListModel();
     
-    public PanelLaWebEvaluar(ictrl ic, javax.swing.JPanel contenido, java.awt.CardLayout c1) {
+    public PanelLaWebEvaluar(Ictrl ic, javax.swing.JPanel contenido, java.awt.CardLayout c1) {
         initComponents();
         
         this.ic = ic;
@@ -40,7 +40,7 @@ public class PanelLaWebEvaluar extends javax.swing.JPanel {
         this.c1 = c1;
         
         listaPropuestas.setModel(modelo);
-        for(propuesta p : ic.listarPropuestas()){
+        for(Propuesta p : ic.listarPropuestas()){
            if(p.getEstadoActual().toString().equalsIgnoreCase("INGRESADA")){
             modelo.addElement(p.getTitulo());
            }
@@ -191,9 +191,9 @@ public class PanelLaWebEvaluar extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Selecciona una propuesta.", "Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
-    propuesta prop = ic.buscoPropuesta(titulo);
-    prop.setEstado(estadoPropuesta.CANCELADA);
-    prop.registrarCambioEstado(estadoPropuesta.CANCELADA);
+    Propuesta prop = ic.buscoPropuesta(titulo);
+    prop.setEstado(EstadoPropuesta.CANCELADA);
+    prop.registrarCambioEstado(EstadoPropuesta.CANCELADA);
     ic.modificoPropuesta(prop);
     JOptionPane.showMessageDialog(this, "Propuesta Cancelada.", "Exito", JOptionPane.WARNING_MESSAGE);
 
@@ -207,9 +207,9 @@ public class PanelLaWebEvaluar extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Selecciona una propuesta.", "Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
-    propuesta prop = ic.buscoPropuesta(titulo);
-    prop.setEstado(estadoPropuesta.PUBLICADA);
-    prop.registrarCambioEstado(estadoPropuesta.PUBLICADA);
+    Propuesta prop = ic.buscoPropuesta(titulo);
+    prop.setEstado(EstadoPropuesta.PUBLICADA);
+    prop.registrarCambioEstado(EstadoPropuesta.PUBLICADA);
     ic.modificoPropuesta(prop);
     JOptionPane.showMessageDialog(this, "Propuesta Publicada.", "Exito", JOptionPane.WARNING_MESSAGE);
 
@@ -219,7 +219,7 @@ public class PanelLaWebEvaluar extends javax.swing.JPanel {
 
     private void recargarLista() {
     modelo.clear(); // limpia la lista visual
-    for (propuesta p : ic.listarPropuestas()) {
+    for (Propuesta p : ic.listarPropuestas()) {
         if (p.getEstadoActual().toString().equalsIgnoreCase("INGRESADA")) {
             modelo.addElement(p.getTitulo());
         }

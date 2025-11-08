@@ -12,8 +12,8 @@ package logica.dtos;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import logica.colaborador;
-import logica.colaboracion;
+import logica.Colaborador;
+import logica.Colaboracion;
 
 import logica.*;
 import persistencia.*;
@@ -34,39 +34,42 @@ public class ColaboradorDTO extends UsuarioDTO implements Serializable {
     public List<ColaboracionDTO> getColaboraciones() { return colaboraciones; }
     public void setColaboraciones(List<ColaboracionDTO> colaboraciones) { this.colaboraciones = colaboraciones; }
 
-    public static ColaboradorDTO fromEntity(colaborador c) {
-        if (c == null) return null;
+public static ColaboradorDTO fromEntity(Colaborador c) {
+    if (c == null) return null;
 
-        ColaboradorDTO dto = new ColaboradorDTO(
-                c.getNickname(),
-                c.getNombre(),
-                c.getApellido(),
-                c.getEmail()
-        );
+    ColaboradorDTO dto = new ColaboradorDTO(
+            c.getNickname(),
+            c.getNombre(),
+            c.getApellido(),
+            c.getEmail()
+    );
 
-        try {
-            fabrica fab = new fabrica();
-            ictrl ic = fab.getIctrl();
-            List<colaboracion> todas = ic.listarColaboraciones();
-            List<ColaboracionDTO> colaboracionesDTO = new ArrayList<>();
+    // Convertimos solo colaboraciones directas, sin Propuesta completa adentro
+    if (c.getColaboraciones() != null && !c.getColaboraciones().isEmpty()) {
+        List<ColaboracionDTO> colaboracionesDTO = new ArrayList<>();
+        for (Colaboracion colab : c.getColaboraciones()) {
+            ColaboracionDTO cDto = new ColaboracionDTO();
+            cDto.setMontoAportado(colab.getMontoAportado());
+            cDto.setFecha(colab.getFecha());
 
-            for (int i = 0; i < todas.size(); i++) {
-                colaboracion colab = todas.get(i);
-                if (colab.getColaborador() != null &&
-                    colab.getColaborador().getNickname().equalsIgnoreCase(c.getNickname())) {
-
-                    colaboracionesDTO.add(ColaboracionDTO.fromEntity(colab));
-                }
+            // Guardamos solo el título de la propuesta, no el objeto entero
+            if (colab.getPropuesta() != null) {
+                Propuesta prop = colab.getPropuesta();
+                PropuestaDTO pDto = new PropuestaDTO();
+                pDto.setTitulo(prop.getTitulo());
+                cDto.setPropuestaTitulo(pDto.getTitulo());
             }
 
-            dto.setColaboraciones(colaboracionesDTO);
-
-        } catch (Exception e) {
-            e.printStackTrace();
+            colaboracionesDTO.add(cDto);
         }
-
-        return dto;
+        dto.setColaboraciones(colaboracionesDTO);
+    } else {
+        dto.setColaboraciones(new ArrayList<>());
     }
+
+    return dto;
+}
+
 
     @Override
     public String toString() {

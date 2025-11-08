@@ -13,7 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import logica.*;
+// Cliente del Web Service
+import clienteWS.IctrlServicio;
+import clienteWS.IctrlServicioService;
+import clienteWS.Colaborador;
+import clienteWS.Propuesta;
+import clienteWS.Comentario;
 
 /**
  *
@@ -21,8 +26,6 @@ import logica.*;
  */
 @WebServlet(name = "dejarComentarioServlet", urlPatterns = {"/dejarComentarioServlet"})
 public class dejarComentarioServlet extends HttpServlet {
-    
-    ControladoraNueva Sistema = new ControladoraNueva();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -53,15 +56,15 @@ public class dejarComentarioServlet extends HttpServlet {
 
         String nickname = (String) sesion.getAttribute("usuarioSesion");
 
+        // Crear cliente del Web Service
+        System.setProperty("file.encoding", "UTF-8");
+        IctrlServicioService service = new IctrlServicioService();
+        IctrlServicio port = service.getIctrlServicioPort();
+
         try {
 
-            colaborador c = Sistema.buscoColaborador(nickname);
-            propuesta p = Sistema.buscoPropuesta(titulo);
-
-            comentario nuevo = new comentario(c, p, texto);
-            p.agregarComentario(nuevo);
-
-            Sistema.modificoPropuesta(p);
+            // Registrar comentario (a través del WS)
+            port.dejarComentario(nickname, titulo, texto);
 
             sesion.setAttribute("mensajeExito", "Tu comentario fue publicado correctamente.");
             response.sendRedirect("consultaPropuestaFullServlet?titulo=" + titulo);
@@ -69,7 +72,9 @@ public class dejarComentarioServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("mensajeError", "Ocurrió un error al guardar tu comentario.");
-            request.getRequestDispatcher("error.jsp").forward(request, response);
+            response.setContentType("text/plain;charset=UTF-8");
+            response.getWriter().println("Error al dejar comentario: " + e.getMessage());
+            return;
         }
     }
 

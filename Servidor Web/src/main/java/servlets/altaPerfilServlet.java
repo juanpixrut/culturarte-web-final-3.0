@@ -18,8 +18,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
-import logica.*;
-import persistencia.*;
+// Cliente del Web Service
+import clienteWS.IctrlServicio;
+import clienteWS.IctrlServicioService;
 
 /**
  *
@@ -34,8 +35,6 @@ import persistencia.*;
 
 @WebServlet(name = "altaPerfilServlet", urlPatterns = {"/altaPerfilServlet"})
 public class altaPerfilServlet extends HttpServlet {
-    
-    ControladoraNueva Sistema = new ControladoraNueva(); //creada como hija de ictrl, (pasar todos los metodos luego a ictrl)
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -53,8 +52,7 @@ public class altaPerfilServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-
-try {
+ try {
             // === Campos comunes ===
             String nickname = request.getParameter("nickname");
             String nombre = request.getParameter("nombre");
@@ -64,22 +62,6 @@ try {
             String contrasena = request.getParameter("contrasena");
             String confirmacion = request.getParameter("confirmacion");
 
-            // === Fecha de nacimiento ===
-            String fechaStr = request.getParameter("fechaNacimiento");
-            Date fechaNac = null;
-            if (fechaStr != null && !fechaStr.isEmpty()) {
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                fechaNac = sdf.parse(fechaStr);
-            }
-
-            // === Imagen ===
-            Part imagenPart = request.getPart("imagen");
-            byte[] imagenBytes = null;
-            if (imagenPart != null && imagenPart.getSize() > 0) {
-                InputStream inputStream = imagenPart.getInputStream();
-                imagenBytes = inputStream.readAllBytes();
-            }
-
             // === Validación de contraseñas ===
             if (contrasena == null || confirmacion == null || !contrasena.equals(confirmacion)) {
                 request.setAttribute("mensaje", "❌ Las contraseñas no coinciden.");
@@ -87,20 +69,57 @@ try {
                 return;
             }
 
+            // === Fecha de nacimiento ===
+            String fechaStr = request.getParameter("fechaNacimiento");
+            String fechaNacStr = null;
+            if (fechaStr != null && !fechaStr.isEmpty()) {
+                // El WS recibirá la fecha como String yyyy-MM-dd
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                Date fechaNac = sdf.parse(fechaStr);
+                fechaNacStr = sdf.format(fechaNac);
+            }
+
+            // === Imagen ===
+            Part imagenPart = request.getPart("imagen");
+            byte[] imagenBytes = null;
+            if (imagenPart != null && imagenPart.getSize() > 0) {
+                try (InputStream inputStream = imagenPart.getInputStream()) {
+                    imagenBytes = inputStream.readAllBytes();
+                }
+            }
+
+            // === Crear cliente del Web Service ===
+            System.setProperty("file.encoding", "UTF-8");
+            IctrlServicioService service = new IctrlServicioService();
+            IctrlServicio port = service.getIctrlServicioPort();
+
             // === Alta según tipo ===
             if ("proponente".equalsIgnoreCase(tipo)) {
                 String direccion = request.getParameter("direccion");
                 String biografia = request.getParameter("biografia");
                 String sitioWeb = request.getParameter("sitioWeb");
 
-                Sistema.altaPerfilProponente(
-                        nickname, nombre, apellido, email, imagenBytes,
-                        direccion, biografia, sitioWeb, contrasena
+                port.altaPerfilProponente(
+                        nickname,
+                        nombre,
+                        apellido,
+                        email,
+                        imagenBytes,
+                        direccion,
+                        biografia,
+                        sitioWeb,
+                        contrasena
                 );
+
                 request.setAttribute("mensaje", "✅ Proponente creado correctamente.");
             } else {
-                Sistema.altaPerfilColaborador(
-                        nickname, nombre, apellido, email, imagenBytes, contrasena
+                port.altaPerfilColaborador(
+                        nickname,
+                        nombre,
+                        apellido,
+                        email,
+                        imagenBytes,
+                        contrasena
                 );
                 request.setAttribute("mensaje", "✅ Colaborador creado correctamente.");
             }

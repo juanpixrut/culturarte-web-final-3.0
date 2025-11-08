@@ -31,26 +31,26 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 @Entity
-public class historialEstado implements Serializable {
+public class HistorialEstado implements Serializable {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @ManyToOne
     @JoinColumn(name="propuesta_titulo")
-    private propuesta propuesta;
+    private Propuesta propuesta;
     
     @Enumerated(EnumType.STRING)
-    private estadoPropuesta estado;
+    private EstadoPropuesta estado;
 
     @Temporal(TemporalType.DATE)
     private Date fecha = Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()); //
 
-    public historialEstado() {
+    public HistorialEstado() {
     
     }
     
-    public historialEstado(propuesta p, estadoPropuesta e){ 
+    public HistorialEstado(Propuesta p, EstadoPropuesta e){ 
         this.propuesta = p; 
         this.estado = e; 
     }
@@ -59,15 +59,15 @@ public class historialEstado implements Serializable {
     return this.id;
     }
     
-    public estadoPropuesta getEstado(){
+    public EstadoPropuesta getEstado(){
     return this.estado;
     }
     
-    public void setPropuesta(propuesta p){
+    public void setPropuesta(Propuesta p){
     this.propuesta = p;
     }
     
-        public void setEstado(estadoPropuesta e){
+        public void setEstado(EstadoPropuesta e){
         this.estado = e; 
         }
         

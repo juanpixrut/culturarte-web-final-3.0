@@ -14,9 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import logica.*;
-import logica.dtos.PropuestaDTO;
-import persistencia.*;
+// Cliente del Web Service
+import clienteWS.IctrlServicio;
+import clienteWS.IctrlServicioService;
+import clienteWS.PropuestaDTO;
 
 /**
  *
@@ -24,8 +25,6 @@ import persistencia.*;
  */
 @WebServlet(name = "cancelarPropuestaServlet", urlPatterns = {"/cancelarPropuestaServlet"})
 public class cancelarPropuestaServlet extends HttpServlet {
-    
-    ControladoraNueva Sistema = new ControladoraNueva();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,15 +36,31 @@ public class cancelarPropuestaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        HttpSession session = request.getSession();
-        
+         HttpSession session = request.getSession();
         String nicknamePedido = (String) session.getAttribute("usuarioSesion");
 
-        List<PropuestaDTO> propuestas = Sistema.listarPropuestasFinanciadas(nicknamePedido);
+        if (nicknamePedido == null || nicknamePedido.isEmpty()) {
+            response.sendRedirect("inicioSesion.jsp");
+            return;
+        }
 
-        request.setAttribute("propuestas", propuestas);
+        // Crear cliente del Web Service
+        System.setProperty("file.encoding", "UTF-8");
+        IctrlServicioService service = new IctrlServicioService();
+        IctrlServicio port = service.getIctrlServicioPort();
 
-        request.getRequestDispatcher("cancelarPropuesta.jsp").forward(request, response);
+        try {
+            // Obtener propuestas financiadas del proponente
+            List<PropuestaDTO> propuestas = port.listarPropuestasFinanciadas(nicknamePedido);
+
+            request.setAttribute("propuestas", propuestas);
+            request.getRequestDispatcher("cancelarPropuesta.jsp").forward(request, response);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("errorMensaje", "Error al cargar las propuestas financiadas: " + e.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+        }
 
     }
 
@@ -56,13 +71,31 @@ public class cancelarPropuestaServlet extends HttpServlet {
         
         //TENGO QUE CONTROLAR Q SI NO HAY NADA Y LE DAS AL BOTON NO DE ERROR
         
-        request.setCharacterEncoding("UTF-8");
+  request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        
-        //aca la cancelacion.
+
         String titulo = request.getParameter("titulo");
-        Sistema.cancelarPropuesta(titulo);
-        response.sendRedirect("home.jsp");
+
+        if (titulo == null || titulo.isEmpty()) {
+            request.setAttribute("errorMensaje", "Debe seleccionar una propuesta para cancelar.");
+            request.getRequestDispatcher("cancelarPropuesta.jsp").forward(request, response);
+            return;
+        }
+
+        // Cliente del Web Service
+        IctrlServicioService service = new IctrlServicioService();
+        IctrlServicio port = service.getIctrlServicioPort();
+
+        try {
+            // Cancelar propuesta mediante el WS
+            port.cancelarPropuesta(titulo);
+            response.sendRedirect("home.jsp");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("errorMensaje", "Error al cancelar la propuesta: " + e.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+        }
 
     }
 

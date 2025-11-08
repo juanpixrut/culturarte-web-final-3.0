@@ -8,7 +8,9 @@ package logica.dtos;
  *
  * @author Juanpi
  */
-
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
@@ -35,6 +37,9 @@ public class PropuestaDTO implements Serializable {
     private List<ColaboracionDTO> colaboraciones;
     private String tipoRetorno;
     private LocalTime hora;
+    private List<ComentarioDTO> comentarios;
+
+    private String fechaRealizacionFormateada;  // NUEVO CAMPO
 
     // ----- Constructores -----
     public PropuestaDTO() {
@@ -43,10 +48,10 @@ public class PropuestaDTO implements Serializable {
     }
 
     public PropuestaDTO(String prop, String titulo, String descripcion, String tipoEspectaculo,
-                        String lugar, Date fechaRealizacion, LocalTime hora, float precioEntrada, float montoNecesario,
-                        float montoRecaudado, Date fechaPublicada, EstadoPropuestaDTO estadoActual,
-                        //List<HistorialEstadoDTO> historial, List<ColaboracionDTO> colaboraciones,
-                        String tipoRetorno) {
+            String lugar, Date fechaRealizacion, LocalTime hora, float precioEntrada, float montoNecesario,
+            float montoRecaudado, Date fechaPublicada, EstadoPropuestaDTO estadoActual,
+            //List<HistorialEstadoDTO> historial, List<ColaboracionDTO> colaboraciones,
+            String tipoRetorno) {
         this.proponenteNickname = prop;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -60,75 +65,160 @@ public class PropuestaDTO implements Serializable {
         this.estadoActual = estadoActual;
         //this.historial = historial != null ? historial : new ArrayList<>();
         this.colaboraciones = colaboraciones != null ? colaboraciones : new ArrayList<>();
+        this.comentarios = comentarios != null ? comentarios : new ArrayList<>();
         this.tipoRetorno = tipoRetorno;
         this.hora = hora;
     }
 
     // ----- Getters y Setters -----
-    public String getProp() { return proponenteNickname; }
-    public void setProponenteNickname(String prop) { this.proponenteNickname = prop; }
-
-    public String getTitulo() { return titulo; }
-    public void setTitulo(String titulo) { this.titulo = titulo; }
-
-    public String getDescripcion() { return descripcion; }
-    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
-
-    public byte[] getImagen() { return imagen; }
-    public void setImagen(byte[] imagen) { this.imagen = imagen; }
-
-    public String getTipoEspectaculo() { return tipoEspectaculo; }
-    public void setTipoEspectaculo(String tipoEspectaculo) { this.tipoEspectaculo = tipoEspectaculo; }
-
-    public String getLugar() { return lugar; }
-    public void setLugar(String lugar) { this.lugar = lugar; }
-
-    public Date getFechaRealizacion() { return fechaRealizacion; }
-    public void setFechaRealizacion(Date fechaRealizacion) { this.fechaRealizacion = fechaRealizacion; }
-
-    public float getPrecioEntrada() { return precioEntrada; }
-    public void setPrecioEntrada(float precioEntrada) { this.precioEntrada = precioEntrada; }
-
-    public float getMontoNecesario() { return montoNecesario; }
-    public void setMontoNecesario(float montoNecesario) { this.montoNecesario = montoNecesario; }
-
-    public float getMontoRecaudado() { return montoRecaudado; }
-    public void setMontoRecaudado(float montoRecaudado) { this.montoRecaudado = montoRecaudado; }
-
-    public Date getFechaPublicada() { return fechaPublicada; }
-    
     public String getFechaRealizacionFormateada() {
-        if (fechaRealizacion == null) {
-            return "";
-        }
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        return formato.format(fechaRealizacion);
+        return fechaRealizacionFormateada;
     }
 
-    public void setFechaPublicada(Date fechaPublicada) { this.fechaPublicada = fechaPublicada; }
+    public void setFechaRealizacionFormateada(String fechaRealizacionFormateada) {
+        this.fechaRealizacionFormateada = fechaRealizacionFormateada;
+    }
 
-    public EstadoPropuestaDTO getEstadoActual() { return estadoActual; }
-    public void setEstadoActual(EstadoPropuestaDTO estadoActual) { this.estadoActual = estadoActual; }
+    public String getProponenteNickname() {
+        return proponenteNickname;
+    }
+
+    public void setProponenteNickname(String prop) {
+        this.proponenteNickname = prop;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getTipoEspectaculo() {
+        return tipoEspectaculo;
+    }
+
+    public void setTipoEspectaculo(String tipoEspectaculo) {
+        this.tipoEspectaculo = tipoEspectaculo;
+    }
+
+    public String getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+
+    public Date getFechaRealizacion() {
+        return fechaRealizacion;
+    }
+
+    public void setFechaRealizacion(Date fechaRealizacion) {
+        this.fechaRealizacion = fechaRealizacion;
+    }
+
+    public float getPrecioEntrada() {
+        return precioEntrada;
+    }
+
+    public void setPrecioEntrada(float precioEntrada) {
+        this.precioEntrada = precioEntrada;
+    }
+
+    public float getMontoNecesario() {
+        return montoNecesario;
+    }
+
+    public void setMontoNecesario(float montoNecesario) {
+        this.montoNecesario = montoNecesario;
+    }
+
+    public float getMontoRecaudado() {
+        return montoRecaudado;
+    }
+
+    public void setMontoRecaudado(float montoRecaudado) {
+        this.montoRecaudado = montoRecaudado;
+    }
+
+    public Date getFechaPublicada() {
+        return fechaPublicada;
+    }
+
+    public void setFechaPublicada(Date fechaPublicada) {
+        this.fechaPublicada = fechaPublicada;
+    }
+
+    public EstadoPropuestaDTO getEstadoActual() {
+        return estadoActual;
+    }
+
+    public void setEstadoActual(EstadoPropuestaDTO estadoActual) {
+        this.estadoActual = estadoActual;
+    }
 
     //public List<HistorialEstadoDTO> getHistorial() { return historial; }
     //public void setHistorial(List<HistorialEstadoDTO> historial) { this.historial = historial; }
+    public List<ColaboracionDTO> getColaboraciones() {
+        return colaboraciones;
+    }
 
-    public List<ColaboracionDTO> getColaboraciones() { return colaboraciones; }
-    public void setColaboraciones(List<ColaboracionDTO> colaboraciones) { this.colaboraciones = colaboraciones; }
+    public void setColaboraciones(List<ColaboracionDTO> colaboraciones) {
+        this.colaboraciones = colaboraciones;
+    }
 
-    public String getTipoRetorno() { return tipoRetorno; }
-    public void setTipoRetorno(String tipoRetorno) { this.tipoRetorno = tipoRetorno; }
-    
-    public void setHora(LocalTime hora) { this.hora = hora; }
-    
-    public LocalTime getHora() { return hora; }
+    public String getTipoRetorno() {
+        return tipoRetorno;
+    }
+
+    public void setTipoRetorno(String tipoRetorno) {
+        this.tipoRetorno = tipoRetorno;
+    }
+
+    public void setHora(LocalTime hora) {
+        this.hora = hora;
+    }
+
+    public LocalTime getHora() {
+        return hora;
+    }
+
+    public void setComentarios(List<ComentarioDTO> comentarios) {
+        this.comentarios = comentarios;
+    }
+
+    public List<ComentarioDTO> getComentarios() {
+        return comentarios;
+    }
 
     // ----- Conversión desde entidad -----
-    public static PropuestaDTO fromEntity(propuesta p) {
-        if (p == null) return null;
+    public static PropuestaDTO fromEntity(Propuesta p) {
+        if (p == null) {
+            return null;
+        }
 
         PropuestaDTO dto = new PropuestaDTO();
-        dto.setProponenteNickname(p.getProponente());
+
+        // Datos básicos
+        dto.setProponenteNickname(p.getProponente()); // suponiendo que devuelve String
         dto.setTitulo(p.getTitulo());
         dto.setDescripcion(p.getDescripcion());
         dto.setLugar(p.getLugar());
@@ -137,35 +227,70 @@ public class PropuestaDTO implements Serializable {
         dto.setMontoNecesario(p.getMonto());
         dto.setMontoRecaudado(p.getRecaudado());
         dto.setFechaRealizacion(p.getFecha());
-        dto.setEstadoActual(EstadoPropuestaDTO.valueOf(p.getEstadoActual().name()));
+        if (p.getFecha() != null) {
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            dto.setFechaRealizacionFormateada(formato.format(p.getFecha()));
+        }
         dto.setTipoRetorno(p.getTipoRetorno());
         dto.setHora(p.getHora());
 
-        // Historial
         if (p.getEstadoActual() != null) {
-            //dto.setHistorial(new ArrayList<>()); // completar si usamos historialestado
+            dto.setEstadoActual(EstadoPropuestaDTO.valueOf(p.getEstadoActual().name()));
         }
 
-        // Colaboraciones
+        // 🔒 Colaboraciones: solo lo necesario, sin recursión
         if (p.getColaboraciones() != null && !p.getColaboraciones().isEmpty()) {
             List<ColaboracionDTO> colaboracionesDTO = new ArrayList<>();
-            for (colaboracion c : p.getColaboraciones()) {
-                colaboracionesDTO.add(ColaboracionDTO.fromEntity(c));
+            for (Colaboracion c : p.getColaboraciones()) {
+                ColaboracionDTO cDto = new ColaboracionDTO();
+                cDto.setMontoAportado(c.getMontoAportado());
+                cDto.setFecha(c.getFecha());
+
+                // Colaborador “liviano”: solo nickname o datos básicos
+                if (c.getColaborador() != null) {
+                    Usuario u = c.getColaborador();
+                    ColaboradorDTO colabDTO = new ColaboradorDTO();
+                    colabDTO.setNickname(u.getNickname());
+                    colabDTO.setNombre(u.getNombre());
+                    colabDTO.setApellido(u.getApellido());
+                    colabDTO.setCorreo(u.getEmail());
+                    // sin listas, sin imagen
+                    cDto.setColaboradorNickname(colabDTO.getNickname());
+                }
+
+                colaboracionesDTO.add(cDto);
             }
             dto.setColaboraciones(colaboracionesDTO);
+        } else {
+            dto.setColaboraciones(new ArrayList<>());
         }
 
+        // 🔹 Comentarios
+        if (p.getComentarios() != null && !p.getComentarios().isEmpty()) {
+            List<ComentarioDTO> comentariosDTO = new ArrayList<>();
+            for (Comentario c : p.getComentarios()) {
+                ComentarioDTO cDto = new ComentarioDTO();
+                cDto.setTexto(c.getTexto());
+                cDto.setFecha(c.getFecha());
+                if (c.getAutor() != null) {
+                    cDto.setAutor(ColaboradorDTO.fromEntity(c.getAutor()));
+                }
+                comentariosDTO.add(cDto);
+            }
+            dto.setComentarios(comentariosDTO);
+        } else {
+            dto.setComentarios(new ArrayList<>());
+        }
 
         return dto;
     }
 
     @Override
     public String toString() {
-        return "PropuestaDTO{" +
-                "titulo='" + titulo + '\'' +
-                ", proponente=" + (proponenteNickname != null ? proponenteNickname : "null") +
-                ", estado=" + estadoActual +
-                '}';
+        return "PropuestaDTO{"
+                + "titulo='" + titulo + '\''
+                + ", proponente=" + (proponenteNickname != null ? proponenteNickname : "null")
+                + ", estado=" + estadoActual
+                + '}';
     }
 }
-

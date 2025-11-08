@@ -12,8 +12,8 @@ package logica.dtos;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import logica.proponente;
-import logica.propuesta;
+import logica.Proponente;
+import logica.Propuesta;
 
 import logica.*;
 import persistencia.*;
@@ -54,41 +54,41 @@ public class ProponenteDTO extends UsuarioDTO implements Serializable {
     public void setPropuestas(List<PropuestaDTO> propuestas) { this.propuestas = propuestas; }
 
     // ----- Conversión desde entidad -----
-    public static ProponenteDTO fromEntity(proponente p) {
-        if (p == null) return null;
+public static ProponenteDTO fromEntity(Proponente p) {
+    if (p == null) return null;
 
-        ProponenteDTO dto = new ProponenteDTO(
-                p.getNickname(),
-                p.getNombre(),
-                p.getApellido(),
-                p.getEmail(),
-                null,
-                p.getDireccion(),
-                p.getBiografia(),
-                p.getLink()
-        );
+    ProponenteDTO dto = new ProponenteDTO(
+            p.getNickname(),
+            p.getNombre(),
+            p.getApellido(),
+            p.getEmail(),
+            null, // imagen
+            p.getDireccion(),
+            p.getBiografia(),
+            p.getLink()
+    );
 
-        try {
-            fabrica fab = new fabrica();
-            ictrl ic = fab.getIctrl();
-            List<propuesta> todas = ic.listarPropuestas();
-            List<PropuestaDTO> propuestasDTO = new ArrayList<>();
-
-            for (int i = 0; i < todas.size(); i++) {
-                propuesta prop = todas.get(i);
-                if (prop.getProponente().equalsIgnoreCase(p.getNickname())) {
-                    propuestasDTO.add(PropuestaDTO.fromEntity(prop));
-                }
-            }
-
-            dto.setPropuestas(propuestasDTO);
-
-        } catch (Exception e) {
-            e.printStackTrace();
+    // Convertimos solo propuestas directas del proponente, sin recursión
+    if (p.getPropuestas() != null && !p.getPropuestas().isEmpty()) {
+        List<PropuestaDTO> propuestasDTO = new ArrayList<>();
+        for (Propuesta prop : p.getPropuestas()) {
+            PropuestaDTO pDto = new PropuestaDTO();
+            pDto.setTitulo(prop.getTitulo());
+            pDto.setDescripcion(prop.getDescripcion());
+            pDto.setLugar(prop.getLugar());
+            pDto.setMontoNecesario(prop.getMonto());
+            pDto.setMontoRecaudado(prop.getRecaudado());
+            pDto.setEstadoActual(EstadoPropuestaDTO.valueOf(prop.getEstadoActual().name()));
+            propuestasDTO.add(pDto);
         }
-
-        return dto;
+        dto.setPropuestas(propuestasDTO);
+    } else {
+        dto.setPropuestas(new ArrayList<>());
     }
+
+    return dto;
+}
+
 
 
     @Override

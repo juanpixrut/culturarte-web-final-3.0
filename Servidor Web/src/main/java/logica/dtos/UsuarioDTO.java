@@ -13,7 +13,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import logica.usuario;
+import logica.Usuario;
 
 public class UsuarioDTO implements Serializable {
 
@@ -75,7 +75,7 @@ public class UsuarioDTO implements Serializable {
     public void setSeguidores(List<UsuarioDTO> seguidores) { this.seguidores = seguidores; }
 
     // ----- Conversión desde entidad -----
-    public static UsuarioDTO fromEntity(usuario u) {
+    public static UsuarioDTO fromEntity(Usuario u) {
         if (u == null) return null;
 
         UsuarioDTO dto = new UsuarioDTO(
@@ -89,7 +89,7 @@ public class UsuarioDTO implements Serializable {
         // Relaciones (sin recursión infinita)
         if (u.getSeguidos() != null) {
             List<UsuarioDTO> seguidosDTO = new ArrayList<>();
-            for (usuario seguido : u.getSeguidos()) {
+            for (Usuario seguido : u.getSeguidos()) {
                 seguidosDTO.add(new UsuarioDTO(seguido.getNickname(), seguido.getNombre(),
                         seguido.getApellido(), seguido.getEmail()));
             }
@@ -98,7 +98,7 @@ public class UsuarioDTO implements Serializable {
 
         if (u.getSeguidores() != null) {
             List<UsuarioDTO> seguidoresDTO = new ArrayList<>();
-            for (usuario seguidor : u.getSeguidores()) {
+            for (Usuario seguidor : u.getSeguidores()) {
                 seguidoresDTO.add(new UsuarioDTO(seguidor.getNickname(), seguidor.getNombre(),
                         seguidor.getApellido(), seguidor.getEmail()));
             }

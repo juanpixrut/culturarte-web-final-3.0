@@ -9,9 +9,9 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
+import logica.Ictrl;
 
-import logica.propuesta;
+import logica.Propuesta;
 
 import javax.swing.DefaultListModel;
 
@@ -31,7 +31,7 @@ public class PanelModifico extends javax.swing.JPanel {
      * Creates new form PanelModifico
      */
     
-    ictrl ic;
+    Ictrl ic;
     
     javax.swing.JPanel contenido;
     java.awt.CardLayout c1;
@@ -39,10 +39,10 @@ public class PanelModifico extends javax.swing.JPanel {
     DefaultListModel modelo = new DefaultListModel();
     DefaultListModel modelo2 = new DefaultListModel();
     
-    propuesta propGuardada;
+    Propuesta propGuardada;
     String cambio;
     
-    public PanelModifico(ictrl ic, javax.swing.JPanel contenido, java.awt.CardLayout c1) {
+    public PanelModifico(Ictrl ic, javax.swing.JPanel contenido, java.awt.CardLayout c1) {
         initComponents();
         this.ic = ic;
         
@@ -51,7 +51,7 @@ public class PanelModifico extends javax.swing.JPanel {
         this.c1 = c1;
         
         listaProp.setModel(modelo);
-        for(propuesta p : ic.listarPropuestas()){
+        for(Propuesta p : ic.listarPropuestas()){
         modelo.addElement("Titulo: " + p.getTitulo());
         }
         
@@ -251,7 +251,7 @@ public class PanelModifico extends javax.swing.JPanel {
     private void listaPropMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaPropMouseClicked
         // TODO add your handling code here:
 
-        propuesta prop = null;
+        Propuesta prop = null;
         int i = listaProp.getSelectedIndex();
         if(i >= 0){
         prop = ic.listarPropuestas().get(i);

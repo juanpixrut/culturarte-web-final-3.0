@@ -12,7 +12,7 @@ package logica.dtos;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import logica.colaboracion;
+import logica.Colaboracion;
 
 public class ColaboracionDTO implements Serializable {
 
@@ -56,7 +56,7 @@ public class ColaboracionDTO implements Serializable {
     public void setTipoRetorno(String tipoRetorno) { this.tipoRetorno = tipoRetorno; }
 
     // ----- Conversión desde entidad -----
-    public static ColaboracionDTO fromEntity(colaboracion c) {
+    public static ColaboracionDTO fromEntity(Colaboracion c) {
         if (c == null) return null;
 
         ColaboracionDTO dto = new ColaboracionDTO();

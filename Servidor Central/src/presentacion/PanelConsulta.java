@@ -9,9 +9,9 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
+import logica.Ictrl;
 
-import logica.propuesta;
+import logica.Propuesta;
 
 import javax.swing.DefaultListModel;
 
@@ -21,14 +21,14 @@ public class PanelConsulta extends javax.swing.JPanel {
      * Creates new form PanelConsulta
      */
     
-    ictrl ic;
+    Ictrl ic;
     
     private javax.swing.JPanel contenido;
     private java.awt.CardLayout c1;
     
     DefaultListModel modelo = new DefaultListModel();
     
-    public PanelConsulta(ictrl ic, javax.swing.JPanel contenido, java.awt.CardLayout c1) {
+    public PanelConsulta(Ictrl ic, javax.swing.JPanel contenido, java.awt.CardLayout c1) {
         initComponents();
         
         this.ic = ic;
@@ -36,7 +36,7 @@ public class PanelConsulta extends javax.swing.JPanel {
         this.c1 = c1;
         
         listaPropuestas.setModel(modelo);
-        for(propuesta p : ic.listarPropuestas()){
+        for(Propuesta p : ic.listarPropuestas()){
         modelo.addElement("Titulo: " + p.getTitulo());
         }
         
@@ -261,7 +261,7 @@ public class PanelConsulta extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         int i = listaPropuestas.getSelectedIndex();
-        propuesta prop = ic.listarPropuestas().get(i);
+        Propuesta prop = ic.listarPropuestas().get(i);
         textoDescripcion.setText(prop.getDescripcion());
         textoProponente.setText(prop.getProponente());
         textoTitulo.setText(prop.getTitulo());

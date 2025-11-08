@@ -9,12 +9,16 @@ package culturarte;
  * @author Juanpi
  */
 
-import logica.fabrica;
-import logica.ictrl;
+import logica.Fabrica;
+import logica.Ictrl;
 
 import persistencia.ControladoraPersistencia;
 
 import presentacion.Pantalla;
+
+import jakarta.xml.ws.Endpoint;
+
+import WebServices.ictrlServicio;
 
 public class Culturarte {
 
@@ -27,6 +31,11 @@ public class Culturarte {
         Pantalla panta = new Pantalla();
         panta.setVisible(true); //no se la diferencia con .show que use en QT c++, investigar.
         panta.setLocationRelativeTo(null); //ponela relativa a nada. ponerla en el medio y listo.
+        
+        ictrlServicio servicio = new ictrlServicio();
+        String url = "http://localhost:8085/servicio";
+        Endpoint.publish(url, servicio);
+        System.out.println("Servicio publicado en: " + url + "?wsdl");
         
     }
     

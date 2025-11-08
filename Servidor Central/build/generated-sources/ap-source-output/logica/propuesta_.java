@@ -6,32 +6,32 @@ import javax.annotation.processing.Generated;
 import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
-import logica.colaboracion;
-import logica.comentario;
-import logica.estadoPropuesta;
-import logica.historialEstado;
-import logica.proponente;
+import logica.Colaboracion;
+import logica.Comentario;
+import logica.EstadoPropuesta;
+import logica.HistorialEstado;
+import logica.Proponente;
 
-@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2025-10-22T21:29:33", comments="EclipseLink-2.7.12.v20230209-rNA")
-@StaticMetamodel(propuesta.class)
-public class propuesta_ { 
+@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2025-11-08T16:17:43", comments="EclipseLink-2.7.12.v20230209-rNA")
+@StaticMetamodel(Propuesta.class)
+public class Propuesta_ { 
 
-    public static volatile SingularAttribute<propuesta, String> descripcion;
-    public static volatile SingularAttribute<propuesta, LocalTime> hora;
-    public static volatile SingularAttribute<propuesta, String> lugar;
-    public static volatile SingularAttribute<propuesta, Float> montoNecesario;
-    public static volatile SingularAttribute<propuesta, String> titulo;
-    public static volatile SingularAttribute<propuesta, byte[]> imagen;
-    public static volatile SingularAttribute<propuesta, String> tipoEspectaculo;
-    public static volatile SingularAttribute<propuesta, Float> precioEntrada;
-    public static volatile SingularAttribute<propuesta, estadoPropuesta> estadoActual;
-    public static volatile SingularAttribute<propuesta, Date> fechaRealizacion;
-    public static volatile SingularAttribute<propuesta, String> tipoRetorno;
-    public static volatile ListAttribute<propuesta, colaboracion> colaboraciones;
-    public static volatile SingularAttribute<propuesta, proponente> prop;
-    public static volatile SingularAttribute<propuesta, Date> fechaPublicada;
-    public static volatile ListAttribute<propuesta, historialEstado> historial;
-    public static volatile SingularAttribute<propuesta, Float> montoRecaudado;
-    public static volatile ListAttribute<propuesta, comentario> comentarios;
+    public static volatile SingularAttribute<Propuesta, String> descripcion;
+    public static volatile SingularAttribute<Propuesta, LocalTime> hora;
+    public static volatile SingularAttribute<Propuesta, String> lugar;
+    public static volatile SingularAttribute<Propuesta, Float> montoNecesario;
+    public static volatile SingularAttribute<Propuesta, String> titulo;
+    public static volatile SingularAttribute<Propuesta, byte[]> imagen;
+    public static volatile SingularAttribute<Propuesta, String> tipoEspectaculo;
+    public static volatile SingularAttribute<Propuesta, Float> precioEntrada;
+    public static volatile SingularAttribute<Propuesta, EstadoPropuesta> estadoActual;
+    public static volatile SingularAttribute<Propuesta, Date> fechaRealizacion;
+    public static volatile SingularAttribute<Propuesta, String> tipoRetorno;
+    public static volatile ListAttribute<Propuesta, Colaboracion> colaboraciones;
+    public static volatile SingularAttribute<Propuesta, Proponente> prop;
+    public static volatile SingularAttribute<Propuesta, Date> fechaPublicada;
+    public static volatile ListAttribute<Propuesta, HistorialEstado> historial;
+    public static volatile SingularAttribute<Propuesta, Float> montoRecaudado;
+    public static volatile ListAttribute<Propuesta, Comentario> comentarios;
 
 }

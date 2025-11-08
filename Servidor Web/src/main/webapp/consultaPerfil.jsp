@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -113,8 +114,8 @@
 
             <h2>${usuarioBuscado.nickname}</h2>
             <p><strong>Nombre:</strong> ${usuarioBuscado.nombre} ${usuarioBuscado.apellido}</p>
-            <p><strong>Email:</strong> ${usuarioBuscado.email}</p>
-            <p><strong>Rol:</strong> ${usuarioBuscado.getClass().simpleName}</p>
+            <p><strong>Email:</strong> ${usuarioBuscado.correo}</p>
+            <p><strong>Rol:</strong> ${rol}</p>
 
             <!-- Mostrar opciones según sea su perfil o no -->
             <div class="botones">

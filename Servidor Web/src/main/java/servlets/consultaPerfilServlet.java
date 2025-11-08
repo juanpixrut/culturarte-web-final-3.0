@@ -13,8 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import logica.*;
-import persistencia.*;
+// Cliente del Web Service
+import clienteWS.IctrlServicio;
+import clienteWS.IctrlServicioService;
+import clienteWS.UsuarioDTO;
 
 /**
  *
@@ -22,8 +24,6 @@ import persistencia.*;
  */
 @WebServlet(name = "consultaPerfilServlet", urlPatterns = {"/consultaPerfilServlet"})
 public class consultaPerfilServlet extends HttpServlet {
-
-    ControladoraNueva Sistema = new ControladoraNueva();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,45 +37,72 @@ public class consultaPerfilServlet extends HttpServlet {
         //processRequest(request, response);
 
         HttpSession session = request.getSession();
-        usuario usuarioSesion = (usuario) session.getAttribute("usuarioObjeto");
+        String nicknameSesion = null;
+        UsuarioDTO usuarioSesion = null;
 
-        // refrescar desde la base a ver si funciona bien. //NUEVO
-        if (usuarioSesion != null) {
-            usuarioSesion = Sistema.buscoUsuario2(usuarioSesion.getNickname());
+        // Crear cliente del Web Service
+        System.setProperty("file.encoding", "UTF-8");
+        IctrlServicioService service = new IctrlServicioService();
+        IctrlServicio port = service.getIctrlServicioPort();
+
+        // Recuperar usuario logueado desde la sesión
+        if (session.getAttribute("usuarioObjeto") != null) {
+            usuarioSesion = (UsuarioDTO) session.getAttribute("usuarioObjeto");
+            nicknameSesion = usuarioSesion.getNickname();
+            
+            // Refrescar el usuario desde el WS
+            usuarioSesion = port.buscoUsuarioDTO(nicknameSesion);
             session.setAttribute("usuarioObjeto", usuarioSesion);
         }
 
-        String nickname = request.getParameter("nickname");
-        usuario usuarioBuscado = Sistema.buscoUsuario2(nickname);
+        // Refrescar los datos del usuario en sesión desde el WS
+        if (nicknameSesion != null) {
+            nicknameSesion = usuarioSesion.getNickname();
+            UsuarioDTO actualizado = port.buscoUsuarioDTO(nicknameSesion);
+            session.setAttribute("usuarioObjeto", actualizado);
+        }
 
-        if (nickname == null || nickname.isEmpty()) {
+        // Obtener el nickname del perfil a consultar
+        String nicknameBuscado = request.getParameter("nickname");
+        if (nicknameBuscado == null || nicknameBuscado.isEmpty()) {
             response.sendRedirect("index.jsp");
             return;
         }
 
+        String rol = port.buscoRol(nicknameBuscado);
+        request.setAttribute("rol", rol);
+
+        // Buscar el usuario a mostrar
+        UsuarioDTO usuarioBuscado = port.buscoUsuarioDTO(nicknameBuscado);
         if (usuarioBuscado == null) {
             response.sendRedirect("index.jsp");
             return;
         }
 
-        //no se puede seguir a el mismo.
+        // Verificar si el perfil es el mismo
         boolean mismoPerfil = false;
-        if (nickname.equalsIgnoreCase(usuarioSesion.getNickname())) {
+        if (nicknameSesion != null && nicknameBuscado.equalsIgnoreCase(nicknameSesion)) {
             mismoPerfil = true;
-            request.setAttribute("mismoPerfil", mismoPerfil);
-
         }
+        request.setAttribute("mismoPerfil", mismoPerfil);
 
-        request.setAttribute("usuarioBuscado", usuarioBuscado);
-
+        // Convertir imagen a Base64 si existe
         if (usuarioBuscado.getImagen() != null) {
             String base64 = java.util.Base64.getEncoder().encodeToString(usuarioBuscado.getImagen());
             request.setAttribute("imagenBase64", base64);
         }
 
-        boolean yaLoSigue = Sistema.usuarioSigueA(usuarioSesion, nickname);
+        // Verificar si el usuario en sesión ya sigue al usuario buscado
+        boolean yaLoSigue = false;
+        if (usuarioSesion != null) {
+        yaLoSigue = port.usuarioSigueA(usuarioSesion.getNickname(), nicknameBuscado);
+        }
         request.setAttribute("yaLoSigue", yaLoSigue);
 
+        // Pasar el usuario buscado al JSP
+        request.setAttribute("usuarioBuscado", usuarioBuscado);
+
+        // Redirigir al JSP
         request.getRequestDispatcher("/consultaPerfil.jsp").forward(request, response);
 
     }

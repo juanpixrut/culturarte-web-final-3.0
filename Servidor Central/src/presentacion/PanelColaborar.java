@@ -9,14 +9,14 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
+import logica.Ictrl;
 
-import logica.propuesta;
+import logica.Propuesta;
 
-import logica.colaborador;
-import logica.colaboracion;
+import logica.Colaborador;
+import logica.Colaboracion;
 
-import logica.proponente;
+import logica.Proponente;
 
 import javax.swing.DefaultListModel;
 
@@ -31,32 +31,32 @@ public class PanelColaborar extends javax.swing.JPanel {
      * Creates new form PanelColaborar
      */
     
-    ictrl ic;
+    Ictrl ic;
     
     DefaultListModel modelo = new DefaultListModel();
     DefaultListModel modelo2 = new DefaultListModel();
     
-    proponente proponente;
-    propuesta prop;
-    propuesta propuesta;
-    colaborador colaborador;
+    Proponente proponente;
+    Propuesta prop;
+    Propuesta propuesta;
+    Colaborador colaborador;
     float monto;
     String retorno;
     
     String boton;
     
-    public PanelColaborar(ictrl ic) {
+    public PanelColaborar(Ictrl ic) {
         initComponents();
         
         this.ic = ic;
         
         listaPropuestas.setModel(modelo);
-        for(propuesta p : ic.listarPropuestas()){
+        for(Propuesta p : ic.listarPropuestas()){
         modelo.addElement(p.getTitulo());
         }
         
         listaColaboradores.setModel(modelo2);
-        for(colaborador c : ic.listarColaboradores()){
+        for(Colaborador c : ic.listarColaboradores()){
         modelo2.addElement(c.getNickname());
         }
         
@@ -438,9 +438,9 @@ public class PanelColaborar extends javax.swing.JPanel {
        //int i = listaPropuestas.getSelectedIndex();
        //propuesta prop = ic.listarPropuestas().get(i);
        
-       propuesta seleccionada = null;
+       Propuesta seleccionada = null;
        String titulo = listaPropuestas.getSelectedValue();
-       for(propuesta p : ic.listarPropuestas()){
+       for(Propuesta p : ic.listarPropuestas()){
        if(p.getTitulo().equalsIgnoreCase(titulo)){
        seleccionada = p;
        break;
@@ -475,14 +475,14 @@ public class PanelColaborar extends javax.swing.JPanel {
         
         String nom = prop.getProponente();
         
-        for(proponente p : ic.listarProponentes()){
+        for(Proponente p : ic.listarProponentes()){
          if(p.getNickname().equalsIgnoreCase(nom)){
          this.proponente = p;
          break;
         }
       }
         
-        //deberia mostrar solo los botones d tipo retorno q la propuesta tenga.
+        //deberia mostrar solo los botones d tipo retorno q la Propuesta tenga.
         String tipoRetorno = prop.getTipoRetorno();
         if(tipoRetorno.equalsIgnoreCase("Entrada")){
         this.boton = "Entrada";
@@ -543,7 +543,7 @@ public class PanelColaborar extends javax.swing.JPanel {
         
         String texto = listaColaboradores.getSelectedValue();
         this.colaborador = null;
-        for(colaborador c : ic.listarColaboradores()){
+        for(Colaborador c : ic.listarColaboradores()){
         if(c.getNickname().equalsIgnoreCase(texto)){
         this.colaborador = c;
         break;
@@ -585,8 +585,8 @@ public class PanelColaborar extends javax.swing.JPanel {
                
         }
         
-             //verificar q no haya colaborado ya con esa propuesta.
-             for(colaboracion c : ic.listarColaboraciones()){
+             //verificar q no haya colaborado ya con esa Propuesta.
+             for(Colaboracion c : ic.listarColaboraciones()){
              if(c.getPropuesta().getTitulo().equalsIgnoreCase(propuesta.getTitulo()) && c.getColaborador().getNickname().equalsIgnoreCase(colaborador.getNickname())){
              javax.swing.JOptionPane.showMessageDialog(this, "Este usuario ya colaboro con la propuesta.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
              return;

@@ -3,8 +3,8 @@
     Created on : 10 Oct 2025, 01:45:11
     Author     : Juanpi
 --%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="javax.servlet.http.HttpSession" %>
@@ -262,7 +262,7 @@
                                     ${c.texto}
                                 </p>
                                 <p style="font-size:13px; color:#999; margin-top:4px;">
-                                    🕒 <fmt:formatDate value="${c.fecha}" pattern="dd/MM/yyyy HH:mm" />
+                                    ${c.fecha}
                                 </p>
                             </div>
                         </c:forEach>

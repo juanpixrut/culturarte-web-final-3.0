@@ -12,7 +12,7 @@ import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import logica.historialEstado;
+import logica.HistorialEstado;
 import persistencia.exceptions.NonexistentEntityException;
 
 import javax.persistence.Persistence;
@@ -37,7 +37,7 @@ public class historialEstadoJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(historialEstado historialEstado) {
+    public void create(HistorialEstado historialEstado) {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -51,7 +51,7 @@ public class historialEstadoJpaController implements Serializable {
         }
     }
 
-    public void edit(historialEstado historialEstado) throws NonexistentEntityException, Exception {
+    public void edit(HistorialEstado historialEstado) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -79,9 +79,9 @@ public class historialEstadoJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            historialEstado historialEstado;
+            HistorialEstado historialEstado;
             try {
-                historialEstado = em.getReference(historialEstado.class, id);
+                historialEstado = em.getReference(HistorialEstado.class, id);
                 historialEstado.getId();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The historialEstado with id " + id + " no longer exists.", enfe);
@@ -95,19 +95,19 @@ public class historialEstadoJpaController implements Serializable {
         }
     }
 
-    public List<historialEstado> findhistorialEstadoEntities() {
+    public List<HistorialEstado> findhistorialEstadoEntities() {
         return findhistorialEstadoEntities(true, -1, -1);
     }
 
-    public List<historialEstado> findhistorialEstadoEntities(int maxResults, int firstResult) {
+    public List<HistorialEstado> findhistorialEstadoEntities(int maxResults, int firstResult) {
         return findhistorialEstadoEntities(false, maxResults, firstResult);
     }
 
-    private List<historialEstado> findhistorialEstadoEntities(boolean all, int maxResults, int firstResult) {
+    private List<HistorialEstado> findhistorialEstadoEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(historialEstado.class));
+            cq.select(cq.from(HistorialEstado.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -119,10 +119,10 @@ public class historialEstadoJpaController implements Serializable {
         }
     }
 
-    public historialEstado findhistorialEstado(int id) {
+    public HistorialEstado findhistorialEstado(int id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(historialEstado.class, id);
+            return em.find(HistorialEstado.class, id);
         } finally {
             em.close();
         }
@@ -132,7 +132,7 @@ public class historialEstadoJpaController implements Serializable {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<historialEstado> rt = cq.from(historialEstado.class);
+            Root<HistorialEstado> rt = cq.from(HistorialEstado.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();

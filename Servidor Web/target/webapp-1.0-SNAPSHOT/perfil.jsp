@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <%@ page import="javax.servlet.http.HttpSession" %>
-<%@ page import="logica.usuario" %>
+<%@ page import="logica.Usuario" %>
 
 <%
     HttpSession sesion = request.getSession(false);
@@ -12,7 +13,7 @@
     String usuario = (String) sesion.getAttribute("usuarioLogueado");
     String rol = (String) sesion.getAttribute("rol");
     String email = null;
-    usuario user = (usuario) sesion.getAttribute("usuarioObjeto");
+    Usuario user = (Usuario) sesion.getAttribute("usuarioObjeto");
 %>
 <!DOCTYPE html>
 <html>

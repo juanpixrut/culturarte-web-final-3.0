@@ -1,30 +1,134 @@
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/com/proyecto/webapp/JAXRSConfiguration.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/listarUsuariosServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/InitAppListener.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/verPerfilServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/logoutServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/logica/dtos/UsuarioDTO.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/altaPerfilServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/com/proyecto/webapp/resources/JavaEE8Resource.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/HomeRedirectServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/dejarSeguirUsuarioServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/altaColaboracionServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/cancelarPropuestaServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/adminServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/logica/ControladoraNueva.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/logica/dtos/ProponenteDTO.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/consultaUsuariosServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/logica/dtos/PropuestaDTO.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/consultaPropuestaFullServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/consultaPropuestaServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/consultaPerfilServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/consultaPropuestaColaboracion.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/logica/dtos/ColaboracionDTO.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/logica/dtos/ColaboradorDTO.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/LoginServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/altaPropuestaServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/logica/dtos/CategoriaDTO.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/dejarComentarioServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/logica/dtos/EstadoPropuestaDTO.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/consultaUsuarioFullServlet.java
-/home/juanpix/Escritorio/PROYECTO WEB/culturarte-web-final/Servidor Web/src/main/java/servlets/seguirUsuarioServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\DejarSeguir.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoColaboradorDTOResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarColaboraciones.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\altaPerfilServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\logica\dtos\CategoriaDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\logica\dtos\PropuestaDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarCategoriaDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\Colaboracion.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\EstadoPropuestaDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestasNoIngresadasResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\com\proyecto\webapp\JAXRSConfiguration.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\listarUsuariosServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoPropuestaResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoUsuarioDTOResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ValidarUsuarioResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarCategoria.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarColaboracionesDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarColaboradoresResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoColaboradorDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\AltaPerfilProponente.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestasFavoritasResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarColaboracionesDTOResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarComentariosDePropuestaResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\IctrlServicio.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoPropuesta.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\AltaPerfilColaborador.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\AltaPropuesta.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoUsuarioDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\HomeRedirectServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoPropuestaDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoUsuario2.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\AltaColaboracionResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ColaboradorDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarColaboradoresDTOResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\Saludar.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoRolResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestasPublicadas.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\InitAppListener.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestasResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestas.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestasNoIngresadas.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ValidarUsuario.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ProponenteDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoPropuestaDTOResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\Comentario.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\logica\dtos\UsuarioDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\SeguirUsuario.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\UsuarioDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoRol.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\AltaPropuestaResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\CategoriaDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\consultaUsuarioFullServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\CambiarEstadoPropuesta.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\LoginServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ComentarioDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoProponenteResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\Usuario.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarCategoriaDTOResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoUsuario2Response.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\logica\dtos\ColaboradorDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\DejarSeguirResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\IctrlServicioService.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestasFinanciadasResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\Propuesta.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscarSeguidosResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ModificoPropuesta.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestasDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\logica\dtos\ProponenteDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\Categoria.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\consultaUsuariosServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\CambiarEstadoPropuestaResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\com\proyecto\webapp\resources\JavaEE8Resource.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarColaboracionesResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarProponentesDTOResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ColaboracionDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarColaboradoresDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\consultaPropuestaColaboracion.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarProponentes.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\dejarSeguirUsuarioServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoUsuario.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\AltaPerfilColaboradorResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestasIngresadasResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\RegistrarAcceso.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarProponentesResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoProponente.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\AltaPerfilProponenteResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoColaborador.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestasFinanciadas.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\consultaPropuestaServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\DejarComentarioResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestasFavoritas.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\EstadoPropuesta.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoColaboradorResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\RegistrarAccesoResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\AltaColaboracion.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\adminServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarCategoriaResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\seguirUsuarioServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarColaboradores.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\CancelarPropuesta.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\LocalTime.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\logica\dtos\ColaboracionDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\consultaPerfilServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscoUsuarioResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\UsuarioSigueA.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestasPublicadasResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\package-info.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarComentariosDePropuesta.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\DejarComentario.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ModificoPropuestaResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\Proponente.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\UsuarioSigueAResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\verPerfilServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestasIngresadas.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\SaludarResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscarSeguidoresResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\altaColaboracionServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\CancelarPropuestaResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\PropuestaDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscarSeguidos.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\consultaPropuestaFullServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\dejarComentarioServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarProponentesDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\logoutServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\logica\ControladoraNueva.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\altaPropuestaServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ObjectFactory.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\logica\dtos\EstadoPropuestaDTO.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\Colaborador.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\filtros\RegistroAccesosFilter.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\servlets\cancelarPropuestaServlet.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\BuscarSeguidores.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\ListarPropuestasDTOResponse.java
+C:\Users\Juanpi\Desktop\proyecto 3 web service\culturarte-web-final\Servidor Web\src\main\java\clienteWS\SeguirUsuarioResponse.java

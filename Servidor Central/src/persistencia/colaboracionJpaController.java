@@ -12,7 +12,7 @@ import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import logica.colaboracion;
+import logica.Colaboracion;
 import persistencia.exceptions.NonexistentEntityException;
 
 import javax.persistence.Persistence;
@@ -37,7 +37,7 @@ public class colaboracionJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(colaboracion colaboracion) {
+    public void create(Colaboracion colaboracion) {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -51,7 +51,7 @@ public class colaboracionJpaController implements Serializable {
         }
     }
 
-    public void edit(colaboracion colaboracion) throws NonexistentEntityException, Exception {
+    public void edit(Colaboracion colaboracion) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -79,9 +79,9 @@ public class colaboracionJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            colaboracion colaboracion;
+            Colaboracion colaboracion;
             try {
-                colaboracion = em.getReference(colaboracion.class, id);
+                colaboracion = em.getReference(Colaboracion.class, id);
                 colaboracion.getId();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The colaboracion with id " + id + " no longer exists.", enfe);
@@ -95,19 +95,19 @@ public class colaboracionJpaController implements Serializable {
         }
     }
 
-    public List<colaboracion> findcolaboracionEntities() {
+    public List<Colaboracion> findcolaboracionEntities() {
         return findcolaboracionEntities(true, -1, -1);
     }
 
-    public List<colaboracion> findcolaboracionEntities(int maxResults, int firstResult) {
+    public List<Colaboracion> findcolaboracionEntities(int maxResults, int firstResult) {
         return findcolaboracionEntities(false, maxResults, firstResult);
     }
 
-    private List<colaboracion> findcolaboracionEntities(boolean all, int maxResults, int firstResult) {
+    private List<Colaboracion> findcolaboracionEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(colaboracion.class));
+            cq.select(cq.from(Colaboracion.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -119,10 +119,10 @@ public class colaboracionJpaController implements Serializable {
         }
     }
 
-    public colaboracion findcolaboracion(int id) {
+    public Colaboracion findcolaboracion(int id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(colaboracion.class, id);
+            return em.find(Colaboracion.class, id);
         } finally {
             em.close();
         }
@@ -132,7 +132,7 @@ public class colaboracionJpaController implements Serializable {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<colaboracion> rt = cq.from(colaboracion.class);
+            Root<Colaboracion> rt = cq.from(Colaboracion.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();

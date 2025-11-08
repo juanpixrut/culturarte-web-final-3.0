@@ -14,14 +14,14 @@ import logica.*;
 import persistencia.*;
 import logica.dtos.*;
 
-public class ControladoraNueva extends logica.ictrl {
+public class ControladoraNueva extends logica.Ictrl {
 
     private ControladoraPersistencia controlP = new ControladoraPersistencia();
 
     //mia
     public boolean validarUsuario(String usuario, String clave) {
         boolean valido = false;
-        for (proponente p : this.listarProponentes()) {
+        for (Proponente p : this.listarProponentes()) {
             if (p.getNickname().equalsIgnoreCase(usuario)) {
                 if (p.getContrasena().equalsIgnoreCase(clave)) {
                     valido = true;
@@ -30,7 +30,7 @@ public class ControladoraNueva extends logica.ictrl {
             }
         }
 
-        for (colaborador c : this.listarColaboradores()) {
+        for (Colaborador c : this.listarColaboradores()) {
             if (c.getNickname().equalsIgnoreCase(usuario)) {
                 if (c.getNickname().equalsIgnoreCase(usuario)) {
                     if (c.getContrasena().equalsIgnoreCase(clave)) {
@@ -46,13 +46,13 @@ public class ControladoraNueva extends logica.ictrl {
     //mia
     public String buscoRol(String usuario) {
         String rol = null;
-        for (proponente p : this.listarProponentes()) {
+        for (Proponente p : this.listarProponentes()) {
             if (p.getNickname().equalsIgnoreCase(usuario)) {
                 rol = "proponente";
                 break;
             }
         }
-        for (colaborador c : this.listarColaboradores()) {
+        for (Colaborador c : this.listarColaboradores()) {
             if (c.getNickname().equalsIgnoreCase(usuario)) {
                 rol = "colaborador";
                 break;
@@ -75,10 +75,10 @@ public class ControladoraNueva extends logica.ictrl {
     }
 
     public List<PropuestaDTO> listarPropuestasDTO() {
-        List<propuesta> entidades = this.listarPropuestas();
+        List<Propuesta> entidades = this.listarPropuestas();
         List<PropuestaDTO> dtos = new ArrayList<>();
 
-        for (propuesta p : entidades) {
+        for (Propuesta p : entidades) {
             dtos.add(new PropuestaDTO(
                     p.getProponente(),
                     p.getTitulo(),
@@ -111,33 +111,33 @@ public class ControladoraNueva extends logica.ictrl {
     }
 
     public PropuestaDTO buscoPropuestaDTO(String titulo) {
-        propuesta prop = this.buscoPropuesta(titulo);
+        Propuesta prop = this.buscoPropuesta(titulo);
         PropuestaDTO propDTO = PropuestaDTO.fromEntity(prop);
         return propDTO;
     }
 
     public List<UsuarioDTO> listarUsuariosDTO() {
-        List<usuario> entidades = this.listarUsuarios();
+        List<Usuario> entidades = this.listarUsuarios();
         List<UsuarioDTO> dtos = new ArrayList<>();
-        for (usuario u : entidades) {
+        for (Usuario u : entidades) {
             dtos.add(UsuarioDTO.fromEntity(u));
         }
         return dtos;
     }
 
     public List<ProponenteDTO> listarProponentesDTO() {
-        List<proponente> entidades = this.listarProponentes();
+        List<Proponente> entidades = this.listarProponentes();
         List<ProponenteDTO> dtos = new ArrayList<>();
-        for (proponente p : entidades) {
+        for (Proponente p : entidades) {
             dtos.add(ProponenteDTO.fromEntity(p));
         }
         return dtos;
     }
 
     public List<ColaboradorDTO> listarColaboradoresDTO() {
-        List<colaborador> entidades = this.listarColaboradores();
+        List<Colaborador> entidades = this.listarColaboradores();
         List<ColaboradorDTO> dtos = new ArrayList<>();
-        for (colaborador c : entidades) {
+        for (Colaborador c : entidades) {
             dtos.add(ColaboradorDTO.fromEntity(c));
         }
         return dtos;
@@ -145,19 +145,19 @@ public class ControladoraNueva extends logica.ictrl {
 
     public List<PropuestaDTO> listarPropuestasFavoritas(String nickname) {
         String rol = buscoRol(nickname);
-        usuario u = null;
+        Usuario u = null;
         if (rol.equalsIgnoreCase("proponente")) {
-            proponente prop = this.buscoProponente(nickname);
+            Proponente prop = this.buscoProponente(nickname);
             u = prop;
         } else if (rol.equalsIgnoreCase("colaborador")) {
-            colaborador col = this.buscoColaborador(nickname);
+            Colaborador col = this.buscoColaborador(nickname);
             u = col;
         }
 
         List<PropuestaDTO> resultado = new ArrayList<>();
 
         if (u != null && u.getFavoritas() != null) {
-            for (propuesta p : u.getFavoritas()) {
+            for (Propuesta p : u.getFavoritas()) {
                 resultado.add(PropuestaDTO.fromEntity(p));
             }
         }
@@ -167,12 +167,12 @@ public class ControladoraNueva extends logica.ictrl {
 
     public List<PropuestaDTO> listarPropuestasPublicadas(String nickname) {
         String rol = buscoRol(nickname);
-        usuario u = null;
+        Usuario u = null;
         if (rol.equalsIgnoreCase("proponente")) {
-            proponente prop = this.buscoProponente(nickname);
+            Proponente prop = this.buscoProponente(nickname);
             u = prop;
         } else if (rol.equalsIgnoreCase("colaborador")) {
-            colaborador col = this.buscoColaborador(nickname);
+            Colaborador col = this.buscoColaborador(nickname);
             u = col;
         }
 
@@ -193,12 +193,12 @@ public class ControladoraNueva extends logica.ictrl {
 
     public List<PropuestaDTO> listarPropuestasIngresadas(String nickname) {
         String rol = buscoRol(nickname);
-        usuario u = null;
+        Usuario u = null;
         if (rol.equalsIgnoreCase("proponente")) {
-            proponente prop = this.buscoProponente(nickname);
+            Proponente prop = this.buscoProponente(nickname);
             u = prop;
         } else if (rol.equalsIgnoreCase("colaborador")) {
-            colaborador col = this.buscoColaborador(nickname);
+            Colaborador col = this.buscoColaborador(nickname);
             u = col;
         }
 
@@ -229,10 +229,10 @@ public class ControladoraNueva extends logica.ictrl {
         return financiadas;
     }
 
-    public usuario buscoUsuario(String nickname) {
-        colaborador col = this.buscoColaborador(nickname);
-        proponente prop = this.buscoProponente(nickname);
-        usuario usuario = null;
+    public Usuario buscoUsuario(String nickname) {
+        Colaborador col = this.buscoColaborador(nickname);
+        Proponente prop = this.buscoProponente(nickname);
+        Usuario usuario = null;
         if (col != null) {
             usuario = col;
         } else if (prop != null) {
@@ -241,22 +241,22 @@ public class ControladoraNueva extends logica.ictrl {
         return usuario;
     }
 
-    public usuario buscoUsuario2(String nickname) {
+    public Usuario buscoUsuario2(String nickname) {
         return controlP.buscarUsuarioConRelaciones(nickname);
     }
 
     public void cancelarPropuesta(String titulo) {
         //la busco.
-        propuesta prop = this.buscoPropuesta(titulo);
-        prop.setEstado(estadoPropuesta.CANCELADA);
-        prop.registrarCambioEstado(estadoPropuesta.CANCELADA);
+        Propuesta prop = this.buscoPropuesta(titulo);
+        prop.setEstado(EstadoPropuesta.CANCELADA);
+        prop.registrarCambioEstado(EstadoPropuesta.CANCELADA);
         this.modificoPropuesta(prop);
     }
 
-    public boolean usuarioSigueA(usuario usuarioSesion, String nickname) {
+    public boolean usuarioSigueA(Usuario usuarioSesion, String nickname) {
         boolean loSigue = false;
-        List<usuario> seguidos = usuarioSesion.getSeguidos();
-        for (usuario u : seguidos) {
+        List<Usuario> seguidos = usuarioSesion.getSeguidos();
+        for (Usuario u : seguidos) {
             if (u.getNickname().equalsIgnoreCase(nickname)) {
                 loSigue = true;
             }
@@ -264,8 +264,8 @@ public class ControladoraNueva extends logica.ictrl {
         return loSigue;
     }
 
-    public List<usuario> buscarSeguidos(String nickname) {
-        usuario u = controlP.buscarUsuarioConRelaciones(nickname); // trae seguidos y seguidores con JOIN FETCH
+    public List<Usuario> buscarSeguidos(String nickname) {
+        Usuario u = controlP.buscarUsuarioConRelaciones(nickname); // trae seguidos y seguidores con JOIN FETCH
         if (u == null) {
             throw new IllegalArgumentException("El usuario no existe: " + nickname);
         }
@@ -278,8 +278,8 @@ public class ControladoraNueva extends logica.ictrl {
         return new ArrayList<>(u.getSeguidos());
     }
 
-    public List<usuario> buscarSeguidores(String nickname) {
-        usuario u = controlP.buscarUsuarioConRelaciones(nickname); // mismo método
+    public List<Usuario> buscarSeguidores(String nickname) {
+        Usuario u = controlP.buscarUsuarioConRelaciones(nickname); // mismo método
         if (u == null) {
             throw new IllegalArgumentException("El usuario no existe: " + nickname);
         }

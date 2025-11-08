@@ -12,8 +12,8 @@ package logica.dtos;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import logica.proponente;
-import logica.propuesta;
+import logica.Proponente;
+import logica.Propuesta;
 
 import logica.*;
 import persistencia.*;
@@ -54,7 +54,7 @@ public class ProponenteDTO extends UsuarioDTO implements Serializable {
     public void setPropuestas(List<PropuestaDTO> propuestas) { this.propuestas = propuestas; }
 
     // ----- Conversión desde entidad -----
-    public static ProponenteDTO fromEntity(proponente p) {
+    public static ProponenteDTO fromEntity(Proponente p) {
         if (p == null) return null;
 
         ProponenteDTO dto = new ProponenteDTO(
@@ -70,11 +70,11 @@ public class ProponenteDTO extends UsuarioDTO implements Serializable {
 
         try {
             ControladoraNueva Sistema = new ControladoraNueva();
-            List<propuesta> todas = Sistema.listarPropuestas();
+            List<Propuesta> todas = Sistema.listarPropuestas();
             List<PropuestaDTO> propuestasDTO = new ArrayList<>();
 
             for (int i = 0; i < todas.size(); i++) {
-                propuesta prop = todas.get(i);
+                Propuesta prop = todas.get(i);
                 if (prop.getProponente().equalsIgnoreCase(p.getNickname())) {
                     propuestasDTO.add(PropuestaDTO.fromEntity(prop));
                 }

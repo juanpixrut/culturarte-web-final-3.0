@@ -8,13 +8,13 @@ package persistencia;
  *
  * @author Juanpi
  */
-
-import logica.usuario;
-import logica.proponente;
-import logica.colaborador;
-import logica.categoria;
-import logica.propuesta;
-import logica.colaboracion;
+import logica.Usuario;
+import logica.Proponente;
+import logica.Colaborador;
+import logica.Categoria;
+import logica.Propuesta;
+import logica.Colaboracion;
+import logica.Registro;
 
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -25,11 +25,10 @@ import javax.persistence.Persistence;
 import persistencia.exceptions.PreexistingEntityException; //para manejar mensajes de errores con try catch creo
 
 //investigar sobre el uso de try catch y los exception.
-
 public class ControladoraPersistencia {
-    
+
     private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("culturartePU");
-    
+
     private final usuarioJpaController usuJpa = new usuarioJpaController(emf);
     private final proponenteJpaController prop = new proponenteJpaController(emf);
     private final colaboradorJpaController colab = new colaboradorJpaController(emf);
@@ -37,213 +36,223 @@ public class ControladoraPersistencia {
     private final colaboracionJpaController c = new colaboracionJpaController(emf);
     private final categoriaJpaController categoria = new categoriaJpaController(emf);
     private final historialEstadoJpaController historial = new historialEstadoJpaController(emf);
-    
-    public void crearUsuarioProponente(proponente usuarioProponente){
-        try{
-        prop.create(usuarioProponente);
-        }catch(PreexistingEntityException e){
-        //PK/Nickname ya existe
-        throw new IllegalArgumentException("El nickname ya esta en uso", e);
-        }catch(Exception e){
-        throw new RuntimeException("No se pudo crear el usuario.", e);
+    //filtro
+    private final RegistroJpaController registroController = new RegistroJpaController(emf);
+
+    public void crearUsuarioProponente(Proponente usuarioProponente) {
+        try {
+            prop.create(usuarioProponente);
+        } catch (PreexistingEntityException e) {
+            //PK/Nickname ya existe
+            throw new IllegalArgumentException("El nickname ya esta en uso", e);
+        } catch (Exception e) {
+            throw new RuntimeException("No se pudo crear el usuario.", e);
         }
     }
-    
-    public List<proponente> listarProponentes(){
+
+    public List<Proponente> listarProponentes() {
         return prop.findproponenteEntities();
-}
-    
-    public void crearUsuarioColaborador(colaborador usuarioColaborador){
-        try{
-        colab.create(usuarioColaborador);
-        }catch(PreexistingEntityException e){
-        //PK/Nickname ya existe
-        throw new IllegalArgumentException("El nickname ya esta en uso", e);
-        }catch(Exception e){
-        throw new RuntimeException("No se pudo crear el usuario.", e);
+    }
+
+    public void crearUsuarioColaborador(Colaborador usuarioColaborador) {
+        try {
+            colab.create(usuarioColaborador);
+        } catch (PreexistingEntityException e) {
+            //PK/Nickname ya existe
+            throw new IllegalArgumentException("El nickname ya esta en uso", e);
+        } catch (Exception e) {
+            throw new RuntimeException("No se pudo crear el usuario.", e);
         }
     }
-    
-    public List<colaborador> listarColaboradores(){
-    return colab.findcolaboradorEntities();
+
+    public List<Colaborador> listarColaboradores() {
+        return colab.findcolaboradorEntities();
     }
-    
-    public void crearCategoria(categoria cat){
-        try{
-        categoria.create(cat);
-        }catch(Exception e){
-        throw new RuntimeException("No se pudo agregar.", e);
+
+    public void crearCategoria(Categoria cat) {
+        try {
+            categoria.create(cat);
+        } catch (Exception e) {
+            throw new RuntimeException("No se pudo agregar.", e);
         }
     }
-    
-    public List<categoria> listarCategoria(){
-    return categoria.findcategoriaEntities();
+
+    public List<Categoria> listarCategoria() {
+        return categoria.findcategoriaEntities();
     }
-    
-    public categoria GetCategoria(String nombre){
-        for(categoria c : categoria.findcategoriaEntities()){
-           if(c.getNombre() != null && c.getNombre().equalsIgnoreCase(nombre)){
-           return c;
-           }
+
+    public Categoria GetCategoria(String nombre) {
+        for (Categoria c : categoria.findcategoriaEntities()) {
+            if (c.getNombre() != null && c.getNombre().equalsIgnoreCase(nombre)) {
+                return c;
+            }
         }
         return null;
     }
-    
-    public void crearPropuesta(propuesta prop){
-        try{
-        propue.create(prop);
-        }catch(Exception e){
-        throw new RuntimeException("No se pudo agregar", e);
+
+    public void crearPropuesta(Propuesta prop) {
+        try {
+            propue.create(prop);
+        } catch (Exception e) {
+            throw new RuntimeException("No se pudo agregar", e);
         }
     }
-    
-    public List<propuesta> listarPropuestas(){
-    return propue.findpropuestaEntities();
+
+    public List<Propuesta> listarPropuestas() {
+        return propue.findpropuestaEntities();
     }
-    
-    public void modificoPropuesta(propuesta prop){
-    try{
-    propue.edit(prop);
-    }catch(Exception e){
-    throw new RuntimeException("No se pudo agregar.", e);
-    }
-    }
-    
-    public void crearColaboracion(colaboracion colab){
-       try{
-           c.create(colab);
-       }catch(Exception e){
-       throw new RuntimeException("No se pudo crear", e);
-       }
-    }
-    
-    public List<colaboracion> listarColaboraciones(){
-    return c.findcolaboracionEntities();
-    }
-    
-    public void eliminoColaboracion(int id){
-        try{
-        c.destroy(id);
-        }catch(Exception e){
-        throw new RuntimeException("No se pudo agregar.", e);
+
+    public void modificoPropuesta(Propuesta prop) {
+        try {
+            propue.edit(prop);
+        } catch (Exception e) {
+            throw new RuntimeException("No se pudo agregar.", e);
         }
-    
-    }
-    
-    public List<usuario> listarUsuarios(){
-    return usuJpa.findusuarioEntities();
-    }
-    
-public void seguirUsuario(String seguidorNick, String seguidoNick) {
-    usuario seguidor = usuJpa.findusuario(seguidorNick);
-    usuario seguido  = usuJpa.findusuario(seguidoNick);
-
-    if (seguidor == null || seguido == null) {
-        throw new IllegalArgumentException("Usuario inexistente");
     }
 
-    if (seguidor.getNickname().equalsIgnoreCase(seguidoNick)) return;
-
-    // Evitar duplicados
-    boolean yaSigue = seguidor.getSeguidos()
-        .stream().anyMatch(u -> u.getNickname().equalsIgnoreCase(seguidoNick));
-    if (yaSigue) return;
-
-    // 👉 Actualizar ambos lados (memoria)
-    seguidor.getSeguidos().add(seguido);
-    seguido.getSeguidores().add(seguidor);
-
-    try {
-        // 👉 Persistir solo el lado propietario
-        usuJpa.edit(seguidor);
-    } catch (Exception e) {
-        throw new RuntimeException("No se pudo seguir al usuario", e);
-    }
-}
-
-
-public void dejarDeSeguir(String seguidorNick, String seguidoNick) {
-    usuario seguidor = usuJpa.findusuario(seguidorNick);
-    usuario seguido  = usuJpa.findusuario(seguidoNick);
-
-    if (seguidor == null || seguido == null) {
-        throw new IllegalArgumentException("Usuario inexistente");
+    public void crearColaboracion(Colaboracion colab) {
+        try {
+            c.create(colab);
+        } catch (Exception e) {
+            throw new RuntimeException("No se pudo crear", e);
+        }
     }
 
-    // Verificar si realmente lo seguía
-    boolean loSigue = seguidor.getSeguidos()
-        .stream()
-        .anyMatch(u -> u.getNickname().equalsIgnoreCase(seguidoNick));
-
-    if (!loSigue) {
-        System.out.println("⚠️ No lo sigue, nada que eliminar.");
-        return;
+    public List<Colaboracion> listarColaboraciones() {
+        return c.findcolaboracionEntities();
     }
 
-    // 👉 Eliminar en ambos lados (memoria)
-    seguidor.getSeguidos().removeIf(u -> u.getNickname().equalsIgnoreCase(seguidoNick));
-    seguido.getSeguidores().removeIf(u -> u.getNickname().equalsIgnoreCase(seguidorNick));
+    public void eliminoColaboracion(int id) {
+        try {
+            c.destroy(id);
+        } catch (Exception e) {
+            throw new RuntimeException("No se pudo agregar.", e);
+        }
 
-    try {
-        // 👉 Persistir solo el lado dueño (seguidor)
-        usuJpa.edit(seguidor);
-    } catch (Exception e) {
-        throw new RuntimeException("No se pudo dejar de seguir", e);
     }
-}
 
+    public List<Usuario> listarUsuarios() {
+        return usuJpa.findusuarioEntities();
+    }
 
+    public void seguirUsuario(String seguidorNick, String seguidoNick) {
+        Usuario seguidor = usuJpa.findusuario(seguidorNick);
+        Usuario seguido = usuJpa.findusuario(seguidoNick);
 
-        public void dejarDeSeguirViejo(String seguidorNick, String seguidoNick){
-        
+        if (seguidor == null || seguido == null) {
+            throw new IllegalArgumentException("Usuario inexistente");
+        }
+
+        if (seguidor.getNickname().equalsIgnoreCase(seguidoNick)) {
+            return;
+        }
+
+        // Evitar duplicados
+        boolean yaSigue = seguidor.getSeguidos()
+                .stream().anyMatch(u -> u.getNickname().equalsIgnoreCase(seguidoNick));
+        if (yaSigue) {
+            return;
+        }
+
+        // 👉 Actualizar ambos lados (memoria)
+        seguidor.getSeguidos().add(seguido);
+        seguido.getSeguidores().add(seguidor);
+
+        try {
+            // 👉 Persistir solo el lado propietario
+            usuJpa.edit(seguidor);
+        } catch (Exception e) {
+            throw new RuntimeException("No se pudo seguir al usuario", e);
+        }
+    }
+
+    public void dejarDeSeguir(String seguidorNick, String seguidoNick) {
+        Usuario seguidor = usuJpa.findusuario(seguidorNick);
+        Usuario seguido = usuJpa.findusuario(seguidoNick);
+
+        if (seguidor == null || seguido == null) {
+            throw new IllegalArgumentException("Usuario inexistente");
+        }
+
+        // Verificar si realmente lo seguía
+        boolean loSigue = seguidor.getSeguidos()
+                .stream()
+                .anyMatch(u -> u.getNickname().equalsIgnoreCase(seguidoNick));
+
+        if (!loSigue) {
+            System.out.println("⚠️ No lo sigue, nada que eliminar.");
+            return;
+        }
+
+        // 👉 Eliminar en ambos lados (memoria)
+        seguidor.getSeguidos().removeIf(u -> u.getNickname().equalsIgnoreCase(seguidoNick));
+        seguido.getSeguidores().removeIf(u -> u.getNickname().equalsIgnoreCase(seguidorNick));
+
+        try {
+            // 👉 Persistir solo el lado dueño (seguidor)
+            usuJpa.edit(seguidor);
+        } catch (Exception e) {
+            throw new RuntimeException("No se pudo dejar de seguir", e);
+        }
+    }
+
+    public void dejarDeSeguirViejo(String seguidorNick, String seguidoNick) {
+
         //
-    usuario seguidor = usuJpa.findusuario(seguidorNick);
-    usuario seguido  = usuJpa.findusuario(seguidoNick);
-    
-    if (seguidor == null || seguido == null){
-        throw new IllegalArgumentException("Usuario inexistente");
-       }
+        Usuario seguidor = usuJpa.findusuario(seguidorNick);
+        Usuario seguido = usuJpa.findusuario(seguidoNick);
 
-    seguidor.getSeguidos().remove(seguido);
-    
-    seguido.getSeguidores().remove(seguidor); // 
+        if (seguidor == null || seguido == null) {
+            throw new IllegalArgumentException("Usuario inexistente");
+        }
 
+        seguidor.getSeguidos().remove(seguido);
 
-    try {
-        usuJpa.edit(seguidor); // dueño
-    } catch (Exception e) {
-        throw new RuntimeException("No se pudo dejar de seguir", e);
+        seguido.getSeguidores().remove(seguidor); // 
+
+        try {
+            usuJpa.edit(seguidor); // dueño
+        } catch (Exception e) {
+            throw new RuntimeException("No se pudo dejar de seguir", e);
+        }
     }
-}
-        
-public usuario buscarUsuarioConRelaciones(String nickname) {
-    EntityManager em = usuJpa.getEntityManager();
-    usuario u = null;
-    try {
-        u = em.createQuery(
-            "SELECT DISTINCT u FROM usuario u " +
-            "LEFT JOIN FETCH u.seguidos " +
-            "LEFT JOIN FETCH u.seguidores " +
-            "WHERE u.nickname = :nick", usuario.class)
-            .setParameter("nick", nickname)
-            // 🔄 fuerza a que siempre traiga datos actualizados
-            .setHint("org.eclipse.persistence.cache.store-mode", "REFRESH")
-            .setHint("javax.persistence.cache.storeMode", "REFRESH")
-            .getSingleResult();
-    } catch (NoResultException e) {
-        System.out.println("⚠️ Usuario no encontrado: " + nickname);
-    } finally {
-        em.close();
+
+    public Usuario buscarUsuarioConRelaciones(String nickname) {
+        EntityManager em = usuJpa.getEntityManager();
+        Usuario u = null;
+        try {
+            u = em.createQuery("SELECT DISTINCT u FROM Usuario u "
+                    + "LEFT JOIN FETCH u.seguidos "
+                    + "LEFT JOIN FETCH u.seguidores "
+                    + "WHERE u.nickname = :nick", Usuario.class)
+                    .setParameter("nick", nickname)
+                    .setHint("org.eclipse.persistence.cache.store-mode", "REFRESH")
+                    .setHint("javax.persistence.cache.storeMode", "REFRESH")
+                    .getSingleResult();
+        } catch (NoResultException e) {
+            System.out.println("⚠️ Usuario no encontrado: " + nickname);
+        } finally {
+            em.close();
+        }
+        return u;
     }
-    return u;
-}
 
-public void limpiarCache() {
-    emf.getCache().evictAll(); // 🔥 limpia el segundo nivel de cache
-}
+    public void limpiarCache() {
+        emf.getCache().evictAll(); // 🔥 limpia el segundo nivel de cache
+    }
+
+    //filtro
+    public void registrarAcceso(String ip, String url, String browser, String so) {
+        try {
+            Registro registro = new Registro(ip, url, browser, so);
+            registroController.create(registro);
+        } catch (Exception e) {
+            throw new RuntimeException("No se pudo crear", e);
+        }
+    }
     
+    public List<Registro> listarRegistros(){
+    return registroController.findRegistroEntities();
+    }
+
 }
-
-
-
-

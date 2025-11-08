@@ -44,11 +44,11 @@ import javax.persistence.Column;
 import javax.persistence.Lob;
 
 @Entity
-public class propuesta implements Serializable {
+public class Propuesta implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "proponente_id")
-    private proponente prop;
+    private Proponente prop;
     @Id
     private String titulo;
     @Lob
@@ -68,13 +68,13 @@ public class propuesta implements Serializable {
     private Date fechaPublicada;
 
     @Enumerated(EnumType.STRING)
-    private estadoPropuesta estadoActual;
+    private EstadoPropuesta estadoActual;
 
     @OneToMany(mappedBy = "propuesta", cascade = CascadeType.ALL)
-    private List<historialEstado> historial;
+    private List<HistorialEstado> historial;
 
     @OneToMany(mappedBy = "propuesta")
-    private List<colaboracion> colaboraciones;
+    private List<Colaboracion> colaboraciones;
 
     //prueba. esta prop tiene tipo d retorno q ofrecer.
     @Basic
@@ -84,13 +84,13 @@ public class propuesta implements Serializable {
     private LocalTime hora;
 
     @OneToMany(mappedBy = "propuesta", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<comentario> comentarios = new ArrayList<>();
+    private List<Comentario> comentarios = new ArrayList<>();
 
-    public propuesta() {
+    public Propuesta() {
 
     }
 
-    public propuesta(proponente proponente, String titulo, String descripcion, String tipoEspectaculo, String lugar, Date fechaRealizacion, float precioEntrada, float montoNecesario, String tipoRetorno) {
+    public Propuesta(Proponente proponente, String titulo, String descripcion, String tipoEspectaculo, String lugar, Date fechaRealizacion, float precioEntrada, float montoNecesario, String tipoRetorno) {
         this.prop = proponente;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -103,13 +103,13 @@ public class propuesta implements Serializable {
         this.tipoRetorno = tipoRetorno;
         this.fechaPublicada = Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()); //
 
-        this.estadoActual = estadoPropuesta.INGRESADA;
+        this.estadoActual = EstadoPropuesta.INGRESADA;
         this.historial = new ArrayList<>();
-        this.historial.add(new historialEstado(this, this.estadoActual));
+        this.historial.add(new HistorialEstado(this, this.estadoActual));
         this.colaboraciones = new ArrayList<>();
     }
 
-    public propuesta(proponente proponente, String titulo, String descripcion, String tipoEspectaculo, String lugar, Date fechaRealizacion, LocalTime hora, float precioEntrada, float montoNecesario, String tipoRetorno) {
+    public Propuesta(Proponente proponente, String titulo, String descripcion, String tipoEspectaculo, String lugar, Date fechaRealizacion, LocalTime hora, float precioEntrada, float montoNecesario, String tipoRetorno) {
         this.prop = proponente;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -122,9 +122,9 @@ public class propuesta implements Serializable {
         this.tipoRetorno = tipoRetorno;
         this.fechaPublicada = Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()); //
 
-        this.estadoActual = estadoPropuesta.INGRESADA;
+        this.estadoActual = EstadoPropuesta.INGRESADA;
         this.historial = new ArrayList<>();
-        this.historial.add(new historialEstado(this, this.estadoActual));
+        this.historial.add(new HistorialEstado(this, this.estadoActual));
         this.colaboraciones = new ArrayList<>();
         this.hora = hora;
     }
@@ -133,24 +133,24 @@ public class propuesta implements Serializable {
         return titulo;
     }
 
-    public estadoPropuesta getEstadoActual() {
+    public EstadoPropuesta getEstadoActual() {
         return estadoActual;
     }
 
-    public void cambiarEstado(estadoPropuesta nuevo) {
+    public void cambiarEstado(EstadoPropuesta nuevo) {
         this.estadoActual = nuevo;
-        historial.add(new historialEstado(this, nuevo));
+        historial.add(new HistorialEstado(this, nuevo));
     }
 
-    public void registrarCambioEstado(estadoPropuesta nuevo) {
+    public void registrarCambioEstado(EstadoPropuesta nuevo) {
         if (!historial.isEmpty()) {
-            historialEstado ultimo = historial.get(historial.size() - 1);
+            HistorialEstado ultimo = historial.get(historial.size() - 1);
             if (ultimo.getEstado() == nuevo) {
                 return; // evitar duplicar mismo estado
             }
         }
 
-        historialEstado h = new historialEstado();
+        HistorialEstado h = new HistorialEstado();
         h.setPropuesta(this);
         h.setEstado(nuevo);
         h.setFecha(new Date());
@@ -159,13 +159,13 @@ public class propuesta implements Serializable {
 
     }
 
-    public void agregarColaboracion(colaboracion colab) {
+    public void agregarColaboracion(Colaboracion colab) {
         colaboraciones.add(colab);
     }
 
     public void mostrarColaboraciones() {
         System.out.println("Colaboraciones en " + titulo + ":");
-        for (colaboracion c : colaboraciones) {
+        for (Colaboracion c : colaboraciones) {
             System.out.println(c.getColaborador().getNickname() + "aporto $" + c.getMontoAportado());
         }
     }
@@ -253,7 +253,7 @@ public class propuesta implements Serializable {
         return this.tipoRetorno;
     }
 
-    public void setEstado(estadoPropuesta estado) {
+    public void setEstado(EstadoPropuesta estado) {
         this.estadoActual = estado;
     }
 
@@ -265,7 +265,7 @@ public class propuesta implements Serializable {
         return this.imagen;
     }
 
-    public List<colaboracion> getColaboraciones() {
+    public List<Colaboracion> getColaboraciones() {
         return this.colaboraciones;
     }
 
@@ -281,28 +281,28 @@ public class propuesta implements Serializable {
         this.titulo = titulo;
     }
 
-    public void setProponente(proponente prop) {
+    public void setProponente(Proponente prop) {
         this.prop = prop;
     }
 
-    public void agregarComentario(colaborador autor, String texto) {
-        comentario c = new comentario(autor, this, texto);
+    public void agregarComentario(Colaborador autor, String texto) {
+        Comentario c = new Comentario(autor, this, texto);
         comentarios.add(c);
     }
 
-    public void agregarComentario(comentario nuevo) {
+    public void agregarComentario(Comentario nuevo) {
         comentarios.add(nuevo);
     }
 
-    public void eliminarComentario(comentario comentario) {
+    public void eliminarComentario(Comentario comentario) {
         comentarios.remove(comentario);
     }
 
-    public List<comentario> getComentarios() {
+    public List<Comentario> getComentarios() {
         return comentarios;
     }
 
-    public void setComentarios(List<comentario> comentarios) {
+    public void setComentarios(List<Comentario> comentarios) {
         this.comentarios = comentarios;
     }
 

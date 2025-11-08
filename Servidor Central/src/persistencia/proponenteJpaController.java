@@ -12,7 +12,7 @@ import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import logica.proponente;
+import logica.Proponente;
 import persistencia.exceptions.NonexistentEntityException;
 import persistencia.exceptions.PreexistingEntityException;
 
@@ -38,7 +38,7 @@ public class proponenteJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(proponente proponente) throws PreexistingEntityException, Exception {
+    public void create(Proponente proponente) throws PreexistingEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -57,7 +57,7 @@ public class proponenteJpaController implements Serializable {
         }
     }
 
-    public void edit(proponente proponente) throws NonexistentEntityException, Exception {
+    public void edit(Proponente proponente) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -85,9 +85,9 @@ public class proponenteJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            proponente proponente;
+            Proponente proponente;
             try {
-                proponente = em.getReference(proponente.class, id);
+                proponente = em.getReference(Proponente.class, id);
                 proponente.getNickname();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The proponente with id " + id + " no longer exists.", enfe);
@@ -101,19 +101,19 @@ public class proponenteJpaController implements Serializable {
         }
     }
 
-    public List<proponente> findproponenteEntities() {
+    public List<Proponente> findproponenteEntities() {
         return findproponenteEntities(true, -1, -1);
     }
 
-    public List<proponente> findproponenteEntities(int maxResults, int firstResult) {
+    public List<Proponente> findproponenteEntities(int maxResults, int firstResult) {
         return findproponenteEntities(false, maxResults, firstResult);
     }
 
-    private List<proponente> findproponenteEntities(boolean all, int maxResults, int firstResult) {
+    private List<Proponente> findproponenteEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(proponente.class));
+            cq.select(cq.from(Proponente.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -125,10 +125,10 @@ public class proponenteJpaController implements Serializable {
         }
     }
 
-    public proponente findproponente(String id) {
+    public Proponente findproponente(String id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(proponente.class, id);
+            return em.find(Proponente.class, id);
         } finally {
             em.close();
         }
@@ -138,7 +138,7 @@ public class proponenteJpaController implements Serializable {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<proponente> rt = cq.from(proponente.class);
+            Root<Proponente> rt = cq.from(Proponente.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();

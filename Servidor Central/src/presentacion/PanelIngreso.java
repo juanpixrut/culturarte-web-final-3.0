@@ -9,13 +9,13 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
+import logica.Ictrl;
 import javax.swing.DefaultListModel;
 
-import logica.proponente;
-import logica.categoria;
+import logica.Proponente;
+import logica.Categoria;
 
-import logica.propuesta;
+import logica.Propuesta;
 
 import java.util.Date;
 import java.util.Calendar; //para pasar a una Date datos
@@ -24,7 +24,7 @@ import java.util.Set;
 
 import javax.swing.JOptionPane;
 
-import logica.estadoPropuesta;
+import logica.EstadoPropuesta;
 
 public class PanelIngreso extends javax.swing.JPanel {
 
@@ -35,13 +35,13 @@ public class PanelIngreso extends javax.swing.JPanel {
     javax.swing.JPanel contenido;
     java.awt.CardLayout c1;
     
-    private ictrl ic;
+    private Ictrl ic;
     DefaultListModel<String> modelo = new DefaultListModel<>(); //
     DefaultListModel<String> modelo2 = new DefaultListModel<>();
     
     private byte[] imagenBytes = null;
     
-    public PanelIngreso(ictrl ic, javax.swing.JPanel contenido, java.awt.CardLayout c1) {
+    public PanelIngreso(Ictrl ic, javax.swing.JPanel contenido, java.awt.CardLayout c1) {
         initComponents();
         this.ic = ic;
         
@@ -49,12 +49,12 @@ public class PanelIngreso extends javax.swing.JPanel {
         this.c1 = c1;
         
         ListaProponentes.setModel(modelo);
-        for(proponente p : ic.listarProponentes()){
+        for(Proponente p : ic.listarProponentes()){
         modelo.addElement("Nickname: " + p.getNickname() + " | Nombre: " + p.getNombre() + " | Apellido: " + p.getApellido());
         }
         
         ListaTipo.setModel(modelo2);
-        for(categoria c : ic.listarCategoria()){
+        for(Categoria c : ic.listarCategoria()){
         modelo2.addElement("Categoria: " + c.getNombre());
         }
     }
@@ -390,8 +390,8 @@ public class PanelIngreso extends javax.swing.JPanel {
 
     private void botonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIngresarActionPerformed
         // TODO add your handling code here:
-        //almaceno todo y doy de alta una propuesta
-    proponente seleccionado = null;
+        //almaceno todo y doy de alta una Propuesta
+    Proponente seleccionado = null;
     int i = ListaProponentes.getSelectedIndex();
     if(i >= 0){
     seleccionado = ic.listarProponentes().get(i);
@@ -439,7 +439,7 @@ public class PanelIngreso extends javax.swing.JPanel {
         }
         
         //verificar existencia. 
-        for(propuesta prop : ic.listarPropuestas()){
+        for(Propuesta prop : ic.listarPropuestas()){
         if(prop.getTitulo().equalsIgnoreCase(titulo)){
         JOptionPane.showMessageDialog(this, "El Titulo ya existe.", "Informacion ya existente", JOptionPane.WARNING_MESSAGE);
         return;
@@ -468,7 +468,7 @@ public class PanelIngreso extends javax.swing.JPanel {
         
         //ahora si
         
-        ic.altaPropuesta(seleccionado, titulo, descripcion, tipoEspectaculo, lugar, fecha, precio, monto, tipoRetorno, imagenBytes, estadoPropuesta.INGRESADA);
+        ic.altaPropuesta(seleccionado, titulo, descripcion, tipoEspectaculo, lugar, fecha, precio, monto, tipoRetorno, imagenBytes, EstadoPropuesta.INGRESADA);
     
         c1.show(contenido, "principal");
     

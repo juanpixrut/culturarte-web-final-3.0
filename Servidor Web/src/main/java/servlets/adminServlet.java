@@ -42,7 +42,7 @@ ControladoraNueva Sistema = new ControladoraNueva(); //creada como hija de ictrl
         String clave = request.getParameter("clave");
         HttpSession sesion = request.getSession();
         
-        List<propuesta> propuestas = new ArrayList<>();
+        List<Propuesta> propuestas = new ArrayList<>();
         propuestas = Sistema.listarPropuestas();
         
         //guardamos la lista en la request.

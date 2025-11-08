@@ -9,7 +9,7 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
+import logica.Ictrl;
 
 import java.awt.CardLayout;
 
@@ -19,14 +19,14 @@ public class PanelColaboraciones extends javax.swing.JPanel {
      * Creates new form PanelColaboraciones
      */
   
-    ictrl ic;
+    Ictrl ic;
     
     CardLayout c1;
     
     java.awt.CardLayout p1;
     javax.swing.JPanel PantallaGrandePrincipal;
     
-    public PanelColaboraciones(ictrl ic, java.awt.CardLayout p1, javax.swing.JPanel PantallaGrandePrincipal) {
+    public PanelColaboraciones(Ictrl ic, java.awt.CardLayout p1, javax.swing.JPanel PantallaGrandePrincipal) {
         initComponents();
         
         this.ic = ic;

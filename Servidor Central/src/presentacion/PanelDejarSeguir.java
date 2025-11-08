@@ -9,12 +9,12 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
-import logica.colaborador;
-import logica.propuesta;
-import logica.colaboracion;
+import logica.Ictrl;
+import logica.Colaborador;
+import logica.Propuesta;
+import logica.Colaboracion;
 
-import logica.usuario;
+import logica.Usuario;
 
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -27,22 +27,22 @@ public class PanelDejarSeguir extends javax.swing.JPanel {
      * Creates new form PanelConsultaColaborador
      */
     
-    ictrl ic;
+    Ictrl ic;
     
     List lista = null;
     DefaultListModel<String> modelo = new DefaultListModel<>();
     DefaultListModel<String> modelo2 = new DefaultListModel<>();
     
-    public PanelDejarSeguir(ictrl ic, javax.swing.JPanel contenido) {
+    public PanelDejarSeguir(Ictrl ic, javax.swing.JPanel contenido) {
         initComponents();
         this.ic = ic;
         ListaSeguidor.setModel(modelo);
-        for(usuario u : ic.listarUsuarios()){
+        for(Usuario u : ic.listarUsuarios()){
         modelo.addElement(u.getNickname());
         }
         
         ListaSeguido.setModel(modelo2);
-        for(usuario u2 : ic.listarUsuarios()){
+        for(Usuario u2 : ic.listarUsuarios()){
         modelo2.addElement(u2.getNickname());
         }
         

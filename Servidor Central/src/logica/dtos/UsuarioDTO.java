@@ -13,7 +13,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import logica.usuario;
+import logica.Usuario;
 
 public class UsuarioDTO implements Serializable {
 
@@ -75,38 +75,54 @@ public class UsuarioDTO implements Serializable {
     public void setSeguidores(List<UsuarioDTO> seguidores) { this.seguidores = seguidores; }
 
     // ----- Conversión desde entidad -----
-    public static UsuarioDTO fromEntity(usuario u) {
-        if (u == null) return null;
+public static UsuarioDTO fromEntity(Usuario u) {
+    if (u == null) return null;
 
-        UsuarioDTO dto = new UsuarioDTO(
-                u.getNickname(),
-                u.getNombre(),
-                u.getApellido(),
-                u.getEmail(),
-                u.getImagen()     
-        );
+    UsuarioDTO dto = new UsuarioDTO(
+            u.getNickname(),
+            u.getNombre(),
+            u.getApellido(),
+            u.getEmail(),
+            u.getImagen()
+    );
 
-        // Relaciones (sin recursión infinita)
-        if (u.getSeguidos() != null) {
-            List<UsuarioDTO> seguidosDTO = new ArrayList<>();
-            for (usuario seguido : u.getSeguidos()) {
-                seguidosDTO.add(new UsuarioDTO(seguido.getNickname(), seguido.getNombre(),
-                        seguido.getApellido(), seguido.getEmail()));
-            }
-            dto.setSeguidos(seguidosDTO);
+    //dto.setFechaNacimiento(u.getFechaNacimiento());
+
+    // Relaciones (sin recursión infinita ni datos innecesarios)
+    if (u.getSeguidos() != null && !u.getSeguidos().isEmpty()) {
+        List<UsuarioDTO> seguidosDTO = new ArrayList<>();
+        for (Usuario seguido : u.getSeguidos()) {
+            // DTO liviano: solo datos básicos, sin imagen ni listas
+            UsuarioDTO seguidoDTO = new UsuarioDTO();
+            seguidoDTO.setNickname(seguido.getNickname());
+            seguidoDTO.setNombre(seguido.getNombre());
+            seguidoDTO.setApellido(seguido.getApellido());
+            seguidoDTO.setCorreo(seguido.getEmail());
+            seguidosDTO.add(seguidoDTO);
         }
-
-        if (u.getSeguidores() != null) {
-            List<UsuarioDTO> seguidoresDTO = new ArrayList<>();
-            for (usuario seguidor : u.getSeguidores()) {
-                seguidoresDTO.add(new UsuarioDTO(seguidor.getNickname(), seguidor.getNombre(),
-                        seguidor.getApellido(), seguidor.getEmail()));
-            }
-            dto.setSeguidores(seguidoresDTO);
-        }
-
-        return dto;
+        dto.setSeguidos(seguidosDTO);
+    } else {
+        dto.setSeguidos(new ArrayList<>());
     }
+
+    if (u.getSeguidores() != null && !u.getSeguidores().isEmpty()) {
+        List<UsuarioDTO> seguidoresDTO = new ArrayList<>();
+        for (Usuario seguidor : u.getSeguidores()) {
+            UsuarioDTO seguidorDTO = new UsuarioDTO();
+            seguidorDTO.setNickname(seguidor.getNickname());
+            seguidorDTO.setNombre(seguidor.getNombre());
+            seguidorDTO.setApellido(seguidor.getApellido());
+            seguidorDTO.setCorreo(seguidor.getEmail());
+            seguidoresDTO.add(seguidorDTO);
+        }
+        dto.setSeguidores(seguidoresDTO);
+    } else {
+        dto.setSeguidores(new ArrayList<>());
+    }
+
+    return dto;
+}
+
 
     @Override
     public String toString() {

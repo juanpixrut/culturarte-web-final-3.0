@@ -34,31 +34,31 @@ import javax.persistence.ElementCollection;
 
 @Entity
 @DiscriminatorValue(value = "colaborador")
-public class colaborador extends usuario{
+public class Colaborador extends Usuario{
     //@OneToMany
-    private List<colaboracion> colaboraciones;
+    private List<Colaboracion> colaboraciones;
     
-    public colaborador(){
+    public Colaborador(){
     
     }
     
-    public colaborador(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes){super(nickname, nombre, apellido, correo, imagenBytes);
+    public Colaborador(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes){super(nickname, nombre, apellido, correo, imagenBytes);
     this.colaboraciones = new ArrayList<>();
     }
     
-    public colaborador(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes, String contrasena){super(nickname, nombre, apellido, correo, imagenBytes, contrasena);
+    public Colaborador(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes, String contrasena){super(nickname, nombre, apellido, correo, imagenBytes, contrasena);
     this.colaboraciones = new ArrayList<>();
     }
     
-    public void colaborar(propuesta prop, float monto, String tipoRetorno){
-        //evitar que colabore mas de una vez en la misma propuesta
-        for(colaboracion c : colaboraciones){
+    public void colaborar(Propuesta prop, float monto, String tipoRetorno){
+        //evitar que colabore mas de una vez en la misma Propuesta
+        for(Colaboracion c : colaboraciones){
         if(c.getPropuesta() == prop){
         System.out.println("Ya colaboraste con esta propuesta.");
         return;
            }
         }
-        colaboracion c = new colaboracion(this, prop, monto, tipoRetorno);
+        Colaboracion c = new Colaboracion(this, prop, monto, tipoRetorno);
         colaboraciones.add(c);
         prop.agregarColaboracion(c);
         System.out.println(getNickname() + " colaboro con $" + monto + " en " + prop.getTitulo());
@@ -66,7 +66,7 @@ public class colaborador extends usuario{
     
     public void mostrarColaboraciones(){
     System.out.println("Colaboraciones de " + nombre + ":");
-    for(colaboracion colab : colaboraciones){
+    for(Colaboracion colab : colaboraciones){
     System.out.println("- " + colab.getPropuesta().getTitulo() + ": $" + colab.getMontoAportado() + " | Retorno: " + colab.getTipoRetorno());
        }
     }
@@ -75,7 +75,7 @@ public class colaborador extends usuario{
     return getNickname();
     }
     
-    public List<colaboracion> getColaboraciones(){
+    public List<Colaboracion> getColaboraciones(){
     return this.colaboraciones;
     }
     

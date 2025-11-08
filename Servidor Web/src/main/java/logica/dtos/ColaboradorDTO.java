@@ -12,8 +12,8 @@ package logica.dtos;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import logica.colaborador;
-import logica.colaboracion;
+import logica.Colaborador;
+import logica.Colaboracion;
 
 import logica.*;
 import persistencia.*;
@@ -34,7 +34,7 @@ public class ColaboradorDTO extends UsuarioDTO implements Serializable {
     public List<ColaboracionDTO> getColaboraciones() { return colaboraciones; }
     public void setColaboraciones(List<ColaboracionDTO> colaboraciones) { this.colaboraciones = colaboraciones; }
 
-    public static ColaboradorDTO fromEntity(colaborador c) {
+    public static ColaboradorDTO fromEntity(Colaborador c) {
         if (c == null) return null;
 
         ColaboradorDTO dto = new ColaboradorDTO(
@@ -46,11 +46,11 @@ public class ColaboradorDTO extends UsuarioDTO implements Serializable {
 
         try {
             ControladoraNueva Sistema = new ControladoraNueva();
-            List<colaboracion> todas = Sistema.listarColaboraciones();
+            List<Colaboracion> todas = Sistema.listarColaboraciones();
             List<ColaboracionDTO> colaboracionesDTO = new ArrayList<>();
 
             for (int i = 0; i < todas.size(); i++) {
-                colaboracion colab = todas.get(i);
+                Colaboracion colab = todas.get(i);
                 if (colab.getColaborador() != null &&
                     colab.getColaborador().getNickname().equalsIgnoreCase(c.getNickname())) {
 

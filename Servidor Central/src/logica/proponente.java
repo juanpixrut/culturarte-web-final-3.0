@@ -33,8 +33,8 @@ import javax.persistence.Lob;
 
 @Entity
 @DiscriminatorValue(value = "proponente")
-//@PrimaryKeyJoinColumn(name = "nickname") //misma PK que usuario
-public class proponente extends usuario{
+//@PrimaryKeyJoinColumn(name = "nickname") //misma PK que Usuario
+public class Proponente extends Usuario{
     @Basic
     private String direccion;
     @Lob
@@ -45,32 +45,32 @@ public class proponente extends usuario{
     
     //@OneToMany
     @Transient //sirve para no implementar todavia en la bd creo
-    private ArrayList<propuesta> propuestas;
+    private ArrayList<Propuesta> propuestas;
     
-    public proponente(){
+    public Proponente(){
     
     }
     
-    public proponente(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes, String direccion, String biografia, String linkSitio){super(nickname, nombre, apellido, correo, imagenBytes);
+    public Proponente(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes, String direccion, String biografia, String linkSitio){super(nickname, nombre, apellido, correo, imagenBytes);
     this.direccion = direccion;
     this.biografia = biografia;
     this.linkSitio = linkSitio;
     this.propuestas = new ArrayList<>();
     }
     
-    public proponente(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes, String contrasena, String direccion, String biografia, String linkSitio){super(nickname, nombre, apellido, correo, imagenBytes, contrasena);
+    public Proponente(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes, String contrasena, String direccion, String biografia, String linkSitio){super(nickname, nombre, apellido, correo, imagenBytes, contrasena);
     this.direccion = direccion;
     this.biografia = biografia;
     this.linkSitio = linkSitio;
     this.propuestas = new ArrayList<>();
     }
     
-    public void agregarPropuesta(propuesta prop){
+    public void agregarPropuesta(Propuesta prop){
         //propuestas.add(prop);
     }
     public void mostrarPropuestas(){
     System.out.println("Propuestas de " + nombre + ":");
-    for(propuesta p : propuestas){
+    for(Propuesta p : propuestas){
         System.out.println("- " + p.getTitulo() + " | Estado: " + p.getEstadoActual());
     }
     }
@@ -87,7 +87,7 @@ public class proponente extends usuario{
     return this.linkSitio;
     }
     
-    public ArrayList<propuesta> getPropuestas(){
+    public ArrayList<Propuesta> getPropuestas(){
     return this.propuestas;
     }
     

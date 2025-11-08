@@ -3,7 +3,7 @@
     Created on : 2 Oct 2025, 23:55:38
     Author     : Juanpi
 --%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="javax.servlet.http.HttpSession" %>
 
@@ -135,7 +135,7 @@
                                 ${p.titulo}
                             </a>
                         </td>
-                        <td>${p.prop}</td>
+                        <td>${p.proponenteNickname}</td>
                     </tr>
                 </c:forEach>
             </table>

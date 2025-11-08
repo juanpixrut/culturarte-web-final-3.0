@@ -9,9 +9,9 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
+import logica.Ictrl;
 
-import logica.colaboracion;
+import logica.Colaboracion;
 
 import javax.swing.DefaultListModel;
 
@@ -21,19 +21,19 @@ public class PanelCancelarColab extends javax.swing.JPanel {
      * Creates new form PanelCancelarColab
      */
     
-    ictrl ic;
+    Ictrl ic;
     
     DefaultListModel modelo = new DefaultListModel();
     
-    colaboracion colab;
+    Colaboracion colab;
     
-    public PanelCancelarColab(ictrl ic) {
+    public PanelCancelarColab(Ictrl ic) {
         initComponents();
         
         this.ic = ic;
         
         listaColab.setModel(modelo);
-        for(colaboracion c : ic.listarColaboraciones()){
+        for(Colaboracion c : ic.listarColaboraciones()){
         modelo.addElement("Titulo: " + c.getPropuesta().getTitulo());
         }
         
@@ -189,7 +189,7 @@ public class PanelCancelarColab extends javax.swing.JPanel {
     private void listaColabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaColabMouseClicked
         // TODO add your handling code here:
         int i = listaColab.getSelectedIndex();
-        colaboracion c = null;
+        Colaboracion c = null;
         c = ic.listarColaboraciones().get(i);
         
         textoNickname.setText(c.getColaborador().getNickname());

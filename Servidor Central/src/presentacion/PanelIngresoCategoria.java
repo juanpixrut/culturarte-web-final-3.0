@@ -9,11 +9,11 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
+import logica.Ictrl;
 
 import javax.swing.DefaultListModel;
 
-import logica.categoria;
+import logica.Categoria;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -31,11 +31,11 @@ public class PanelIngresoCategoria extends javax.swing.JPanel {
      * Creates new form PanelIngresoCategoria
      */
     
-    private ictrl ic;
+    private Ictrl ic;
     
     DefaultListModel<String> modelo = new DefaultListModel();
     
-    public PanelIngresoCategoria(ictrl ic) {
+    public PanelIngresoCategoria(Ictrl ic) {
         initComponents();
         this.ic = ic;  
     
@@ -44,23 +44,23 @@ public class PanelIngresoCategoria extends javax.swing.JPanel {
     //cargar el JTREE
     
     //traer categorias una vez sola
-    List<categoria> cats = ic.listarCategoria();
+    List<Categoria> cats = ic.listarCategoria();
     
     //cargo una vez la raiz
     if(cats.isEmpty()){
     ic.altaCategoria("Categoria");
     }
 
-    // crear un nodo por categoria.
+    // crear un nodo por Categoria.
     Map<Integer, DefaultMutableTreeNode> nodos = new HashMap<>();
-    for (categoria c : cats) {
+    for (Categoria c : cats) {
         nodos.put(c.getId(), new DefaultMutableTreeNode(c));
     }
 
     //Elegir raiz: si existe una unica llamada "Categoría" y padre == null, usamos esa.
     //    Si no, creamos una raiz "Categorias".
-    categoria raizCat = null;
-    for (categoria c : cats) {
+    Categoria raizCat = null;
+    for (Categoria c : cats) {
         if (c.getPadre() == null && "Categoria".equalsIgnoreCase(c.getNombre())) {
             raizCat = c;
             break;
@@ -69,14 +69,14 @@ public class PanelIngresoCategoria extends javax.swing.JPanel {
     DefaultMutableTreeNode root = (raizCat != null) ? nodos.get(raizCat.getId()) : new DefaultMutableTreeNode("Categorías");
 
     //Armar la jerarquia
-    for (categoria c : cats) {
+    for (Categoria c : cats) {
         DefaultMutableTreeNode nodo = nodos.get(c.getId());
         if (nodo == null) continue;
 
         if (raizCat != null && c.getId() == raizCat.getId()) continue; // ya es root
 
         DefaultMutableTreeNode padreNodo = null;
-        categoria p = c.getPadre();
+        Categoria p = c.getPadre();
         if (p != null) {
             padreNodo = nodos.get(p.getId());
         }
@@ -298,7 +298,7 @@ public class PanelIngresoCategoria extends javax.swing.JPanel {
         String nombre = TextoNombre.getText();
         
         //nuevo, verificar existencia.
-        for(categoria c : ic.listarCategoria()){
+        for(Categoria c : ic.listarCategoria()){
         if(c.getNombre().equalsIgnoreCase(nombre)){
             JOptionPane.showMessageDialog(this, "Categoria existente.", "Datos existentes", JOptionPane.WARNING_MESSAGE);
         return;
@@ -314,7 +314,7 @@ public class PanelIngresoCategoria extends javax.swing.JPanel {
         String padre = TextoPadre.getText();
         boolean encontro = false;
         //buscar q exista el padre.
-        for(categoria c : ic.listarCategoria()){
+        for(Categoria c : ic.listarCategoria()){
         if(c.getNombre().equalsIgnoreCase(padre)){
         ic.altaSubCategoria(nombre, padre);
         encontro = true;

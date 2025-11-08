@@ -13,8 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import logica.*;
-import persistencia.*;
+// Import del cliente del Web Service
+import clienteWS.IctrlServicio;
+import clienteWS.IctrlServicioService;
+import clienteWS.UsuarioDTO;
 
 /**
  *
@@ -22,8 +24,6 @@ import persistencia.*;
  */
 @WebServlet(name = "dejarSeguirUsuarioServlet", urlPatterns = {"/dejarSeguirUsuarioServlet"})
 public class dejarSeguirUsuarioServlet extends HttpServlet {
-    
-    ControladoraNueva Sistema = new ControladoraNueva();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -35,9 +35,7 @@ public class dejarSeguirUsuarioServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        
-        
-        
+
     }
 
     @Override
@@ -54,7 +52,7 @@ public class dejarSeguirUsuarioServlet extends HttpServlet {
         }
 
         // Usuario logueado (el que deja de seguir a otro)
-        usuario usuarioSesion = (usuario) session.getAttribute("usuarioObjeto");
+        UsuarioDTO usuarioSesion = (UsuarioDTO) session.getAttribute("usuarioObjeto");
         String nicknameSeguidor = usuarioSesion.getNickname();
 
         // Usuario a dejar de seguir (viene por parametro del formulario jsp)
@@ -65,18 +63,33 @@ public class dejarSeguirUsuarioServlet extends HttpServlet {
             return;
         }
 
-        // Registrar el dejar de seguimiento
-        Sistema.dejarSeguir(nicknameSeguidor, nicknameDejarSeguir);
-        usuario usuarioActualizado = Sistema.buscoUsuario2(usuarioSesion.getNickname());
-        session.setAttribute("usuarioObjeto", usuarioActualizado);
+        // Crear cliente WS
+        System.setProperty("file.encoding", "UTF-8");
+        IctrlServicioService service = new IctrlServicioService();
+        IctrlServicio port = service.getIctrlServicioPort();
 
-        // Redirigir al perfil del usuario seguido
-        response.sendRedirect("consultaPerfilServlet?nickname=" + nicknameDejarSeguir);
+        try {
+            // Llamada al WS para dejar de seguir
+            port.dejarSeguir(nicknameSeguidor, nicknameDejarSeguir);
 
+            // Obtener versión actualizada del usuario logueado
+            UsuarioDTO usuarioActualizado = port.buscoUsuarioDTO(nicknameSeguidor);
+
+            // Actualizar la sesión
+            session.setAttribute("usuarioObjeto", usuarioActualizado);
+
+            // Redirigir al perfil del usuario que se dejó de seguir
+            response.sendRedirect("consultaPerfilServlet?nickname=" + nicknameDejarSeguir);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("errorMensaje", "Error al dejar de seguir usuario: " + e.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+        }
     }
 
-    @Override
-    public String getServletInfo() {
+@Override
+public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

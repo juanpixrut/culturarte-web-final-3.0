@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
  * @author Juanpi
  */
 @Entity
-public class comentario implements Serializable {
+public class Comentario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,22 +29,22 @@ public class comentario implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "colaborador_id")
-    private colaborador autor;
+    private Colaborador autor;
 
     @ManyToOne
     @JoinColumn(name = "propuesta_id")
-    private propuesta propuesta;
+    private Propuesta propuesta;
 
     @Basic
     private String texto;
     @Temporal(TemporalType.TIMESTAMP) //timestamp para hora tamb.
     private Date fecha;
 
-    public comentario() {
+    public Comentario() {
         this.fecha = new Date();
     }
 
-    public comentario(colaborador autor, propuesta propuesta, String texto) {
+    public Comentario(Colaborador autor, Propuesta propuesta, String texto) {
         this.autor = autor;
         this.propuesta = propuesta;
         this.texto = texto;
@@ -55,19 +55,19 @@ public class comentario implements Serializable {
         return id;
     }
 
-    public colaborador getAutor() {
+    public Colaborador getAutor() {
         return autor;
     }
 
-    public void setAutor(colaborador autor) {
+    public void setAutor(Colaborador autor) {
         this.autor = autor;
     }
 
-    public propuesta getPropuesta() {
+    public Propuesta getPropuesta() {
         return propuesta;
     }
 
-    public void setPropuesta(propuesta propuesta) {
+    public void setPropuesta(Propuesta propuesta) {
         this.propuesta = propuesta;
     }
 

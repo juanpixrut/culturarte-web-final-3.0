@@ -38,7 +38,7 @@ import javax.persistence.OneToMany;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo", discriminatorType = DiscriminatorType.STRING)
-public class usuario implements Serializable {
+public class Usuario implements Serializable {
     @Id
     //@GeneratedValue(strategy = GenerationType.SEQUENCE) esto no porque es String. no puedo auto incrementarse
     protected String nickname;
@@ -51,22 +51,22 @@ public class usuario implements Serializable {
     protected Date fechaNacimiento;
     
     @ManyToMany
-    protected List<usuario> seguidos;
+    protected List<Usuario> seguidos;
     
     @ManyToMany(mappedBy = "seguidos")
-    protected List<usuario> seguidores;
+    protected List<Usuario> seguidores;
     
     @ManyToMany
-    protected List<propuesta> propuestasFavoritas;
+    protected List<Propuesta> propuestasFavoritas;
     
     @Basic
     protected String contrasena;
 
-    public usuario(){
+    public Usuario(){
         
     }
     
-    public usuario(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes){
+    public Usuario(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes){
         this.nickname = nickname;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -76,7 +76,7 @@ public class usuario implements Serializable {
         this.seguidores = new ArrayList<>();
         this.propuestasFavoritas = new ArrayList<>();
     }
-        public usuario(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes, String contrasena){
+        public Usuario(String nickname, String nombre, String apellido, String correo, byte[] imagenBytes, String contrasena){
         this.nickname = nickname;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -115,11 +115,11 @@ public class usuario implements Serializable {
     return this.correo;
     }
     
-    public List<usuario> getSeguidores(){
+    public List<Usuario> getSeguidores(){
     return seguidores;
     }
     
-    public List<usuario> getSeguidos(){
+    public List<Usuario> getSeguidos(){
     return seguidos;
     }
     
@@ -131,7 +131,7 @@ public class usuario implements Serializable {
     return this.imagen;
     }
     
-    public List<propuesta> getFavoritas(){
+    public List<Propuesta> getFavoritas(){
     return propuestasFavoritas;
     }
     
@@ -143,11 +143,11 @@ public class usuario implements Serializable {
     this.contrasena = contrasena;
     }
     
-    public void setFavoritas(List<propuesta> propuestas){
+    public void setFavoritas(List<Propuesta> propuestas){
     this.propuestasFavoritas = propuestas;
     }
     
-    public void setSeguidores(List<usuario> seguidores){
+    public void setSeguidores(List<Usuario> seguidores){
     this.seguidores = seguidores;
     }
         

@@ -9,10 +9,10 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
-import logica.colaborador;
-import logica.propuesta;
-import logica.colaboracion;
+import logica.Ictrl;
+import logica.Colaborador;
+import logica.Propuesta;
+import logica.Colaboracion;
 
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -23,18 +23,18 @@ public class PanelConsultaColaborador extends javax.swing.JPanel {
      * Creates new form PanelConsultaColaborador
      */
     
-    ictrl ic;
+    Ictrl ic;
     
     List lista = null;
     DefaultListModel<String> modelo = new DefaultListModel<>();
     
     DefaultListModel modelo2 = new DefaultListModel();
     
-    public PanelConsultaColaborador(ictrl ic) {
+    public PanelConsultaColaborador(Ictrl ic) {
         initComponents();
         this.ic = ic;
         ListaColaboradores.setModel(modelo);
-        for(colaborador c : ic.listarColaboradores()){
+        for(Colaborador c : ic.listarColaboradores()){
         modelo.addElement("Nickname: " + c.getNickname() + " | Nombre: " + c.getNombre() + " | Apellido: " + c.getApellido());
         }
     }
@@ -283,7 +283,7 @@ public class PanelConsultaColaborador extends javax.swing.JPanel {
 
     private void ListaColaboradoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaColaboradoresMouseClicked
         // TODO add your handling code here:
-        colaborador seleccionado = null;
+        Colaborador seleccionado = null;
         int i = ListaColaboradores.getSelectedIndex();
         if(i>=0){
         seleccionado = ic.listarColaboradores().get(i);
@@ -297,7 +297,7 @@ public class PanelConsultaColaborador extends javax.swing.JPanel {
         modelo2.clear();
         listaPropuestas.setModel(modelo2);
         if(!ic.listarColaboraciones().isEmpty()){
-        for(colaboracion c : ic.listarColaboraciones()){
+        for(Colaboracion c : ic.listarColaboraciones()){
             if(c.getColaborador() == null) continue;
         if(c.getColaborador().getNickname().equalsIgnoreCase(seleccionado.getNickname())){
         modelo2.addElement(c.getPropuesta().getTitulo());
@@ -314,11 +314,11 @@ public class PanelConsultaColaborador extends javax.swing.JPanel {
     private void listaPropuestasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaPropuestasMouseClicked
         // TODO add your handling code here:
 
-        propuesta seleccionada = null;
+        Propuesta seleccionada = null;
         
         String titulo = listaPropuestas.getSelectedValue();
         
-        for(propuesta p : ic.listarPropuestas()){
+        for(Propuesta p : ic.listarPropuestas()){
         if(p.getTitulo().equalsIgnoreCase(titulo)){
         seleccionada = p;
         break;

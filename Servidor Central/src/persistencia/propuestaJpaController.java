@@ -12,7 +12,7 @@ import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import logica.propuesta;
+import logica.Propuesta;
 import persistencia.exceptions.NonexistentEntityException;
 import persistencia.exceptions.PreexistingEntityException;
 
@@ -38,7 +38,7 @@ public class propuestaJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(propuesta propuesta) throws PreexistingEntityException, Exception {
+    public void create(Propuesta propuesta) throws PreexistingEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -57,7 +57,7 @@ public class propuestaJpaController implements Serializable {
         }
     }
 
-    public void edit(propuesta propuesta) throws NonexistentEntityException, Exception {
+    public void edit(Propuesta propuesta) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -85,9 +85,9 @@ public class propuestaJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            propuesta propuesta;
+            Propuesta propuesta;
             try {
-                propuesta = em.getReference(propuesta.class, id);
+                propuesta = em.getReference(Propuesta.class, id);
                 propuesta.getTitulo();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The propuesta with id " + id + " no longer exists.", enfe);
@@ -101,28 +101,28 @@ public class propuestaJpaController implements Serializable {
         }
     }
 
-    public List<propuesta> findpropuestaEntities() {
+    public List<Propuesta> findpropuestaEntities() {
         return findpropuestaEntities(true, -1, -1);
     }
 
-    public List<propuesta> findpropuestaEntities(int maxResults, int firstResult) {
+    public List<Propuesta> findpropuestaEntities(int maxResults, int firstResult) {
         return findpropuestaEntities(false, maxResults, firstResult);
     }
 
-    private List<propuesta> findpropuestaEntities(boolean all, int maxResults, int firstResult) {
+    private List<Propuesta> findpropuestaEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(propuesta.class));
+            cq.select(cq.from(Propuesta.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
                 q.setFirstResult(firstResult);
             }
             
-        List<propuesta> resultados = q.getResultList();              //CAMBIO
+        List<Propuesta> resultados = q.getResultList();              //CAMBIO
         // 🔥 Aca refrescamos todas las entidades y sus relaciones   //CAMBIO
-        for (propuesta p : resultados) {                             //CAMBIO
+        for (Propuesta p : resultados) {                             //CAMBIO
             em.refresh(p);                                         //CAMBIO
         }                                                            //CAMBIO
             
@@ -132,10 +132,10 @@ public class propuestaJpaController implements Serializable {
         }
     }
 
-    public propuesta findpropuesta(String id) {
+    public Propuesta findpropuesta(String id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(propuesta.class, id);
+            return em.find(Propuesta.class, id);
         } finally {
             em.close();
         }
@@ -145,7 +145,7 @@ public class propuestaJpaController implements Serializable {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<propuesta> rt = cq.from(propuesta.class);
+            Root<Propuesta> rt = cq.from(Propuesta.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();
@@ -154,7 +154,7 @@ public class propuestaJpaController implements Serializable {
         }
     }
     
-        public void refresh(propuesta entidad) {
+        public void refresh(Propuesta entidad) {
         EntityManager em = getEntityManager();
         try {
             em.getTransaction().begin();

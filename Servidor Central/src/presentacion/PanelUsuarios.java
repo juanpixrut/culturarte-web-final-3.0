@@ -11,21 +11,21 @@ package presentacion;
 
 import java.awt.CardLayout;
 
-import logica.ictrl;
+import logica.Ictrl;
 
 public class PanelUsuarios extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelUsuarios
      */
-    private ictrl ic;
+    private Ictrl ic;
     
     private CardLayout c1;
     
     java.awt.CardLayout p1; //para volver atras
     javax.swing.JPanel PantallaGrandePrincipal; //para volver atras
     
-    public PanelUsuarios(ictrl ic, java.awt.CardLayout p1, javax.swing.JPanel PantallaGrandePrincipal) {
+    public PanelUsuarios(Ictrl ic, java.awt.CardLayout p1, javax.swing.JPanel PantallaGrandePrincipal) {
         initComponents();
         
         this.ic = ic;

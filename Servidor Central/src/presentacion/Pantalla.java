@@ -9,8 +9,8 @@ package presentacion;
  * @author Juanpi
  */
 
-import logica.ictrl;
-import logica.fabrica;
+import logica.Ictrl;
+import logica.Fabrica;
 
 import persistencia.ControladoraPersistencia;
 
@@ -24,8 +24,8 @@ public class Pantalla extends javax.swing.JFrame {
      * Creates new form Pantalla
      */
     
-    private ictrl ic;
-    private fabrica fab;
+    private Ictrl ic;
+    private Fabrica fab;
     
     private CardLayout c1; //card para contenido
     
@@ -33,7 +33,7 @@ public class Pantalla extends javax.swing.JFrame {
     
     public Pantalla() {
         initComponents(); 
-        this.fab = new fabrica();
+        this.fab = new Fabrica();
         this.ic = fab.getIctrl();
         
         c1 = new CardLayout();
