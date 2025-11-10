@@ -27,30 +27,261 @@ public interface IctrlServicio {
 
     /**
      * 
+     * @param arg0
      * @return
-     *     returns java.util.List<clienteWS.CategoriaDTO>
+     *     returns java.util.List<clienteWS.ComentarioDTO>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarCategoriaDTO", targetNamespace = "http://WebServices/", className = "clienteWS.ListarCategoriaDTO")
-    @ResponseWrapper(localName = "listarCategoriaDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarCategoriaDTOResponse")
-    @Action(input = "http://WebServices/ictrlServicio/listarCategoriaDTORequest", output = "http://WebServices/ictrlServicio/listarCategoriaDTOResponse")
-    public List<CategoriaDTO> listarCategoriaDTO();
+    @RequestWrapper(localName = "listarComentariosDePropuesta", targetNamespace = "http://WebServices/", className = "clienteWS.ListarComentariosDePropuesta")
+    @ResponseWrapper(localName = "listarComentariosDePropuestaResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarComentariosDePropuestaResponse")
+    @Action(input = "http://WebServices/ictrlServicio/listarComentariosDePropuestaRequest", output = "http://WebServices/ictrlServicio/listarComentariosDePropuestaResponse")
+    public List<ComentarioDTO> listarComentariosDePropuesta(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<clienteWS.PropuestaDTO>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarPropuestasNoIngresadas", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasNoIngresadas")
+    @ResponseWrapper(localName = "listarPropuestasNoIngresadasResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasNoIngresadasResponse")
+    @Action(input = "http://WebServices/ictrlServicio/listarPropuestasNoIngresadasRequest", output = "http://WebServices/ictrlServicio/listarPropuestasNoIngresadasResponse")
+    public List<PropuestaDTO> listarPropuestasNoIngresadas();
 
     /**
      * 
      * @param arg0
      * @return
-     *     returns clienteWS.UsuarioDTO
+     *     returns java.util.List<clienteWS.PropuestaDTO>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscoUsuarioDTO", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoUsuarioDTO")
-    @ResponseWrapper(localName = "buscoUsuarioDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoUsuarioDTOResponse")
-    @Action(input = "http://WebServices/ictrlServicio/buscoUsuarioDTORequest", output = "http://WebServices/ictrlServicio/buscoUsuarioDTOResponse")
-    public UsuarioDTO buscoUsuarioDTO(
+    @RequestWrapper(localName = "listarPropuestasFinanciadas", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasFinanciadas")
+    @ResponseWrapper(localName = "listarPropuestasFinanciadasResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasFinanciadasResponse")
+    @Action(input = "http://WebServices/ictrlServicio/listarPropuestasFinanciadasRequest", output = "http://WebServices/ictrlServicio/listarPropuestasFinanciadasResponse")
+    public List<PropuestaDTO> listarPropuestasFinanciadas(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscoRol", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoRol")
+    @ResponseWrapper(localName = "buscoRolResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoRolResponse")
+    @Action(input = "http://WebServices/ictrlServicio/buscoRolRequest", output = "http://WebServices/ictrlServicio/buscoRolResponse")
+    public String buscoRol(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @param arg1
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "usuarioSigueA", targetNamespace = "http://WebServices/", className = "clienteWS.UsuarioSigueA")
+    @ResponseWrapper(localName = "usuarioSigueAResponse", targetNamespace = "http://WebServices/", className = "clienteWS.UsuarioSigueAResponse")
+    @Action(input = "http://WebServices/ictrlServicio/usuarioSigueARequest", output = "http://WebServices/ictrlServicio/usuarioSigueAResponse")
+    public boolean usuarioSigueA(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<clienteWS.UsuarioDTO>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscarSeguidores", targetNamespace = "http://WebServices/", className = "clienteWS.BuscarSeguidores")
+    @ResponseWrapper(localName = "buscarSeguidoresResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscarSeguidoresResponse")
+    @Action(input = "http://WebServices/ictrlServicio/buscarSeguidoresRequest", output = "http://WebServices/ictrlServicio/buscarSeguidoresResponse")
+    public List<UsuarioDTO> buscarSeguidores(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<clienteWS.UsuarioDTO>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscarSeguidos", targetNamespace = "http://WebServices/", className = "clienteWS.BuscarSeguidos")
+    @ResponseWrapper(localName = "buscarSeguidosResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscarSeguidosResponse")
+    @Action(input = "http://WebServices/ictrlServicio/buscarSeguidosRequest", output = "http://WebServices/ictrlServicio/buscarSeguidosResponse")
+    public List<UsuarioDTO> buscarSeguidos(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns clienteWS.Usuario
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscoUsuario", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoUsuario")
+    @ResponseWrapper(localName = "buscoUsuarioResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoUsuarioResponse")
+    @Action(input = "http://WebServices/ictrlServicio/buscoUsuarioRequest", output = "http://WebServices/ictrlServicio/buscoUsuarioResponse")
+    public Usuario buscoUsuario(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "cancelarPropuesta", targetNamespace = "http://WebServices/", className = "clienteWS.CancelarPropuesta")
+    @ResponseWrapper(localName = "cancelarPropuestaResponse", targetNamespace = "http://WebServices/", className = "clienteWS.CancelarPropuestaResponse")
+    @Action(input = "http://WebServices/ictrlServicio/cancelarPropuestaRequest", output = "http://WebServices/ictrlServicio/cancelarPropuestaResponse")
+    public void cancelarPropuesta(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @param arg1
+     * @param arg2
+     * @param arg3
+     * @param arg4
+     */
+    @WebMethod
+    @RequestWrapper(localName = "altaColaboracion", targetNamespace = "http://WebServices/", className = "clienteWS.AltaColaboracion")
+    @ResponseWrapper(localName = "altaColaboracionResponse", targetNamespace = "http://WebServices/", className = "clienteWS.AltaColaboracionResponse")
+    @Action(input = "http://WebServices/ictrlServicio/altaColaboracionRequest", output = "http://WebServices/ictrlServicio/altaColaboracionResponse")
+    public void altaColaboracion(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        Float arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        String arg3,
+        @WebParam(name = "arg4", targetNamespace = "")
+        String arg4);
+
+    /**
+     * 
+     * @param arg0
+     * @param arg1
+     */
+    @WebMethod
+    @RequestWrapper(localName = "dejarSeguir", targetNamespace = "http://WebServices/", className = "clienteWS.DejarSeguir")
+    @ResponseWrapper(localName = "dejarSeguirResponse", targetNamespace = "http://WebServices/", className = "clienteWS.DejarSeguirResponse")
+    @Action(input = "http://WebServices/ictrlServicio/dejarSeguirRequest", output = "http://WebServices/ictrlServicio/dejarSeguirResponse")
+    public void dejarSeguir(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns clienteWS.Usuario
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscoUsuario2", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoUsuario2")
+    @ResponseWrapper(localName = "buscoUsuario2Response", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoUsuario2Response")
+    @Action(input = "http://WebServices/ictrlServicio/buscoUsuario2Request", output = "http://WebServices/ictrlServicio/buscoUsuario2Response")
+    public Usuario buscoUsuario2(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @param arg1
+     * @param arg2
+     */
+    @WebMethod
+    @RequestWrapper(localName = "dejarComentario", targetNamespace = "http://WebServices/", className = "clienteWS.DejarComentario")
+    @ResponseWrapper(localName = "dejarComentarioResponse", targetNamespace = "http://WebServices/", className = "clienteWS.DejarComentarioResponse")
+    @Action(input = "http://WebServices/ictrlServicio/dejarComentarioRequest", output = "http://WebServices/ictrlServicio/dejarComentarioResponse")
+    public void dejarComentario(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2);
+
+    /**
+     * 
+     * @param arg0
+     * @param arg1
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "validarUsuario", targetNamespace = "http://WebServices/", className = "clienteWS.ValidarUsuario")
+    @ResponseWrapper(localName = "validarUsuarioResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ValidarUsuarioResponse")
+    @Action(input = "http://WebServices/ictrlServicio/validarUsuarioRequest", output = "http://WebServices/ictrlServicio/validarUsuarioResponse")
+    public boolean validarUsuario(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns clienteWS.PropuestaDTO
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscoPropuestaDTO", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoPropuestaDTO")
+    @ResponseWrapper(localName = "buscoPropuestaDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoPropuestaDTOResponse")
+    @Action(input = "http://WebServices/ictrlServicio/buscoPropuestaDTORequest", output = "http://WebServices/ictrlServicio/buscoPropuestaDTOResponse")
+    public PropuestaDTO buscoPropuestaDTO(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @param arg1
+     * @param arg2
+     * @param arg3
+     */
+    @WebMethod
+    @RequestWrapper(localName = "registrarAcceso", targetNamespace = "http://WebServices/", className = "clienteWS.RegistrarAcceso")
+    @ResponseWrapper(localName = "registrarAccesoResponse", targetNamespace = "http://WebServices/", className = "clienteWS.RegistrarAccesoResponse")
+    @Action(input = "http://WebServices/ictrlServicio/registrarAccesoRequest", output = "http://WebServices/ictrlServicio/registrarAccesoResponse")
+    public void registrarAcceso(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        String arg3);
 
     /**
      * 
@@ -78,33 +309,6 @@ public interface IctrlServicio {
 
     /**
      * 
-     * @param arg0
-     * @param arg1
-     */
-    @WebMethod
-    @RequestWrapper(localName = "seguirUsuario", targetNamespace = "http://WebServices/", className = "clienteWS.SeguirUsuario")
-    @ResponseWrapper(localName = "seguirUsuarioResponse", targetNamespace = "http://WebServices/", className = "clienteWS.SeguirUsuarioResponse")
-    @Action(input = "http://WebServices/ictrlServicio/seguirUsuarioRequest", output = "http://WebServices/ictrlServicio/seguirUsuarioResponse")
-    public void seguirUsuario(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "modificoPropuesta", targetNamespace = "http://WebServices/", className = "clienteWS.ModificoPropuesta")
-    @ResponseWrapper(localName = "modificoPropuestaResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ModificoPropuestaResponse")
-    @Action(input = "http://WebServices/ictrlServicio/modificoPropuestaRequest", output = "http://WebServices/ictrlServicio/modificoPropuestaResponse")
-    public void modificoPropuesta(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Propuesta arg0);
-
-    /**
-     * 
      * @return
      *     returns java.util.List<clienteWS.Propuesta>
      */
@@ -118,224 +322,14 @@ public interface IctrlServicio {
     /**
      * 
      * @param arg0
-     * @return
-     *     returns java.util.List<clienteWS.PropuestaDTO>
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarPropuestasFinanciadas", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasFinanciadas")
-    @ResponseWrapper(localName = "listarPropuestasFinanciadasResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasFinanciadasResponse")
-    @Action(input = "http://WebServices/ictrlServicio/listarPropuestasFinanciadasRequest", output = "http://WebServices/ictrlServicio/listarPropuestasFinanciadasResponse")
-    public List<PropuestaDTO> listarPropuestasFinanciadas(
+    @RequestWrapper(localName = "modificoPropuesta", targetNamespace = "http://WebServices/", className = "clienteWS.ModificoPropuesta")
+    @ResponseWrapper(localName = "modificoPropuestaResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ModificoPropuestaResponse")
+    @Action(input = "http://WebServices/ictrlServicio/modificoPropuestaRequest", output = "http://WebServices/ictrlServicio/modificoPropuestaResponse")
+    public void modificoPropuesta(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<clienteWS.PropuestaDTO>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarPropuestasNoIngresadas", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasNoIngresadas")
-    @ResponseWrapper(localName = "listarPropuestasNoIngresadasResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasNoIngresadasResponse")
-    @Action(input = "http://WebServices/ictrlServicio/listarPropuestasNoIngresadasRequest", output = "http://WebServices/ictrlServicio/listarPropuestasNoIngresadasResponse")
-    public List<PropuestaDTO> listarPropuestasNoIngresadas();
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<clienteWS.ComentarioDTO>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarComentariosDePropuesta", targetNamespace = "http://WebServices/", className = "clienteWS.ListarComentariosDePropuesta")
-    @ResponseWrapper(localName = "listarComentariosDePropuestaResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarComentariosDePropuestaResponse")
-    @Action(input = "http://WebServices/ictrlServicio/listarComentariosDePropuestaRequest", output = "http://WebServices/ictrlServicio/listarComentariosDePropuestaResponse")
-    public List<ComentarioDTO> listarComentariosDePropuesta(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscoRol", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoRol")
-    @ResponseWrapper(localName = "buscoRolResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoRolResponse")
-    @Action(input = "http://WebServices/ictrlServicio/buscoRolRequest", output = "http://WebServices/ictrlServicio/buscoRolResponse")
-    public String buscoRol(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @param arg1
-     * @param arg2
-     * @param arg3
-     * @param arg4
-     * @param arg5
-     */
-    @WebMethod
-    @RequestWrapper(localName = "altaPerfilColaborador", targetNamespace = "http://WebServices/", className = "clienteWS.AltaPerfilColaborador")
-    @ResponseWrapper(localName = "altaPerfilColaboradorResponse", targetNamespace = "http://WebServices/", className = "clienteWS.AltaPerfilColaboradorResponse")
-    @Action(input = "http://WebServices/ictrlServicio/altaPerfilColaboradorRequest", output = "http://WebServices/ictrlServicio/altaPerfilColaboradorResponse")
-    public void altaPerfilColaborador(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        String arg2,
-        @WebParam(name = "arg3", targetNamespace = "")
-        String arg3,
-        @WebParam(name = "arg4", targetNamespace = "")
-        byte[] arg4,
-        @WebParam(name = "arg5", targetNamespace = "")
-        String arg5);
-
-    /**
-     * 
-     * @param arg0
-     * @param arg1
-     * @param arg2
-     * @param arg3
-     * @param arg4
-     * @param arg5
-     * @param arg6
-     * @param arg7
-     * @param arg8
-     */
-    @WebMethod
-    @RequestWrapper(localName = "altaPerfilProponente", targetNamespace = "http://WebServices/", className = "clienteWS.AltaPerfilProponente")
-    @ResponseWrapper(localName = "altaPerfilProponenteResponse", targetNamespace = "http://WebServices/", className = "clienteWS.AltaPerfilProponenteResponse")
-    @Action(input = "http://WebServices/ictrlServicio/altaPerfilProponenteRequest", output = "http://WebServices/ictrlServicio/altaPerfilProponenteResponse")
-    public void altaPerfilProponente(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        String arg2,
-        @WebParam(name = "arg3", targetNamespace = "")
-        String arg3,
-        @WebParam(name = "arg4", targetNamespace = "")
-        byte[] arg4,
-        @WebParam(name = "arg5", targetNamespace = "")
-        String arg5,
-        @WebParam(name = "arg6", targetNamespace = "")
-        String arg6,
-        @WebParam(name = "arg7", targetNamespace = "")
-        String arg7,
-        @WebParam(name = "arg8", targetNamespace = "")
-        String arg8);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<clienteWS.Colaboracion>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarColaboraciones", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboraciones")
-    @ResponseWrapper(localName = "listarColaboracionesResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboracionesResponse")
-    @Action(input = "http://WebServices/ictrlServicio/listarColaboracionesRequest", output = "http://WebServices/ictrlServicio/listarColaboracionesResponse")
-    public List<Colaboracion> listarColaboraciones();
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<clienteWS.Colaborador>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarColaboradores", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboradores")
-    @ResponseWrapper(localName = "listarColaboradoresResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboradoresResponse")
-    @Action(input = "http://WebServices/ictrlServicio/listarColaboradoresRequest", output = "http://WebServices/ictrlServicio/listarColaboradoresResponse")
-    public List<Colaborador> listarColaboradores();
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns clienteWS.ColaboradorDTO
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscoColaboradorDTO", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoColaboradorDTO")
-    @ResponseWrapper(localName = "buscoColaboradorDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoColaboradorDTOResponse")
-    @Action(input = "http://WebServices/ictrlServicio/buscoColaboradorDTORequest", output = "http://WebServices/ictrlServicio/buscoColaboradorDTOResponse")
-    public ColaboradorDTO buscoColaboradorDTO(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<clienteWS.ColaboracionDTO>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarColaboracionesDTO", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboracionesDTO")
-    @ResponseWrapper(localName = "listarColaboracionesDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboracionesDTOResponse")
-    @Action(input = "http://WebServices/ictrlServicio/listarColaboracionesDTORequest", output = "http://WebServices/ictrlServicio/listarColaboracionesDTOResponse")
-    public List<ColaboracionDTO> listarColaboracionesDTO();
-
-    /**
-     * 
-     * @param arg0
-     * @param arg1
-     * @param arg2
-     * @param arg3
-     */
-    @WebMethod
-    @RequestWrapper(localName = "registrarAcceso", targetNamespace = "http://WebServices/", className = "clienteWS.RegistrarAcceso")
-    @ResponseWrapper(localName = "registrarAccesoResponse", targetNamespace = "http://WebServices/", className = "clienteWS.RegistrarAccesoResponse")
-    @Action(input = "http://WebServices/ictrlServicio/registrarAccesoRequest", output = "http://WebServices/ictrlServicio/registrarAccesoResponse")
-    public void registrarAcceso(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        String arg2,
-        @WebParam(name = "arg3", targetNamespace = "")
-        String arg3);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns clienteWS.Colaborador
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscoColaborador", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoColaborador")
-    @ResponseWrapper(localName = "buscoColaboradorResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoColaboradorResponse")
-    @Action(input = "http://WebServices/ictrlServicio/buscoColaboradorRequest", output = "http://WebServices/ictrlServicio/buscoColaboradorResponse")
-    public Colaborador buscoColaborador(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns clienteWS.Usuario
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscoUsuario", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoUsuario")
-    @ResponseWrapper(localName = "buscoUsuarioResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoUsuarioResponse")
-    @Action(input = "http://WebServices/ictrlServicio/buscoUsuarioRequest", output = "http://WebServices/ictrlServicio/buscoUsuarioResponse")
-    public Usuario buscoUsuario(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+        Propuesta arg0);
 
     /**
      * 
@@ -386,54 +380,6 @@ public interface IctrlServicio {
      * 
      * @param arg0
      * @return
-     *     returns clienteWS.Usuario
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscoUsuario2", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoUsuario2")
-    @ResponseWrapper(localName = "buscoUsuario2Response", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoUsuario2Response")
-    @Action(input = "http://WebServices/ictrlServicio/buscoUsuario2Request", output = "http://WebServices/ictrlServicio/buscoUsuario2Response")
-    public Usuario buscoUsuario2(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @param arg1
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "validarUsuario", targetNamespace = "http://WebServices/", className = "clienteWS.ValidarUsuario")
-    @ResponseWrapper(localName = "validarUsuarioResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ValidarUsuarioResponse")
-    @Action(input = "http://WebServices/ictrlServicio/validarUsuarioRequest", output = "http://WebServices/ictrlServicio/validarUsuarioResponse")
-    public boolean validarUsuario(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<clienteWS.UsuarioDTO>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarSeguidores", targetNamespace = "http://WebServices/", className = "clienteWS.BuscarSeguidores")
-    @ResponseWrapper(localName = "buscarSeguidoresResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscarSeguidoresResponse")
-    @Action(input = "http://WebServices/ictrlServicio/buscarSeguidoresRequest", output = "http://WebServices/ictrlServicio/buscarSeguidoresResponse")
-    public List<UsuarioDTO> buscarSeguidores(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
      *     returns clienteWS.Propuesta
      */
     @WebMethod
@@ -448,100 +394,13 @@ public interface IctrlServicio {
     /**
      * 
      * @param arg0
-     * @return
-     *     returns clienteWS.PropuestaDTO
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscoPropuestaDTO", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoPropuestaDTO")
-    @ResponseWrapper(localName = "buscoPropuestaDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoPropuestaDTOResponse")
-    @Action(input = "http://WebServices/ictrlServicio/buscoPropuestaDTORequest", output = "http://WebServices/ictrlServicio/buscoPropuestaDTOResponse")
-    public PropuestaDTO buscoPropuestaDTO(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "cancelarPropuesta", targetNamespace = "http://WebServices/", className = "clienteWS.CancelarPropuesta")
-    @ResponseWrapper(localName = "cancelarPropuestaResponse", targetNamespace = "http://WebServices/", className = "clienteWS.CancelarPropuestaResponse")
-    @Action(input = "http://WebServices/ictrlServicio/cancelarPropuestaRequest", output = "http://WebServices/ictrlServicio/cancelarPropuestaResponse")
-    public void cancelarPropuesta(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @param arg1
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "usuarioSigueA", targetNamespace = "http://WebServices/", className = "clienteWS.UsuarioSigueA")
-    @ResponseWrapper(localName = "usuarioSigueAResponse", targetNamespace = "http://WebServices/", className = "clienteWS.UsuarioSigueAResponse")
-    @Action(input = "http://WebServices/ictrlServicio/usuarioSigueARequest", output = "http://WebServices/ictrlServicio/usuarioSigueAResponse")
-    public boolean usuarioSigueA(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
-
-    /**
-     * 
-     * @param arg0
-     * @param arg1
-     * @param arg2
-     */
-    @WebMethod
-    @RequestWrapper(localName = "dejarComentario", targetNamespace = "http://WebServices/", className = "clienteWS.DejarComentario")
-    @ResponseWrapper(localName = "dejarComentarioResponse", targetNamespace = "http://WebServices/", className = "clienteWS.DejarComentarioResponse")
-    @Action(input = "http://WebServices/ictrlServicio/dejarComentarioRequest", output = "http://WebServices/ictrlServicio/dejarComentarioResponse")
-    public void dejarComentario(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        String arg2);
-
-    /**
-     * 
-     * @param arg0
-     * @param arg1
-     * @param arg2
-     * @param arg3
-     * @param arg4
-     */
-    @WebMethod
-    @RequestWrapper(localName = "altaColaboracion", targetNamespace = "http://WebServices/", className = "clienteWS.AltaColaboracion")
-    @ResponseWrapper(localName = "altaColaboracionResponse", targetNamespace = "http://WebServices/", className = "clienteWS.AltaColaboracionResponse")
-    @Action(input = "http://WebServices/ictrlServicio/altaColaboracionRequest", output = "http://WebServices/ictrlServicio/altaColaboracionResponse")
-    public void altaColaboracion(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        Float arg2,
-        @WebParam(name = "arg3", targetNamespace = "")
-        String arg3,
-        @WebParam(name = "arg4", targetNamespace = "")
-        String arg4);
-
-    /**
-     * 
-     * @param arg0
      * @param arg1
      */
     @WebMethod
-    @RequestWrapper(localName = "dejarSeguir", targetNamespace = "http://WebServices/", className = "clienteWS.DejarSeguir")
-    @ResponseWrapper(localName = "dejarSeguirResponse", targetNamespace = "http://WebServices/", className = "clienteWS.DejarSeguirResponse")
-    @Action(input = "http://WebServices/ictrlServicio/dejarSeguirRequest", output = "http://WebServices/ictrlServicio/dejarSeguirResponse")
-    public void dejarSeguir(
+    @RequestWrapper(localName = "seguirUsuario", targetNamespace = "http://WebServices/", className = "clienteWS.SeguirUsuario")
+    @ResponseWrapper(localName = "seguirUsuarioResponse", targetNamespace = "http://WebServices/", className = "clienteWS.SeguirUsuarioResponse")
+    @Action(input = "http://WebServices/ictrlServicio/seguirUsuarioRequest", output = "http://WebServices/ictrlServicio/seguirUsuarioResponse")
+    public void seguirUsuario(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
@@ -551,14 +410,14 @@ public interface IctrlServicio {
      * 
      * @param arg0
      * @return
-     *     returns java.util.List<clienteWS.UsuarioDTO>
+     *     returns clienteWS.Colaborador
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "buscarSeguidos", targetNamespace = "http://WebServices/", className = "clienteWS.BuscarSeguidos")
-    @ResponseWrapper(localName = "buscarSeguidosResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscarSeguidosResponse")
-    @Action(input = "http://WebServices/ictrlServicio/buscarSeguidosRequest", output = "http://WebServices/ictrlServicio/buscarSeguidosResponse")
-    public List<UsuarioDTO> buscarSeguidos(
+    @RequestWrapper(localName = "buscoColaborador", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoColaborador")
+    @ResponseWrapper(localName = "buscoColaboradorResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoColaboradorResponse")
+    @Action(input = "http://WebServices/ictrlServicio/buscoColaboradorRequest", output = "http://WebServices/ictrlServicio/buscoColaboradorResponse")
+    public Colaborador buscoColaborador(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
@@ -574,6 +433,93 @@ public interface IctrlServicio {
     @ResponseWrapper(localName = "buscoProponenteResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoProponenteResponse")
     @Action(input = "http://WebServices/ictrlServicio/buscoProponenteRequest", output = "http://WebServices/ictrlServicio/buscoProponenteResponse")
     public Proponente buscoProponente(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<clienteWS.Colaborador>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarColaboradores", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboradores")
+    @ResponseWrapper(localName = "listarColaboradoresResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboradoresResponse")
+    @Action(input = "http://WebServices/ictrlServicio/listarColaboradoresRequest", output = "http://WebServices/ictrlServicio/listarColaboradoresResponse")
+    public List<Colaborador> listarColaboradores();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<clienteWS.Colaboracion>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarColaboraciones", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboraciones")
+    @ResponseWrapper(localName = "listarColaboracionesResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboracionesResponse")
+    @Action(input = "http://WebServices/ictrlServicio/listarColaboracionesRequest", output = "http://WebServices/ictrlServicio/listarColaboracionesResponse")
+    public List<Colaboracion> listarColaboraciones();
+
+    /**
+     * 
+     * @param arg0
+     * @param arg1
+     * @param arg2
+     * @param arg3
+     * @param arg4
+     * @param arg5
+     * @param arg6
+     * @param arg7
+     * @param arg8
+     */
+    @WebMethod
+    @RequestWrapper(localName = "altaPerfilProponente", targetNamespace = "http://WebServices/", className = "clienteWS.AltaPerfilProponente")
+    @ResponseWrapper(localName = "altaPerfilProponenteResponse", targetNamespace = "http://WebServices/", className = "clienteWS.AltaPerfilProponenteResponse")
+    @Action(input = "http://WebServices/ictrlServicio/altaPerfilProponenteRequest", output = "http://WebServices/ictrlServicio/altaPerfilProponenteResponse")
+    public void altaPerfilProponente(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        String arg3,
+        @WebParam(name = "arg4", targetNamespace = "")
+        byte[] arg4,
+        @WebParam(name = "arg5", targetNamespace = "")
+        String arg5,
+        @WebParam(name = "arg6", targetNamespace = "")
+        String arg6,
+        @WebParam(name = "arg7", targetNamespace = "")
+        String arg7,
+        @WebParam(name = "arg8", targetNamespace = "")
+        String arg8);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<clienteWS.PropuestaDTO>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarPropuestasDTO", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasDTO")
+    @ResponseWrapper(localName = "listarPropuestasDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasDTOResponse")
+    @Action(input = "http://WebServices/ictrlServicio/listarPropuestasDTORequest", output = "http://WebServices/ictrlServicio/listarPropuestasDTOResponse")
+    public List<PropuestaDTO> listarPropuestasDTO();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<clienteWS.PropuestaDTO>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarPropuestasPublicadas", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasPublicadas")
+    @ResponseWrapper(localName = "listarPropuestasPublicadasResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasPublicadasResponse")
+    @Action(input = "http://WebServices/ictrlServicio/listarPropuestasPublicadasRequest", output = "http://WebServices/ictrlServicio/listarPropuestasPublicadasResponse")
+    public List<PropuestaDTO> listarPropuestasPublicadas(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
@@ -607,17 +553,41 @@ public interface IctrlServicio {
     /**
      * 
      * @param arg0
+     * @param arg1
+     * @param arg2
+     * @param arg3
+     * @param arg4
+     * @param arg5
+     */
+    @WebMethod
+    @RequestWrapper(localName = "altaPerfilColaborador", targetNamespace = "http://WebServices/", className = "clienteWS.AltaPerfilColaborador")
+    @ResponseWrapper(localName = "altaPerfilColaboradorResponse", targetNamespace = "http://WebServices/", className = "clienteWS.AltaPerfilColaboradorResponse")
+    @Action(input = "http://WebServices/ictrlServicio/altaPerfilColaboradorRequest", output = "http://WebServices/ictrlServicio/altaPerfilColaboradorResponse")
+    public void altaPerfilColaborador(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        String arg3,
+        @WebParam(name = "arg4", targetNamespace = "")
+        byte[] arg4,
+        @WebParam(name = "arg5", targetNamespace = "")
+        String arg5);
+
+    /**
+     * 
      * @return
-     *     returns java.util.List<clienteWS.PropuestaDTO>
+     *     returns java.util.List<clienteWS.ColaboradorDTO>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarPropuestasFavoritas", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasFavoritas")
-    @ResponseWrapper(localName = "listarPropuestasFavoritasResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasFavoritasResponse")
-    @Action(input = "http://WebServices/ictrlServicio/listarPropuestasFavoritasRequest", output = "http://WebServices/ictrlServicio/listarPropuestasFavoritasResponse")
-    public List<PropuestaDTO> listarPropuestasFavoritas(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+    @RequestWrapper(localName = "listarColaboradoresDTO", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboradoresDTO")
+    @ResponseWrapper(localName = "listarColaboradoresDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboradoresDTOResponse")
+    @Action(input = "http://WebServices/ictrlServicio/listarColaboradoresDTORequest", output = "http://WebServices/ictrlServicio/listarColaboradoresDTOResponse")
+    public List<ColaboradorDTO> listarColaboradoresDTO();
 
     /**
      * 
@@ -636,40 +606,16 @@ public interface IctrlServicio {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<clienteWS.ColaboradorDTO>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarColaboradoresDTO", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboradoresDTO")
-    @ResponseWrapper(localName = "listarColaboradoresDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboradoresDTOResponse")
-    @Action(input = "http://WebServices/ictrlServicio/listarColaboradoresDTORequest", output = "http://WebServices/ictrlServicio/listarColaboradoresDTOResponse")
-    public List<ColaboradorDTO> listarColaboradoresDTO();
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<clienteWS.PropuestaDTO>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarPropuestasDTO", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasDTO")
-    @ResponseWrapper(localName = "listarPropuestasDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasDTOResponse")
-    @Action(input = "http://WebServices/ictrlServicio/listarPropuestasDTORequest", output = "http://WebServices/ictrlServicio/listarPropuestasDTOResponse")
-    public List<PropuestaDTO> listarPropuestasDTO();
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns java.util.List<clienteWS.PropuestaDTO>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listarPropuestasPublicadas", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasPublicadas")
-    @ResponseWrapper(localName = "listarPropuestasPublicadasResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasPublicadasResponse")
-    @Action(input = "http://WebServices/ictrlServicio/listarPropuestasPublicadasRequest", output = "http://WebServices/ictrlServicio/listarPropuestasPublicadasResponse")
-    public List<PropuestaDTO> listarPropuestasPublicadas(
+    @RequestWrapper(localName = "listarPropuestasFavoritas", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasFavoritas")
+    @ResponseWrapper(localName = "listarPropuestasFavoritasResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarPropuestasFavoritasResponse")
+    @Action(input = "http://WebServices/ictrlServicio/listarPropuestasFavoritasRequest", output = "http://WebServices/ictrlServicio/listarPropuestasFavoritasResponse")
+    public List<PropuestaDTO> listarPropuestasFavoritas(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
@@ -687,5 +633,59 @@ public interface IctrlServicio {
     public String saludar(
         @WebParam(name = "nombre", targetNamespace = "")
         String nombre);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns clienteWS.ColaboradorDTO
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscoColaboradorDTO", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoColaboradorDTO")
+    @ResponseWrapper(localName = "buscoColaboradorDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoColaboradorDTOResponse")
+    @Action(input = "http://WebServices/ictrlServicio/buscoColaboradorDTORequest", output = "http://WebServices/ictrlServicio/buscoColaboradorDTOResponse")
+    public ColaboradorDTO buscoColaboradorDTO(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<clienteWS.ColaboracionDTO>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarColaboracionesDTO", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboracionesDTO")
+    @ResponseWrapper(localName = "listarColaboracionesDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarColaboracionesDTOResponse")
+    @Action(input = "http://WebServices/ictrlServicio/listarColaboracionesDTORequest", output = "http://WebServices/ictrlServicio/listarColaboracionesDTOResponse")
+    public List<ColaboracionDTO> listarColaboracionesDTO();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns clienteWS.UsuarioDTO
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "buscoUsuarioDTO", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoUsuarioDTO")
+    @ResponseWrapper(localName = "buscoUsuarioDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.BuscoUsuarioDTOResponse")
+    @Action(input = "http://WebServices/ictrlServicio/buscoUsuarioDTORequest", output = "http://WebServices/ictrlServicio/buscoUsuarioDTOResponse")
+    public UsuarioDTO buscoUsuarioDTO(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<clienteWS.CategoriaDTO>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listarCategoriaDTO", targetNamespace = "http://WebServices/", className = "clienteWS.ListarCategoriaDTO")
+    @ResponseWrapper(localName = "listarCategoriaDTOResponse", targetNamespace = "http://WebServices/", className = "clienteWS.ListarCategoriaDTOResponse")
+    @Action(input = "http://WebServices/ictrlServicio/listarCategoriaDTORequest", output = "http://WebServices/ictrlServicio/listarCategoriaDTOResponse")
+    public List<CategoriaDTO> listarCategoriaDTO();
 
 }

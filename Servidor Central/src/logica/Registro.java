@@ -5,11 +5,16 @@
 package logica;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -28,6 +33,9 @@ public class Registro implements Serializable {
     private String browser;
     private String so;
 
+    @Temporal(TemporalType.DATE)
+    private Date fecha = Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant());
+
     public Registro() {
 
     }
@@ -38,9 +46,9 @@ public class Registro implements Serializable {
         this.browser = browser;
         this.so = so;
     }
-    
-    public int getId(){
-    return this.id;
+
+    public int getId() {
+        return this.id;
     }
 
     public String getIp() {
@@ -73,6 +81,14 @@ public class Registro implements Serializable {
 
     public void setSo(String so) {
         this.so = so;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+    
+    public Date getFecha(){
+    return this.fecha;
     }
 
 }

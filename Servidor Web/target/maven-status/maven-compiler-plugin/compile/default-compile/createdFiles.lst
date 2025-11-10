@@ -39,6 +39,7 @@ clienteWS\Saludar.class
 clienteWS\EstadoPropuesta.class
 clienteWS\IctrlServicioService.class
 clienteWS\BuscoColaborador.class
+servlets\desactivarCuentaServlet.class
 logica\dtos\ColaboracionDTO.class
 clienteWS\ProponenteDTO.class
 servlets\consultaPropuestaFullServlet.class

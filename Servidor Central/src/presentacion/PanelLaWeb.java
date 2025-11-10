@@ -55,10 +55,11 @@ public class PanelLaWeb extends javax.swing.JPanel {
         principal = new javax.swing.JPanel();
         labelFoto = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        botonRegistro = new javax.swing.JButton();
+        botonAlta = new javax.swing.JButton();
+        botonEliminados = new javax.swing.JButton();
         botonAtras = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        botonEvaluar = new javax.swing.JButton();
+        botonRegistro = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(16, 32, 56));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -117,29 +118,29 @@ public class PanelLaWeb extends javax.swing.JPanel {
             .addComponent(principal, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
         );
 
-        jButton1.setBackground(new java.awt.Color(119, 205, 215));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("ALTA PERFIL");
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setOpaque(true);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonAlta.setBackground(new java.awt.Color(119, 205, 215));
+        botonAlta.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        botonAlta.setForeground(new java.awt.Color(255, 255, 255));
+        botonAlta.setText("ALTA PERFIL");
+        botonAlta.setBorderPainted(false);
+        botonAlta.setContentAreaFilled(false);
+        botonAlta.setOpaque(true);
+        botonAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonAltaActionPerformed(evt);
             }
         });
 
-        botonRegistro.setBackground(new java.awt.Color(119, 205, 215));
-        botonRegistro.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        botonRegistro.setForeground(new java.awt.Color(255, 255, 255));
-        botonRegistro.setText("Registro Acceso al sitio");
-        botonRegistro.setBorderPainted(false);
-        botonRegistro.setContentAreaFilled(false);
-        botonRegistro.setOpaque(true);
-        botonRegistro.addActionListener(new java.awt.event.ActionListener() {
+        botonEliminados.setBackground(new java.awt.Color(119, 205, 215));
+        botonEliminados.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        botonEliminados.setForeground(new java.awt.Color(255, 255, 255));
+        botonEliminados.setText("Proponentes eliminados");
+        botonEliminados.setBorderPainted(false);
+        botonEliminados.setContentAreaFilled(false);
+        botonEliminados.setOpaque(true);
+        botonEliminados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRegistroActionPerformed(evt);
+                botonEliminadosActionPerformed(evt);
             }
         });
 
@@ -156,16 +157,29 @@ public class PanelLaWeb extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(119, 205, 215));
-        jButton3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("EVALUAR PROPUESTA");
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setOpaque(true);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        botonEvaluar.setBackground(new java.awt.Color(119, 205, 215));
+        botonEvaluar.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        botonEvaluar.setForeground(new java.awt.Color(255, 255, 255));
+        botonEvaluar.setText("EVALUAR PROPUESTA");
+        botonEvaluar.setBorderPainted(false);
+        botonEvaluar.setContentAreaFilled(false);
+        botonEvaluar.setOpaque(true);
+        botonEvaluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                botonEvaluarActionPerformed(evt);
+            }
+        });
+
+        botonRegistro.setBackground(new java.awt.Color(119, 205, 215));
+        botonRegistro.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        botonRegistro.setForeground(new java.awt.Color(255, 255, 255));
+        botonRegistro.setText("Registro Acceso al sitio");
+        botonRegistro.setBorderPainted(false);
+        botonRegistro.setContentAreaFilled(false);
+        botonRegistro.setOpaque(true);
+        botonRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistroActionPerformed(evt);
             }
         });
 
@@ -175,20 +189,27 @@ public class PanelLaWeb extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(46, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(74, 74, 74))
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(38, 38, 38))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(botonAtras)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(botonEliminados, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(46, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(74, 74, 74))
+                                    .addComponent(botonAlta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(botonEvaluar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(38, 38, 38)))
                 .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -197,29 +218,43 @@ public class PanelLaWeb extends javax.swing.JPanel {
                 .addGap(53, 53, 53)
                 .addComponent(jLabel1)
                 .addGap(45, 45, 45)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonAlta, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonEvaluar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 492, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(botonEliminados, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 424, Short.MAX_VALUE)
                 .addComponent(botonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56))
             .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botonAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAltaActionPerformed
         // TODO add your handling code here:
         PanelLaWebLogin PanelLaWebLogin = new PanelLaWebLogin(ic, contenido);
         contenido.add(PanelLaWebLogin, "PanelLaWebLogin");
         c1.show(contenido, "PanelLaWebLogin");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonAltaActionPerformed
 
     private void botonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAtrasActionPerformed
         // TODO add your handling code here:
         p1.show(PantallaGrandePrincipal, "principal");
     }//GEN-LAST:event_botonAtrasActionPerformed
+
+    private void botonEliminadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminadosActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_botonEliminadosActionPerformed
+
+    private void botonEvaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEvaluarActionPerformed
+        // TODO add your handling code here:
+        PanelLaWebEvaluar PanelLaWebEvaluar = new PanelLaWebEvaluar(ic, contenido, c1);
+        contenido.add(PanelLaWebEvaluar, "PanelLaWebEvaluar");
+        c1.show(contenido, "PanelLaWebEvaluar");
+    }//GEN-LAST:event_botonEvaluarActionPerformed
 
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
         // TODO add your handling code here:
@@ -228,17 +263,14 @@ public class PanelLaWeb extends javax.swing.JPanel {
         c1.show(contenido, "PanelLaWebRegistro");
     }//GEN-LAST:event_botonRegistroActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonAlta;
     private javax.swing.JButton botonAtras;
+    private javax.swing.JButton botonEliminados;
+    private javax.swing.JButton botonEvaluar;
     private javax.swing.JButton botonRegistro;
     private javax.swing.JPanel contenido;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelFoto;

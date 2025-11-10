@@ -8,7 +8,8 @@ package presentacion;
  *
  * @author Juanpi
  */
-
+import java.text.SimpleDateFormat;
+import java.util.List;
 import logica.Ictrl;
 
 import logica.Registro;
@@ -21,30 +22,38 @@ public class PanelLaWebRegistro extends javax.swing.JPanel {
     /**
      * Creates new form PanelConsulta
      */
-    
     Ictrl ic;
-    
+
     private javax.swing.JPanel contenido;
     private java.awt.CardLayout c1;
-    
-    private String titulo = null;
-    
+
     DefaultListModel modelo = new DefaultListModel();
-    
+
     public PanelLaWebRegistro(Ictrl ic, javax.swing.JPanel contenido, java.awt.CardLayout c1) {
         initComponents();
-        
+
         this.ic = ic;
         this.contenido = contenido;
         this.c1 = c1;
-        
+
         listaRegistros.setModel(modelo);
-        for(Registro r : ic.listarRegistros()){
-           if(p.getEstadoActual().toString().equalsIgnoreCase("INGRESADA")){
-            modelo.addElement(p.getTitulo());
-           }
-        }
         
+        List<Registro> registros = ic.listarRegistros();
+        registros.sort((r1, r2) -> r2.getFecha().compareTo(r1.getFecha()));
+        // orden descendente (últimos primero)
+
+        for (Registro r : registros) {
+            String fila = String.format(
+                    "%-15s | %-30s | %-10s | %-10s | %s",
+                    r.getIp(),
+                    r.getUrl(),
+                    r.getBrowser(),
+                    r.getSo(),
+                    new SimpleDateFormat("dd/MM/yyyy HH:mm").format(r.getFecha())
+            );
+            modelo.addElement(fila);
+        }
+
     }
 
     /**
@@ -61,8 +70,6 @@ public class PanelLaWebRegistro extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         labelImagen = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        botonPublicar1 = new javax.swing.JButton();
-        botonCancelar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 240, 255));
         setMinimumSize(new java.awt.Dimension(1000, 900));
@@ -88,7 +95,7 @@ public class PanelLaWebRegistro extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(359, 359, 359)
                 .addComponent(labelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,69 +109,27 @@ public class PanelLaWebRegistro extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(16, 32, 56));
         jLabel2.setText("Registro Acceso al Sitio Web");
 
-        botonPublicar1.setBackground(new java.awt.Color(16, 32, 56));
-        botonPublicar1.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        botonPublicar1.setForeground(new java.awt.Color(255, 255, 255));
-        botonPublicar1.setText("PUBLICAR");
-        botonPublicar1.setBorderPainted(false);
-        botonPublicar1.setContentAreaFilled(false);
-        botonPublicar1.setOpaque(true);
-        botonPublicar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonPublicar1ActionPerformed(evt);
-            }
-        });
-
-        botonCancelar.setBackground(new java.awt.Color(16, 32, 56));
-        botonCancelar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        botonCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        botonCancelar.setText("CANCELAR");
-        botonCancelar.setBorderPainted(false);
-        botonCancelar.setContentAreaFilled(false);
-        botonCancelar.setOpaque(true);
-        botonCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCancelarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(68, 68, 68)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(botonPublicar1)
-                                .addGap(43, 43, 43)
-                                .addComponent(botonCancelar)
-                                .addGap(32, 32, 32)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(76, 76, 76)
                 .addComponent(jLabel2)
-                .addGap(85, 85, 85)
+                .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botonCancelar)
-                            .addComponent(botonPublicar1)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(291, Short.MAX_VALUE))
         );
@@ -172,55 +137,18 @@ public class PanelLaWebRegistro extends javax.swing.JPanel {
 
     private void listaRegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaRegistrosMouseClicked
         // TODO add your handling code here:
-        this.titulo = listaRegistros.getSelectedValue();
+
     }//GEN-LAST:event_listaRegistrosMouseClicked
 
-    private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
-        // TODO add your handling code here:
-        if (titulo == null) {
-            JOptionPane.showMessageDialog(this, "Selecciona una propuesta.", "Error", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-    Propuesta prop = ic.buscoPropuesta(titulo);
-    prop.setEstado(EstadoPropuesta.CANCELADA);
-    prop.registrarCambioEstado(EstadoPropuesta.CANCELADA);
-    ic.modificoPropuesta(prop);
-    JOptionPane.showMessageDialog(this, "Propuesta Cancelada.", "Exito", JOptionPane.WARNING_MESSAGE);
-
-    recargarLista();
-    
-    }//GEN-LAST:event_botonCancelarActionPerformed
-
-    private void botonPublicar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPublicar1ActionPerformed
-        // TODO add your handling code here:
-        if (titulo == null) {
-            JOptionPane.showMessageDialog(this, "Selecciona una propuesta.", "Error", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-    Propuesta prop = ic.buscoPropuesta(titulo);
-    prop.setEstado(EstadoPropuesta.PUBLICADA);
-    prop.registrarCambioEstado(EstadoPropuesta.PUBLICADA);
-    ic.modificoPropuesta(prop);
-    JOptionPane.showMessageDialog(this, "Propuesta Publicada.", "Exito", JOptionPane.WARNING_MESSAGE);
-
-    recargarLista();
-        
-    }//GEN-LAST:event_botonPublicar1ActionPerformed
-
     private void recargarLista() {
-    modelo.clear(); // limpia la lista visual
-    for (Propuesta p : ic.listarPropuestas()) {
-        if (p.getEstadoActual().toString().equalsIgnoreCase("INGRESADA")) {
-            modelo.addElement(p.getTitulo());
+        modelo.clear(); // limpia la lista visual
+        for (Registro r : ic.listarRegistros()) {
+            modelo.addElement(r.getIp());
         }
+        listaRegistros.clearSelection();
     }
-    titulo = null; // resetea selección
-    listaRegistros.clearSelection();
-}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonCancelar;
-    private javax.swing.JButton botonPublicar1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

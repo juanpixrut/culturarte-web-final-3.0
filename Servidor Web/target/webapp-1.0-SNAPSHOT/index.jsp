@@ -10,7 +10,7 @@
     if (sesion != null) {
         rol = (String) sesion.getAttribute("rol");
         usuario = (String) sesion.getAttribute("usuarioLogueado");
-    }else {
+    } else {
         // si no hay sesion, simulamos visitante
         rol = "visitante";
         usuario = "visitante";
@@ -166,7 +166,7 @@
 
     <body>
 
-       <header>
+        <header>
             <h1>🌐 Culturarte</h1>
             <nav>
                 <a href="index.jsp">🏠 Inicio</a>
@@ -180,6 +180,8 @@
                 <% } %>
             </nav>
         </header> 
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <div class="buscador">
             <form action="consultaPropuestaServlet" method="GET" style="display:flex; width:70%; gap:10px;">
@@ -197,6 +199,32 @@
                 </button>
             </form>
             <% } %>
+
+            <% if (usuario != null && "proponente".equalsIgnoreCase(rol)) {%>
+            <form action="desactivarCuentaServlet" method="POST" onsubmit="return confirmarBaja()" style="display:flex; align-items:center; gap:5px;">
+                <button type="submit" style="margin-left: -30vW">🧭 Desactivar mi cuenta</button>
+            </form>
+            <script>
+                function confirmarBaja() {
+                    Swal.fire({
+                        title: "¿Estas seguro?",
+                        text: "Tu cuenta será desactivada. Podés volver a activarla más adelante.",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#e74c3c",
+                        cancelButtonColor: "#3498db",
+                        confirmButtonText: "Sí, desactivar",
+                        cancelButtonText: "No, cancelar"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Redirigo al servlet
+                            window.location.href = "desactivarCuentaServlet";
+                        }
+                    });
+                }
+            </script>
+            <% } %>
+
         </div>
 
         <div class="content">
